@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Colmant | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+    <!-- Particles.js Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Header -->
+    <header id="header">
+        <a href="index.html" class="logo">Thomas<span>Colmant</span></a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Accueil</a></li>
+            <li><a href="index.html#about">À propos</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+    
+    <section class="section" id="audiovisuel">
+       <div class="section-title">
+            <h2>Montage / Motion Design</h2>
+        </div>
+        
+  <div class="motion-list">
+    <a href="desc_logo_QG.html" class="motion-link">
+  <div class="motion-block">
+    <video class="motion-preview" src="Composition_1_1 (2).mp4" controls></video>
+    <div class="motion-info">
+      <p class="motion-date">2025</p>
+      <h3 class="motion-titre">Animation du logo QG</h3>
+    </div></a>
+  </div>
+
+    <a href="desc_montage_ete.html" class="motion-link">
+  <div class="motion-block">
+    <video class="motion-preview" src="Compositin.mp4" controls></video>
+    <div class="motion-info">
+      <p class="motion-date">2025</p>
+      <h3 class="motion-titre">Montage d'été </h3>
+    </div>
+  </div>
+  </a>
+
+  <a href="desc_animation_mac.html" class="motion-link">
+  <div class="motion-block">
+    <video class="motion-preview" src="aftereffect.mp4" controls></video>
+    <div class="motion-info">
+      <p class="motion-date">2025</p>
+      <h3 class="motion-titre">Animation interface mac</h3>
+    </div>
+  </div>
+  </a>
+</div>
+
+
+
+        
+   </section>
+   
+
+<!-- Replace inline scripts with resilient script -->
+<script>
+/* filepath: c:\Users\colma\Desktop\portfolio\motion.html */
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile nav (guarded)
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const navItems = document.querySelectorAll('.nav-links li');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+      navItems.forEach((link, index) => {
+        link.style.animation = link.style.animation ? '' : `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+      });
+    });
+  }
+
+  // Sticky header
+  const header = document.getElementById('header');
+  if (header) window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 100));
+
+  // Scroll top
+  const scrollTopBtn = document.querySelector('.scroll-top');
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => scrollTopBtn.classList.toggle('active', window.pageYOffset > 300));
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  // Portfolio filter (guarded)
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  if (filterBtns.length) {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    filterBtns.forEach(btn => btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      portfolioItems.forEach(item => item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none');
+    }));
+  }
+
+  // Slideshow auto-init if present
+  const slides = document.querySelectorAll('.mySlides');
+  if (slides.length) {
+    let idx = 0;
+    const show = () => { slides.forEach(s => s.style.display = 'none'); slides[idx].style.display = 'block'; };
+    show();
+    setInterval(() => { idx = (idx + 1) % slides.length; show(); }, 5000);
+  }
+
+  // Smooth anchors
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => anchor.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) { e.preventDefault(); window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' }); }
+  }));
+});
+</script>
+
+
+
+                
+      
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section class="section" id="portfolio">
+        <div class="section-title">
+            <h2>Mon Portfolio</h2>
+        </div>
+        
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">Tout</button>
+            <button class="filter-btn" data-filter="audiovisuel">Audiovisuel</button>
+            <button class="filter-btn" data-filter="graphisme">Affiches / Graphisme</button>
+            <button class="filter-btn" data-filter="motion">Montage / Motion Design</button>
+        </div>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-category="audiovisuel">
+                <a href="photographie.html">
+                  <img src="./DSC_0071.jpg" alt="Project 1" class="portfolio-img">
+                  <div class="portfolio-overlay">
+                    <h3>Photographie</h3>
+                  </div>
+                </a>
+              </div>
+            
+              <div class="portfolio-item" data-category="graphisme">
+                <a href="graphisme.html">
+                  <img src="Capture_decran_2025-09-15_162636.png" alt="Project 2" class="portfolio-img">
+                  <div class="portfolio-overlay">
+                    <h3>Affiches / Graphisme</h3>
+                  </div>
+                </a>
+              </div>
+            
+              <div class="portfolio-item" data-category="motion">
+                <a href="motion.html">
+                  <img src="media-montage-ouverture.jpg" alt="Project 3" class="portfolio-img">
+                  <div class="portfolio-overlay">
+                    <h3>Montage / Motion Design</h3>
+                  </div>
+                </a>
+              </div>
+            
+        </div>
+    </section>
+
+
+        
+    
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Me contacter</h2>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Location</h3>
+                        <p>France</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p>Colmant.thomas@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Téléphone</h3>
+                        <p>06 34 68 50 03</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                       
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nom" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Sujet">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Message" required />
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Envoyer un message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="footer-logo">Thomas<span>Colmant</span></a>
+            
+            <ul class="footer-links">
+                <li><a href="index.html#home">Accueil</a></li>
+                <li><a href="index.html#about">A propos</a></li>
+          
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/thomas-colmant-506629382"><i class="fab fa-linkedin-in"></i></a>
+
+            </div>
+            
+            <p class="copyright">© 2025 Thomas Colmant. Tous droits réservés.</p>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const links = document.querySelectorAll('.nav-links li');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            
+            // Animate Links
+            links.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+        });
+        
+        // Close mobile menu when clicking a link
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                links.forEach(link => {
+                    link.style.animation = '';
+                });
+            });
+        });
+        
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 100);
+        });
+        
+        // Scroll to Top Button
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Portfolio Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Animate skills on scroll
+        const skillProgress = document.querySelectorAll('.skill-progress');
+        
+        function animateSkills() {
+            skillProgress.forEach(progress => {
+                const width = progress.parentElement.previousElementSibling.lastElementChild.textContent;
+                progress.style.width = width;
+            });
+        }
+        
+        // Initialize skills animation when section is in view
+        const aboutSection = document.getElementById('about');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkills();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        observer.observe(aboutSection);
+        
+       
+        
+        // Form Submission
+        const form = document.getElementById('form');
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to a server
+            // For demo purposes, we'll just show an alert
+            alert('Merci pour votre message ! Je vous répondrai rapidement.');
+            form.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        
+    </script>
+
+
+
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affiche Mohammed Ali</title>
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header id="header">
+    <a href="index.html" class="logo">Thomas<span>Colmant</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#home">Accueil</a></li>
+      <li><a href="index.html#about">À propos</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </header>
+  <main>
+    <section class="section" id="description-motion-projet">
+  <div class="section-title">
+    <h2>Montage été</h2>
+  </div>
+  <button class="btn-retour" onclick="window.history.back();">← Retour à Montage</button>
+  <div class="desc-affiche-block">
+    <video class="desc-affiche-img" controls poster="poster2.jpg">
+      <source src="Compositin.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo.
+    </video>
+    <div class="desc-titre-zone">
+      <p class="desc-affiche-date">2025</p>
+      <h3>Montage été</h3>
+    </div>
+    <div class="desc-affiche-texte">
+      <p>
+        Montage et composition autour de la thématique du Torii japonais au coucher du soleil. Travail sur la colorimétrie, l'intégration textuelle et les transitions pour créer une ambiance zen et inspirée.
+      </p>
+      <p>
+        <span class="desc-label">Logiciels utilisés :</span> Premiere Pro, Lightroom
+      </p>
+      <p>
+        <span class="desc-label">Contexte :</span> Projet MMI, illustration de la narration par le montage et l’image.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+     <!-- Portfolio Section -->
+    <section class="section" id="portfolio">
+        <div class="section-title">
+            <h2>Mon Portfolio</h2>
+        </div>
+        
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">Tout</button>
+            <button class="filter-btn" data-filter="audiovisuel">Audiovisuel</button>
+            <button class="filter-btn" data-filter="graphisme">Affiches / Graphisme</button>
+            <button class="filter-btn" data-filter="motion">Montage / Motion Design</button>
+        </div>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-category="audiovisuel">
+                <a href="photographie.html">
+                  <img src="./DSC_0071.jpg" alt="Project 1" class="portfolio-img">
+                  <div class="portfolio-overlay">
+                    <h3>Photographie</h3>
+                  </div>
+                </a>
+              </div>
+            
+              <div class="portfolio-item" data-category="graphisme">
+                <a href="graphisme.html">
+                  <img src="Capture_decran_2025-09-15_162636.png" alt="Project 2" class="portfolio-img">
+                  <div class="portfolio-overlay">
+                    <h3>Affiches / Graphisme</h3>
+                  </div>
+                </a>
+              </div>
+            
+              <div class="portfolio-item" data-category="motion">
+                <a href="motion.html">
+                  <img src="media-montage-ouverture.jpg" alt="Project 3" class="portfolio-img">
+                  <div class="portfolio-overlay">
+                    <h3>Montage / Motion Design</h3>
+                  </div>
+                </a>
+              </div>
+            
+        </div>
+    </section>
+
+
+        
+    
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Me contacter</h2>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Location</h3>
+                        <p>France</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p>Colmant.thomas@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Téléphone</h3>
+                        <p>06 34 68 50 03</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                       
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nom" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Sujet">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Message" required />
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Envoyer un message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+  </main>
+  <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="footer-logo">Thomas<span>Colmant</span></a>
+            
+            <ul class="footer-links">
+                <li><a href="index.html#home">Accueil</a></li>
+                <li><a href="index.html#about">A propos</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/thomas-colmant-506629382"><i class="fab fa-linkedin-in"></i></a>
+
+            </div>
+            
+            <p class="copyright">© 2025 Thomas Colmant. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
