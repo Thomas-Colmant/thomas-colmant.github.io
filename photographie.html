@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Colmant | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+    <!-- Particles.js Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Header -->
+    <header id="header">
+        <a href="index.html" class="logo">Thomas<span>Colmant</span></a>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Accueil</a></li>
+            <li><a href="index.html#about">À propos</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+    
+    <section class="section" id="audiovisuel">
+        <div class="section-title">
+            <h2>Photographie</h2>
+        </div>
+
+        <!-- Category filters -->
+        <div class="category-filters" role="tablist" aria-label="Filtres photos">
+            <button class="filter-btn active" data-filter="all" aria-pressed="true">Tout</button>
+            <button class="filter-btn" data-filter="zoo" aria-pressed="false">Zoo</button>
+            <button class="filter-btn" data-filter="paysages" aria-pressed="false">Paysages</button>
+            <button class="filter-btn" data-filter="chiens" aria-pressed="false">Chiens</button>
+            <button class="filter-btn" data-filter="autres" aria-pressed="false">Autres</button>
+        </div>
+
+        <!-- Album: Zoo -->
+        <div class="album-section" data-category="zoo" id="album-zoo">
+            <div class="album-header">
+                <h3>Photos Zoo</h3>
+                <button class="collapse-btn" aria-expanded="true" aria-controls="album-zoo">Réduire</button>
+            </div>
+            <div class="album-zoo">
+                <div class="responsive-container-block bg">
+                  <div class="responsive-container-block img-cont">
+                    <img class="img" src="./img_photographie/DSC_0091.jpg" loading="lazy" alt="Zoo 1">
+                    <img class="img" src="./img_photographie/DSC_0062.jpg" loading="lazy" alt="Zoo 2">
+                    <img class="img img-last" src="./img_photographie/DSC_0122.jpg" loading="lazy" alt="Zoo 3">
+                  </div>
+                  <div class="responsive-container-block img-cont">
+                    <img class="img img-big" src="./img_photographie/DSC_0129.jpg" loading="lazy" alt="Zoo 4">
+                    <img class="img img-big img-last" src="./img_photographie/DSC_0145.jpg" loading="lazy" alt="Zoo 5">
+                    <img class="img img-big img-last" src="./img_photographie/DSC_0043.jpg" loading="lazy" alt="Zoo 6">
+                  </div>
+                  <div class="responsive-container-block img-cont">
+                    <img class="img" src="./img_photographie/DSC_0176.jpg" loading="lazy" alt="Zoo 7">
+                    <img class="img" src="./img_photographie/DSC_0139-2.jpg" loading="lazy" alt="Zoo 8">
+                    <img class="img" src="./img_photographie/DSC_0123.jpg" loading="lazy" alt="Zoo 9">
+                  </div>
+                </div>
+
+                <div class="responsive-container-block bg">
+                  <div class="responsive-container-block img-cont">
+                    <img class="img" src="./img_photographie/DSC_0161.jpg" loading="lazy" alt="Zoo 10">
+                    <img class="img" src="./img_photographie/DSC_0164.jpg" loading="lazy" alt="Zoo 11">
+                  </div>
+                  <div class="responsive-container-block img-cont">
+                    <img class="img img-big" src="./img_photographie/DSC_0096.jpg" loading="lazy" alt="Zoo 12">
+                    <img class="img img-big img-last" src="./img_photographie/DSC_0126.jpg" loading="lazy" alt="Zoo 13">
+                  </div>
+                  <div class="responsive-container-block img-cont">
+                    <img class="img" src="./img_photographie/DSC_0151.jpg" loading="lazy" alt="Zoo 14">
+                    <img class="img" src="./img_photographie/DSC_0173.jpg" loading="lazy" alt="Zoo 15">
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Album: Paysages -->
+        <div class="album-section" data-category="paysages" id="album-paysages">
+            <div class="album-header">
+                <h3>Photos Paysages</h3>
+                <button class="collapse-btn" aria-expanded="true" aria-controls="album-paysages">Réduire</button>
+            </div>
+            <div class="album-paysages">
+                <div class="responsive-container-block bg">
+                  <div class="responsive-container-block img-cont">
+                    <img class="img" src="./img_photographie/DSC_0066-2.jpg" loading="lazy" alt="Paysage 1">
+                    <img class="img" src="./img_photographie/DSC_0094.jpg" loading="lazy" alt="Paysage 2">
+                     <img class="img" src="./img_photographie/DSC_0048-2.jpg" loading="lazy" alt="Paysage 2">
+                    
+                  </div>
+                  <div class="responsive-container-block img-cont">
+                    <img class="img img-big" src="./img_photographie/DSC_0068-2.jpg" loading="lazy" alt="Paysage 3">
+                    <img class="img img-big img-last" src="./img_photographie/DSC_0076-2.jpg" loading="lazy" alt="Paysage 4">
+                    <img class="img" src="./img_photographie/DSC_0060.jpg" loading="lazy" alt="Paysage 2">
+                  </div>
+                  <div class="responsive-container-block img-cont">
+                    <img class="img" src="./img_photographie/DSC_0010-3.jpg" loading="lazy" alt="Paysage 5">
+                    <img class="img" src="./img_photographie/DSC_0080-2.jpg" loading="lazy" alt="Paysage 6">
+                    <img class="img" src="./img_photographie/DSC_0050.jpg" loading="lazy" alt="Paysage 2">
+                    <img class="img" src="./DSC_0046-3.jpg" loading="lazy" alt="Paysage 2">
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Album: Chiens -->
+        <div class="album-section" data-category="chiens" id="album-chiens">
+            <div class="album-header">
+                <h3>Photos Chiens</h3>
+                <button class="collapse-btn" aria-expanded="true" aria-controls="album-chiens">Réduire</button>
+            </div>
+            <div class="album-chiens">
+                <div class="responsive-container-block bg">
+                  <div class="responsive-container-block img-cont">
+                    <img class="img" src="./img_photographie/aaaaaaaaaaaaa.jpg" loading="lazy" alt="Chien 1">
+                    <img class="img" src="./img_photographie/DSC_0034.jpg" loading="lazy" alt="Chien 2">
+                  </div>
+                  <div class="responsive-container-block img-cont">
+                    <img class="img img-big" src="./img_photographie/DSC_0026.jpg" loading="lazy" alt="Chien 3">
+                    <img class="img img-big img-last" src="./img_photographie/DSC_0029.jpg" loading="lazy" alt="Chien 4">
+                  </div>
+                  <div class="responsive-container-block img-cont">
+                    <img class="img" src="./img_photographie/DSC_0019.jpg" loading="lazy" alt="Chien 5">
+                    <img class="img" src="./img_photographie/DSC_0010.jpg" loading="lazy" alt="Chien 6">
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- Album: Autres -->
+        <div class="album-section" data-category="autres" id="album-autres">
+            <div class="album-header">
+                <h3>Photos Autres</h3>
+                <button class="collapse-btn" aria-expanded="true" aria-controls="album-autres">Réduire</button>
+            </div>
+            <div class="album-autres">
+                <div class="responsive-container-block bg">
+                  <div class="responsive-container-block img-cont">
+                    <img class="img" src="./img_photographie/DSC_0020.jpg" loading="lazy" alt="Autre 1">
+                  </div>
+                  <div class="responsive-container-block img-cont">
+                    <img class="img img-big" src="./img_photographie/DSC_0017.jpg" loading="lazy" alt="Autre 2">
+                  </div>
+                  <div class="responsive-container-block img-cont">
+                    <img class="img" src="./img_photographie/DSC_00226.jpg" loading="lazy" alt="Autre 3">
+                  </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<section class="section" id="appareil-photo">
+  <div class="section-title">
+    <h2>Mon Appareil Photo</h2>
+  </div>
+  <div class="appareil-contenu">
+    <img src="FrontLeft-25412_D80_-kugYeAkr.png" alt="Appareil Canon EOS 90D" class="camera-image" />
+    <h3>Nikon D80</h3>
+    <p>J'aime bien prendre des photos, c'est une vraie passion qui me pousse à explorer la lumière, les couleurs et les émotions à travers mon objectif.</p>
+  </div>
+</section>
+
+    <!-- Portfolio Section -->
+    <section class="section" id="portfolio">
+        <div class="section-title">
+            <h2>Mon Portfolio</h2>
+        </div>
+        
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">Tout</button>
+            <button class="filter-btn" data-filter="audiovisuel">Audiovisuel</button>
+            <button class="filter-btn" data-filter="graphisme">Affiches / Graphisme</button>
+            <button class="filter-btn" data-filter="motion">Montage / Motion Design</button>
+        </div>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-category="audiovisuel">
+                <a href="photographie.html">
+                  <img src="./DSC_0071.jpg" alt="Project 1" class="portfolio-img">
+                  <div class="portfolio-overlay">
+                    <h3>Photographie</h3>
+                  </div>
+                </a>
+              </div>
+            
+              <div class="portfolio-item" data-category="graphisme">
+                <a href="graphisme.html">
+                  <img src="Capture_decran_2025-09-15_162636.png" alt="Project 2" class="portfolio-img">
+                  <div class="portfolio-overlay">
+                    <h3>Affiches / Graphisme</h3>
+                  </div>
+                </a>
+              </div>
+            
+              <div class="portfolio-item" data-category="motion">
+                <a href="motion.html">
+                  <img src="media-montage-ouverture.jpg" alt="Project 3" class="portfolio-img">
+                  <div class="portfolio-overlay">
+                    <h3>Montage / Motion Design</h3>
+                  </div>
+                </a>
+              </div>
+            
+        </div>
+    </section>
+
+
+        
+    
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Me contacter</h2>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Location</h3>
+                        <p>France</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p>Colmant.thomas@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Téléphone</h3>
+                        <p>06 34 68 50 03</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                       
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nom" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Sujet">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Message" required />
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Envoyer un message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="#" class="footer-logo">Thomas<span>Colmant</span></a>
+            
+            <ul class="footer-links">
+              <li><a href="index.html#home">Accueil</a></li>
+                <li><a href="index.html#about">A propos</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/thomas-colmant-506629382"><i class="fab fa-linkedin-in"></i></a>
+
+            </div>
+            
+            <p class="copyright">© 2025 Thomas Colmant. Tous droits réservés.</p>
+        </div>
+    </footer>
+    
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+<!-- Lightbox markup (invisible par défaut) -->
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Aperçu de l'image">
+  <div class="lightbox-backdrop" data-action="close"></div>
+  <div class="lightbox-content" role="document">
+    <button class="lightbox-close" aria-label="Fermer la fenêtre d'aperçu">&times;</button>
+    <button class="lightbox-prev" aria-label="Image précédente"><i class="fas fa-chevron-left"></i></button>
+    <div class="lightbox-media-wrap">
+      <img class="lightbox-img" src="" alt="">
+      <div class="lightbox-caption" aria-live="polite"></div>
+    </div>
+    <button class="lightbox-next" aria-label="Image suivante"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const links = document.querySelectorAll('.nav-links li');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            
+            // Animate Links
+            links.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = '';
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                }
+            });
+        });
+        
+        // Close mobile menu when clicking a link
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                links.forEach(link => {
+                    link.style.animation = '';
+                });
+            });
+        });
+        
+        // Sticky Header
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 100);
+        });
+        
+        // Scroll to Top Button
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Portfolio Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Animate skills on scroll
+        const skillProgress = document.querySelectorAll('.skill-progress');
+        
+        function animateSkills() {
+            skillProgress.forEach(progress => {
+                const width = progress.parentElement.previousElementSibling.lastElementChild.textContent;
+                progress.style.width = width;
+            });
+        }
+        
+        // Initialize skills animation when section is in view
+        const aboutSection = document.getElementById('about');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkills();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        observer.observe(aboutSection);
+        
+       
+        
+        // Form Submission
+        const form = document.getElementById('form');
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Here you would typically send the form data to a server
+            // For demo purposes, we'll just show an alert
+            alert('Merci pour votre message ! Je vous répondrai rapidement.');
+            form.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        
+    </script>
+
+    <!-- New small script for filtering + collapse (inserted before existing scripts end) -->
+<script>
+  // category filter buttons
+  (function(){
+    const filterBtns = document.querySelectorAll('.category-filters .filter-btn');
+    const albumSections = document.querySelectorAll('.album-section');
+
+    function setActiveBtn(btn){
+      filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed','true');
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        setActiveBtn(btn);
+        const filter = btn.dataset.filter;
+        albumSections.forEach(sec => {
+          const cat = sec.dataset.category;
+          if (filter === 'all' || cat === filter) {
+            sec.classList.remove('hidden');
+          } else {
+            sec.classList.add('hidden');
+          }
+        });
+        // scroll first visible album into view for better UX
+        const firstVisible = document.querySelector('.album-section:not(.hidden)');
+        if (firstVisible) firstVisible.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+
+    // collapse toggles
+    document.querySelectorAll('.collapse-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = document.getElementById(btn.getAttribute('aria-controls'));
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        btn.textContent = expanded ? 'Développer' : 'Réduire';
+        section.classList.toggle('collapsed', expanded);
+      });
+    });
+
+    // keyboard accessibility: allow space/enter on filter buttons
+    filterBtns.forEach(b => {
+      b.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          b.click();
+        }
+      });
+    });
+  })();
+</script>
+
+        <!-- Lightbox accessible pour les images des albums -->
+        <script>
+          (function(){
+            const lightbox = document.getElementById('lightbox');
+            const lbImg = lightbox.querySelector('.lightbox-img');
+            const lbCaption = lightbox.querySelector('.lightbox-caption');
+            const btnClose = lightbox.querySelector('.lightbox-close');
+            const btnNext = lightbox.querySelector('.lightbox-next');
+            const btnPrev = lightbox.querySelector('.lightbox-prev');
+            const backdrop = lightbox.querySelector('.lightbox-backdrop');
+
+            let currentIndex = -1;
+            let currentList = [];
+            let lastFocused = null;
+
+            function buildList() {
+              // images currently visible (non filtrées / non cachées)
+              currentList = Array.from(document.querySelectorAll('.album-section:not(.hidden) .img'));
+            }
+
+            function openLightbox(index) {
+              buildList();
+              if (!currentList.length) return;
+              currentIndex = index;
+              const el = currentList[currentIndex];
+              lbImg.src = el.src;
+              lbImg.alt = el.alt || '';
+              lbCaption.textContent = el.alt || '';
+              lightbox.classList.add('open');
+              lightbox.setAttribute('aria-hidden','false');
+              lastFocused = document.activeElement;
+              btnClose.focus();
+              document.body.style.overflow = 'hidden'; // empêcher le scroll arrière-plan
+            }
+
+            function closeLightbox() {
+              lightbox.classList.remove('open');
+              lightbox.setAttribute('aria-hidden','true');
+              lbImg.src = '';
+              lbCaption.textContent = '';
+              document.body.style.overflow = '';
+              if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+            }
+
+            function showIndex(i) {
+              if (!currentList.length) return;
+              if (i < 0) i = currentList.length - 1;
+              if (i >= currentList.length) i = 0;
+              currentIndex = i;
+              const el = currentList[currentIndex];
+              lbImg.src = el.src;
+              lbImg.alt = el.alt || '';
+              lbCaption.textContent = el.alt || '';
+            }
+
+            // open when clicking an album image
+            document.addEventListener('click', (e) => {
+              const img = e.target.closest('.album-section .img');
+              if (!img) return;
+              e.preventDefault();
+              // find index among visible images
+              buildList();
+              const idx = currentList.indexOf(img);
+              if (idx !== -1) openLightbox(idx);
+            });
+
+            // controls
+            btnClose.addEventListener('click', closeLightbox);
+            backdrop.addEventListener('click', closeLightbox);
+            btnNext.addEventListener('click', () => showIndex(currentIndex + 1));
+            btnPrev.addEventListener('click', () => showIndex(currentIndex - 1));
+
+            // keyboard navigation
+            document.addEventListener('keydown', (e) => {
+              if (lightbox.classList.contains('open')) {
+                if (e.key === 'Escape') { closeLightbox(); }
+                else if (e.key === 'ArrowRight') { showIndex(currentIndex + 1); }
+                else if (e.key === 'ArrowLeft') { showIndex(currentIndex - 1); }
+                else if (e.key === 'Tab') {
+                  // keep focus inside the modal (simple trap)
+                  const focusable = Array.from(lightbox.querySelectorAll('button'));
+                  if (focusable.length === 0) return;
+                  const idx = focusable.indexOf(document.activeElement);
+                  if (e.shiftKey && idx === 0) {
+                    e.preventDefault();
+                    focusable[focusable.length - 1].focus();
+                  } else if (!e.shiftKey && idx === focusable.length - 1) {
+                    e.preventDefault();
+                    focusable[0].focus();
+                  }
+                }
+              }
+            });
+
+            // prevent image drag
+            lbImg.addEventListener('dragstart', (e) => e.preventDefault());
+          })();
+        </script>
+
+<!-- Replace standalone slideshow code with guarded init (remove previous window.onload duplicates) -->
+<script>
+/* filepath: c:\Users\colma\Desktop\portfolio\photographie.html */
+document.addEventListener('DOMContentLoaded', () => {
+  // Slideshow init (if any slideshow on this page)
+  const slides = document.querySelectorAll('.mySlides');
+  if (slides.length) {
+    let idx = 0;
+    const show = () => { slides.forEach(s => s.style.display = 'none'); slides[idx].style.display = 'block'; };
+    show();
+    setInterval(() => { idx = (idx + 1) % slides.length; show(); }, 5000);
+  }
+
+  // Other generic handlers (mobile nav, header, scroll-top, filters) reused from other pages:
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const navItems = document.querySelectorAll('.nav-links li');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+      navItems.forEach((link, index) => {
+        link.style.animation = link.style.animation ? '' : `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+      });
+    });
+  }
+
+  const header = document.getElementById('header');
+  if (header) window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 100));
+
+  const scrollTopBtn = document.querySelector('.scroll-top');
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => scrollTopBtn.classList.toggle('active', window.pageYOffset > 300));
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  // portfolio filter guard
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  if (filterBtns.length) {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    filterBtns.forEach(btn => btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      portfolioItems.forEach(item => item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none');
+    }));
+  }
+});
+</script>
+
+</body>
+</html>
+
+
+
