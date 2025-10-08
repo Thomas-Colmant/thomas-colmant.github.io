@@ -110,6 +110,11 @@
         .nav-links a:hover {
             color: var(--primary);
         }
+
+
+
+
+        
         
         .hamburger {
             display: none;
@@ -1687,3 +1692,6 @@ body {
   font-size: 1md;
   font-weight: 550;
 }
+
+
+
