@@ -20,8 +20,8 @@
         
         <ul class="nav-links">
             <li><a href="index.html#home">Accueil</a></li>
-            <li><a href="index.html#about">À propos</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="index.html#about">À propos de moi</a></li>
+            <li><a href="#portfolio">Mes Projets</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         
@@ -38,7 +38,7 @@
         </div>
         
   <div class="motion-list">
-    <a href="desc_logo_QG.html" class="motion-link">
+    <a href="detail_MotionDeisgn_logo_QG.html" class="motion-link">
   <div class="motion-block">
     <video class="motion-preview" src="Composition_1_1 (2).mp4" controls></video>
     <div class="motion-info">
@@ -47,7 +47,7 @@
     </div></a>
   </div>
 
-    <a href="desc_montage_ete.html" class="motion-link">
+    <a href="detail_montage_ete.html" class="motion-link">
   <div class="motion-block">
     <video class="motion-preview" src="Compositin.mp4" controls></video>
     <div class="motion-info">
@@ -57,7 +57,7 @@
   </div>
   </a>
 
-  <a href="desc_animation_mac.html" class="motion-link">
+  <a href="detail_animation_mac.html" class="motion-link">
   <div class="motion-block">
     <video class="motion-preview" src="aftereffect.mp4" controls></video>
     <div class="motion-info">
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <!-- Portfolio Section -->
     <section class="section" id="portfolio">
         <div class="section-title">
-            <h2>Mon Portfolio</h2>
+            <h2>Mes Projets</h2>
         </div>
         
         <div class="portfolio-filter">
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
             
               <div class="portfolio-item" data-category="graphisme">
-                <a href="graphisme.html">
+                <a href="Affiche_Graphisme.html">
                   <img src="Capture_decran_2025-09-15_162636.png" alt="Project 2" class="portfolio-img">
                   <div class="portfolio-overlay">
                     <h3>Affiches / Graphisme</h3>
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
             
               <div class="portfolio-item" data-category="motion">
-                <a href="motion.html">
+                <a href="Montage_Motion_Design.html">
                   <img src="photo_motion_design_categorie.png" alt="Project 3" class="portfolio-img">
                   <div class="portfolio-overlay">
                     <h3>Montage / Motion Design</h3>
@@ -232,25 +232,27 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             
             <div class="contact-form">
-                <form id="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nom" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Sujet">
-                    </div>
-                    
-                    <div class="form-group">
-                        <input class="form-control" placeholder="Message" required />
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">Envoyer un message</button>
-                </form>
+               <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST">
+  <div class="form-group">
+    <input type="text" name="Nom" class="form-control" placeholder="Nom" required>
+  </div>
+  
+  <div class="form-group">
+    <input type="email" name="Email" class="form-control" placeholder="Email" required>
+  </div>
+  
+  <div class="form-group">
+    <input type="text" name="Sujet" class="form-control" placeholder="Sujet">
+  </div>
+  
+  <div class="form-group">
+    <textarea name="Message" class="form-control" placeholder="Message" required></textarea>
+  </div>
+  
+  <div>
+    <button type="submit" class="btn btn-primary">Envoyer un message</button>
+  </div>
+</form>
             </div>
         </div>
     </section>
@@ -262,9 +264,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             <ul class="footer-links">
                 <li><a href="index.html#home">Accueil</a></li>
-                <li><a href="index.html#about">A propos</a></li>
+                <li><a href="index.html#about">À propos de moi</a></li>
           
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#portfolio">Mes Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             
@@ -417,7 +419,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         
-        document.addEventListener('DOMContentLoaded', function() {
+   document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('form');
   
   form.addEventListener('submit', function(e) {

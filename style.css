@@ -210,13 +210,12 @@
         .btn-secondary {
             background-color: transparent;
             color: var(--light);
-            border-color: var(--light);
+            border-color: var(--primary);
         }
         
         .btn-secondary:hover {
-            background-color: var(--light);
-            color: var(--dark);
-            transform: translateY(-3px);
+            background-color: var(--primary);
+            color: var(--light);
         }
         
         .hero-image {
@@ -440,7 +439,7 @@
 .filter-btn.active, .filter-btn:hover {
   background-color: var(--primary);
   border-color: var(--primary);
-  color: var(--dark);
+  color: var(--light);
 }
 
         
@@ -596,7 +595,7 @@
             width: 100%;
             padding: 1rem;
             background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--primary);
             border-radius: 10px;
             color: var(--light);
             font-family: 'Poppins', sans-serif;
