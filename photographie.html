@@ -20,8 +20,8 @@
         
         <ul class="nav-links">
             <li><a href="index.html#home">Accueil</a></li>
-            <li><a href="index.html#about">À propos</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="index.html#about">À propos de moi</a></li>
+            <li><a href="#portfolio">Mes Projets</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         
@@ -180,7 +180,7 @@
     <!-- Portfolio Section -->
     <section class="section" id="portfolio">
         <div class="section-title">
-            <h2>Mon Portfolio</h2>
+            <h2>Mes Projets</h2>
         </div>
         
         <div class="portfolio-filter">
@@ -201,7 +201,7 @@
               </div>
             
               <div class="portfolio-item" data-category="graphisme">
-                <a href="graphisme.html">
+                <a href="Affiche_Graphisme.html">
                   <img src="Capture_decran_2025-09-15_162636.png" alt="Project 2" class="portfolio-img">
                   <div class="portfolio-overlay">
                     <h3>Affiches / Graphisme</h3>
@@ -210,7 +210,7 @@
               </div>
             
               <div class="portfolio-item" data-category="motion">
-                <a href="motion.html">
+                <a href="Montage_Motion_Design.html">
                   <img src="photo_motion_design_categorie.png" alt="Project 3" class="portfolio-img">
                   <div class="portfolio-overlay">
                     <h3>Montage / Motion Design</h3>
@@ -270,26 +270,28 @@
                 </div>
             </div>
             
-            <div class="contact-form">
-                <form id="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nom" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Sujet">
-                    </div>
-                    
-                    <div class="form-group">
-                        <input class="form-control" placeholder="Message" required />
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">Envoyer un message</button>
-                </form>
+          <div class="contact-form">
+               <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST">
+  <div class="form-group">
+    <input type="text" name="Nom" class="form-control" placeholder="Nom" required>
+  </div>
+  
+  <div class="form-group">
+    <input type="email" name="Email" class="form-control" placeholder="Email" required>
+  </div>
+  
+  <div class="form-group">
+    <input type="text" name="Sujet" class="form-control" placeholder="Sujet">
+  </div>
+  
+  <div class="form-group">
+    <textarea name="Message" class="form-control" placeholder="Message" required></textarea>
+  </div>
+  
+  <div>
+    <button type="submit" class="btn btn-primary">Envoyer un message</button>
+  </div>
+</form>
             </div>
         </div>
     </section>
@@ -301,8 +303,8 @@
             
             <ul class="footer-links">
               <li><a href="index.html#home">Accueil</a></li>
-                <li><a href="index.html#about">A propos</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="index.html#about">À propos de moi</a></li>
+                <li><a href="#portfolio">Mes Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             

@@ -17,12 +17,12 @@
 
     <section class="section" id="audiovisuel">
         <div class="section-title">
-            <h2>Affiches / Graphisme</h2>
+            <h2>Affiche / Graphisme</h2>
         </div>
 
         <div class="affiches-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
 <div class="affiches-container">
-  <a href="desc_mohammedali.html" class="affiche-link">
+  <a href="detail_affiche_mohammed_ali.html" class="affiche-link">
   <div class="affiche-block">
       <img class="affiche-img" src="./img/affiche_mohammed_ali.jpg" alt="Affiche Mohammed Ali">
     <div class="affiche-desc">
@@ -32,7 +32,7 @@
   </div></a>
 
   <div class="affiche-block">
-    <a href="desc_ronaldo.html" class="affiche-link">
+    <a href="detail_affiche_ronaldo.html" class="affiche-link">
       <img class="affiche-img" src="./img/afficge_ronaldo.png"  alt="Affiche Ronaldo">
     <div class="affiche-desc">
       <p class="affiche-date">2025</p>
@@ -41,7 +41,7 @@
   </div></a>
 
   <div class="affiche-block">
-    <a href="desc_BMW.html" class="affiche-link">
+    <a href="detail_affiche_BMW.html" class="affiche-link">
       <img class="affiche-img" src="./img/affiche_bmw2.jpg"  alt="Affiche BMW">
     <div class="affiche-desc">
       <p class="affiche-date">2025</p>
@@ -50,7 +50,7 @@
   </div></a>
 
   <div class="affiche-block">
-    <a href="desc_programme.html" class="affiche-link">
+    <a href="detail_affiche_programme.html" class="affiche-link">
       <img class="affiche-img" src="./img/page_dacceuil_programme.jpg"alt="Page d'accueil - programme">
     <div class="affiche-desc">
       <p class="affiche-date">2025</p>
@@ -59,7 +59,7 @@
   </div></a>
 
   <div class="affiche-block">
-    <a href="desc_PSG.html" class="affiche-link">
+    <a href="detail_affiche_PSG_Toulouse.html" class="affiche-link">
       <img class="affiche-img" src="./img/affiche_psg_vs_toulouse.jpg"  alt="Affiche PSG vs Toulouse">
     <div class="affiche-desc">
       <p class="affiche-date">2025</p>
@@ -68,7 +68,7 @@
   </div></a>
 
   <div class="affiche-block">
-    <a href="desc_sensibilisation.html" class="affiche-link">
+    <a href="detail_affiche_sensibilisation.html" class="affiche-link">
       <img class="affiche-img" src="./img/affiche de sensibilisation infograpie.png" alt="Affiche sensibilisation">
     <div class="affiche-desc" affiche>
       <p class="affiche-date">2024</p>
@@ -90,8 +90,8 @@
         
         <ul class="nav-links">
             <li><a href="index.html#home">Accueil</a></li>
-            <li><a href="index.html#about">À propos</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="index.html#about">À propos de moi</a></li>
+            <li><a href="#portfolio">Mes Projets</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="hamburger">
@@ -143,7 +143,7 @@ function showSlides(n) {
     <!-- Portfolio Section -->
     <section class="section" id="portfolio">
         <div class="section-title">
-            <h2>Mon Portfolio</h2>
+            <h2>Mes Projets</h2>
         </div>
         
         <div class="portfolio-filter">
@@ -164,7 +164,7 @@ function showSlides(n) {
               </div>
             
               <div class="portfolio-item" data-category="graphisme">
-                <a href="graphisme.html">
+                <a href="Affiche_Graphisme.html">
                   <img src="Capture_decran_2025-09-15_162636.png" alt="Project 2" class="portfolio-img">
                   <div class="portfolio-overlay">
                     <h3>Affiches / Graphisme</h3>
@@ -173,7 +173,7 @@ function showSlides(n) {
               </div>
             
               <div class="portfolio-item" data-category="motion">
-                <a href="motion.html">
+                <a href="Montage_Motion_Design.html">
                   <img src="photo_motion_design_categorie.png" alt="Project 3" class="portfolio-img">
                   <div class="portfolio-overlay">
                     <h3>Montage / Motion Design</h3>
@@ -234,25 +234,27 @@ function showSlides(n) {
             </div>
             
             <div class="contact-form">
-                <form id="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nom" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Sujet">
-                    </div>
-                    
-                    <div class="form-group">
-                        <input class="form-control" placeholder="Message" required />
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">Envoyer un message</button>
-                </form>
+               <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST">
+  <div class="form-group">
+    <input type="text" name="Nom" class="form-control" placeholder="Nom" required>
+  </div>
+  
+  <div class="form-group">
+    <input type="email" name="Email" class="form-control" placeholder="Email" required>
+  </div>
+  
+  <div class="form-group">
+    <input type="text" name="Sujet" class="form-control" placeholder="Sujet">
+  </div>
+  
+  <div class="form-group">
+    <textarea name="Message" class="form-control" placeholder="Message" required></textarea>
+  </div>
+  
+  <div>
+    <button type="submit" class="btn btn-primary">Envoyer un message</button>
+  </div>
+</form>
             </div>
         </div>
     </section>
@@ -264,8 +266,8 @@ function showSlides(n) {
             
             <ul class="footer-links">
                 <li><a href="index.html#home">Accueil</a></li>
-                <li><a href="index.html#about">A propos</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="index.html#about">À propos de moi</a></li>
+                <li><a href="#portfolio">Mes Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             
@@ -410,7 +412,7 @@ function showSlides(n) {
         });
 
 
-        document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('form');
   
   form.addEventListener('submit', function(e) {
