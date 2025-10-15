@@ -343,132 +343,153 @@
 </div>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        // Mobile Navigation
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        const links = document.querySelectorAll('.nav-links li');
-        
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-            
-            // Animate Links
-            links.forEach((link, index) => {
-                if (link.style.animation) {
-                    link.style.animation = '';
-                } else {
-                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                }
-            });
-        });
-        
-        // Close mobile menu when clicking a link
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                hamburger.classList.remove('active');
-                links.forEach(link => {
-                    link.style.animation = '';
-                });
-            });
-        });
-        
-        // Sticky Header
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            header.classList.toggle('scrolled', window.scrollY > 100);
-        });
-        
-        // Scroll to Top Button
-        const scrollTopBtn = document.querySelector('.scroll-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.add('active');
-            } else {
-                scrollTopBtn.classList.remove('active');
-            }
-        });
-        
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Portfolio Filter
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                portfolioItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-        
-        // Animate skills on scroll
-        const skillProgress = document.querySelectorAll('.skill-progress');
-        
-        function animateSkills() {
-            skillProgress.forEach(progress => {
-                const width = progress.parentElement.previousElementSibling.lastElementChild.textContent;
-                progress.style.width = width;
-            });
-        }
-        
-        // Initialize skills animation when section is in view
-        const aboutSection = document.getElementById('about');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateSkills();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 });
-        
-        observer.observe(aboutSection);
-        
-       
-        
+    <!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Slideshow init (if any slideshow on this page)
+  const slides = document.querySelectorAll('.mySlides');
+  if (slides.length) {
+    let idx = 0;
+    const show = () => { slides.forEach(s => s.style.display = 'none'); slides[idx].style.display = 'block'; };
+    show();
+    setInterval(() => { idx = (idx + 1) % slides.length; show(); }, 5000);
+  }
+
+  // Mobile nav
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const navItems = document.querySelectorAll('.nav-links li');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+      navItems.forEach((link, index) => {
+        link.style.animation = link.style.animation ? '' : `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+      });
+    });
+    navItems.forEach(li => li.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      hamburger.classList.remove('active');
+      navItems.forEach(li => li.style.animation = '');
+    }));
+  }
+
+  // Sticky header
+  const header = document.getElementById('header');
+  if (header) window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 100));
+
+  // Scroll to top
+  const scrollTopBtn = document.querySelector('.scroll-top');
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => scrollTopBtn.classList.toggle('active', window.pageYOffset > 300));
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  // Portfolio filter (guard)
+  const filterBtns = document.querySelectorAll('.portfolio-filter .filter-btn');
+  if (filterBtns.length) {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    filterBtns.forEach(btn => btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      portfolioItems.forEach(item => item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none');
+    }));
+  }
+
+  // NOUVEAU : Navigation active selon la section scrollée
+const sections = document.querySelectorAll('section[id]');
+const navLinksActive = document.querySelectorAll('.nav-links a[href*="#"]');
+
+function activateNavLink() {
+  let current = '';
+  
+  // Sur cette page (photographie), toujours "Mes Projets" actif sauf pour Contact
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    if (window.scrollY >= (sectionTop - 100)) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  // Enlever active de tous les liens
+  navLinksActive.forEach(link => link.classList.remove('active'));
+
+  // Si on scroll sur la section Contact, activer Contact
+  if (current === 'contact') {
+    navLinksActive.forEach(link => {
+      if (link.getAttribute('href').includes('#contact')) {
+        link.classList.add('active');
+      }
+    });
+  } 
+  // Sinon, toujours activer "Mes Projets" sur cette page
+  else {
+    navLinksActive.forEach(link => {
+      if (link.getAttribute('href').includes('#portfolio')) {
+        link.classList.add('active');
+      }
+    });
+  }
+}
+
+// Active au chargement et au scroll
+activateNavLink();
+window.addEventListener('scroll', activateNavLink);
+
+
+  // Active au chargement et au scroll
+  activateNavLink();
+  window.addEventListener('scroll', activateNavLink);
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
       
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+      if (targetElement) {
+        e.preventDefault();
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
         });
+      }
+    });
+  });
+});
 
-        
-    </script>
+// Contact form
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('form');
+  
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          alert('Merci pour votre message ! Je vous répondrai rapidement.');
+          form.reset();
+        } else {
+          alert('Une erreur est survenue, veuillez réessayer.');
+        }
+      }).catch(() => {
+        alert('Une erreur réseau est survenue, veuillez réessayer.');
+      });
+    });
+  }
+});
+</script>
 
-    <!-- New small script for filtering + collapse (inserted before existing scripts end) -->
+<!-- New small script for filtering + collapse (inserted before existing scripts end) -->
 <script>
   // category filter buttons
   (function(){
@@ -493,13 +514,11 @@
             sec.classList.add('hidden');
           }
         });
-        // scroll first visible album into view for better UX
         const firstVisible = document.querySelector('.album-section:not(.hidden)');
         if (firstVisible) firstVisible.scrollIntoView({behavior:'smooth', block:'start'});
       });
     });
 
-    // collapse toggles
     document.querySelectorAll('.collapse-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const section = document.getElementById(btn.getAttribute('aria-controls'));
@@ -510,7 +529,6 @@
       });
     });
 
-    // keyboard accessibility: allow space/enter on filter buttons
     filterBtns.forEach(b => {
       b.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -522,180 +540,98 @@
   })();
 </script>
 
-        <!-- Lightbox accessible pour les images des albums -->
-        <script>
-          (function(){
-            const lightbox = document.getElementById('lightbox');
-            const lbImg = lightbox.querySelector('.lightbox-img');
-            const lbCaption = lightbox.querySelector('.lightbox-caption');
-            const btnClose = lightbox.querySelector('.lightbox-close');
-            const btnNext = lightbox.querySelector('.lightbox-next');
-            const btnPrev = lightbox.querySelector('.lightbox-prev');
-            const backdrop = lightbox.querySelector('.lightbox-backdrop');
-
-            let currentIndex = -1;
-            let currentList = [];
-            let lastFocused = null;
-
-            function buildList() {
-              // images currently visible (non filtrées / non cachées)
-              currentList = Array.from(document.querySelectorAll('.album-section:not(.hidden) .img'));
-            }
-
-            function openLightbox(index) {
-              buildList();
-              if (!currentList.length) return;
-              currentIndex = index;
-              const el = currentList[currentIndex];
-              lbImg.src = el.src;
-              lbImg.alt = el.alt || '';
-              lbCaption.textContent = el.alt || '';
-              lightbox.classList.add('open');
-              lightbox.setAttribute('aria-hidden','false');
-              lastFocused = document.activeElement;
-              btnClose.focus();
-              document.body.style.overflow = 'hidden'; // empêcher le scroll arrière-plan
-            }
-
-            function closeLightbox() {
-              lightbox.classList.remove('open');
-              lightbox.setAttribute('aria-hidden','true');
-              lbImg.src = '';
-              lbCaption.textContent = '';
-              document.body.style.overflow = '';
-              if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
-            }
-
-            function showIndex(i) {
-              if (!currentList.length) return;
-              if (i < 0) i = currentList.length - 1;
-              if (i >= currentList.length) i = 0;
-              currentIndex = i;
-              const el = currentList[currentIndex];
-              lbImg.src = el.src;
-              lbImg.alt = el.alt || '';
-              lbCaption.textContent = el.alt || '';
-            }
-
-            // open when clicking an album image
-            document.addEventListener('click', (e) => {
-              const img = e.target.closest('.album-section .img');
-              if (!img) return;
-              e.preventDefault();
-              // find index among visible images
-              buildList();
-              const idx = currentList.indexOf(img);
-              if (idx !== -1) openLightbox(idx);
-            });
-
-            // controls
-            btnClose.addEventListener('click', closeLightbox);
-            backdrop.addEventListener('click', closeLightbox);
-            btnNext.addEventListener('click', () => showIndex(currentIndex + 1));
-            btnPrev.addEventListener('click', () => showIndex(currentIndex - 1));
-
-            // keyboard navigation
-            document.addEventListener('keydown', (e) => {
-              if (lightbox.classList.contains('open')) {
-                if (e.key === 'Escape') { closeLightbox(); }
-                else if (e.key === 'ArrowRight') { showIndex(currentIndex + 1); }
-                else if (e.key === 'ArrowLeft') { showIndex(currentIndex - 1); }
-                else if (e.key === 'Tab') {
-                  // keep focus inside the modal (simple trap)
-                  const focusable = Array.from(lightbox.querySelectorAll('button'));
-                  if (focusable.length === 0) return;
-                  const idx = focusable.indexOf(document.activeElement);
-                  if (e.shiftKey && idx === 0) {
-                    e.preventDefault();
-                    focusable[focusable.length - 1].focus();
-                  } else if (!e.shiftKey && idx === focusable.length - 1) {
-                    e.preventDefault();
-                    focusable[0].focus();
-                  }
-                }
-              }
-            });
-
-            // prevent image drag
-            lbImg.addEventListener('dragstart', (e) => e.preventDefault());
-          })();
-        </script>
-
-<!-- Replace standalone slideshow code with guarded init (remove previous window.onload duplicates) -->
+<!-- Lightbox accessible pour les images des albums -->
 <script>
-/* filepath: c:\Users\colma\Desktop\portfolio\photographie.html */
-document.addEventListener('DOMContentLoaded', () => {
-  // Slideshow init (if any slideshow on this page)
-  const slides = document.querySelectorAll('.mySlides');
-  if (slides.length) {
-    let idx = 0;
-    const show = () => { slides.forEach(s => s.style.display = 'none'); slides[idx].style.display = 'block'; };
-    show();
-    setInterval(() => { idx = (idx + 1) % slides.length; show(); }, 5000);
-  }
+  (function(){
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = lightbox.querySelector('.lightbox-img');
+    const lbCaption = lightbox.querySelector('.lightbox-caption');
+    const btnClose = lightbox.querySelector('.lightbox-close');
+    const btnNext = lightbox.querySelector('.lightbox-next');
+    const btnPrev = lightbox.querySelector('.lightbox-prev');
+    const backdrop = lightbox.querySelector('.lightbox-backdrop');
 
-  // Other generic handlers (mobile nav, header, scroll-top, filters) reused from other pages:
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  const navItems = document.querySelectorAll('.nav-links li');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburger.classList.toggle('active');
-      navItems.forEach((link, index) => {
-        link.style.animation = link.style.animation ? '' : `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-      });
+    let currentIndex = -1;
+    let currentList = [];
+    let lastFocused = null;
+
+    function buildList() {
+      currentList = Array.from(document.querySelectorAll('.album-section:not(.hidden) .img'));
+    }
+
+    function openLightbox(index) {
+      buildList();
+      if (!currentList.length) return;
+      currentIndex = index;
+      const el = currentList[currentIndex];
+      lbImg.src = el.src;
+      lbImg.alt = el.alt || '';
+      lbCaption.textContent = el.alt || '';
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden','false');
+      lastFocused = document.activeElement;
+      btnClose.focus();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden','true');
+      lbImg.src = '';
+      lbCaption.textContent = '';
+      document.body.style.overflow = '';
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+
+    function showIndex(i) {
+      if (!currentList.length) return;
+      if (i < 0) i = currentList.length - 1;
+      if (i >= currentList.length) i = 0;
+      currentIndex = i;
+      const el = currentList[currentIndex];
+      lbImg.src = el.src;
+      lbImg.alt = el.alt || '';
+      lbCaption.textContent = el.alt || '';
+    }
+
+    document.addEventListener('click', (e) => {
+      const img = e.target.closest('.album-section .img');
+      if (!img) return;
+      e.preventDefault();
+      buildList();
+      const idx = currentList.indexOf(img);
+      if (idx !== -1) openLightbox(idx);
     });
-  }
 
-  const header = document.getElementById('header');
-  if (header) window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 100));
+    btnClose.addEventListener('click', closeLightbox);
+    backdrop.addEventListener('click', closeLightbox);
+    btnNext.addEventListener('click', () => showIndex(currentIndex + 1));
+    btnPrev.addEventListener('click', () => showIndex(currentIndex - 1));
 
-  const scrollTopBtn = document.querySelector('.scroll-top');
-  if (scrollTopBtn) {
-    window.addEventListener('scroll', () => scrollTopBtn.classList.toggle('active', window.pageYOffset > 300));
-    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-  }
-
-  // portfolio filter guard
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  if (filterBtns.length) {
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-    filterBtns.forEach(btn => btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      portfolioItems.forEach(item => item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none');
-    }));
-  }
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('form');
-  
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const formData = new FormData(form);
-    
-    fetch(form.action, {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        alert('Merci pour votre message ! Je vous répondrai rapidement.');
-        form.reset();
-      } else {
-        alert('Une erreur est survenue, veuillez réessayer.');
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.classList.contains('open')) {
+        if (e.key === 'Escape') { closeLightbox(); }
+        else if (e.key === 'ArrowRight') { showIndex(currentIndex + 1); }
+        else if (e.key === 'ArrowLeft') { showIndex(currentIndex - 1); }
+        else if (e.key === 'Tab') {
+          const focusable = Array.from(lightbox.querySelectorAll('button'));
+          if (focusable.length === 0) return;
+          const idx = focusable.indexOf(document.activeElement);
+          if (e.shiftKey && idx === 0) {
+            e.preventDefault();
+            focusable[focusable.length - 1].focus();
+          } else if (!e.shiftKey && idx === focusable.length - 1) {
+            e.preventDefault();
+            focusable[0].focus();
+          }
+        }
       }
-    }).catch(() => {
-      alert('Une erreur réseau est survenue, veuillez réessayer.');
     });
-  });
-});
+
+    lbImg.addEventListener('dragstart', (e) => e.preventDefault());
+  })();
 </script>
+
 
 </body>
 </html>

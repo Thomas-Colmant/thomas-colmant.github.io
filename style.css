@@ -106,6 +106,17 @@
         .nav-links a:hover::after {
             width: 100%;
         }
+
+        .nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--primary);
+    background-color: transparent;
+}
+
+        
         
         .nav-links a:hover {
             color: var(--primary);
