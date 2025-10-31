@@ -1705,3 +1705,10 @@ body {
   font-weight: 550;
 }
 
+
+.desc-affiche-media a {
+  color: white;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
