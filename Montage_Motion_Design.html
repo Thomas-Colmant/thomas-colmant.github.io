@@ -11,8 +11,7 @@
 </head>
 <body>
     
-    <!-- Particles.js Background -->
-    <div id="particles-js"></div>
+
     
     <!-- Header -->
     <header id="header">
@@ -126,14 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   }
 
-  // Slideshow auto-init if present
-  const slides = document.querySelectorAll('.mySlides');
-  if (slides.length) {
-    let idx = 0;
-    const show = () => { slides.forEach(s => s.style.display = 'none'); slides[idx].style.display = 'block'; };
-    show();
-    setInterval(() => { idx = (idx + 1) % slides.length; show(); }, 5000);
-  }
+
 
   // Smooth anchors
   document.querySelectorAll('a[href^="#"]').forEach(anchor => anchor.addEventListener('click', function (e) {

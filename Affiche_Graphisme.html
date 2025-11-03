@@ -12,8 +12,7 @@
 <body>
 
     
-    <!-- Particles.js Background -->
-    <div id="particles-js"></div>
+   
 
     <section class="section" id="audiovisuel">
         <div class="section-title">
@@ -341,17 +340,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
   }
 
-  // Slideshow (only if slides exist)
-  const slides = document.querySelectorAll('.mySlides');
-  if (slides.length) {
-    let idx = 0;
-    const show = () => {
-      slides.forEach(s => s.style.display = 'none');
-      slides[idx].style.display = 'block';
-    };
-    show();
-    setInterval(() => { idx = (idx + 1) % slides.length; show(); }, 5000);
-  }
 
   // Animate skills (guard)
   const skillProgress = document.querySelectorAll('.skill-progress');
