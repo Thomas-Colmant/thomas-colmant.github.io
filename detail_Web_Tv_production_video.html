@@ -1,319 +1,176 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Affiche Mohammed Ali</title>
-  <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header id="header">
-    <a href="index.html" class="logo">Thomas<span>Colmant</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html#home">Accueil</a></li>
-      <li><a href="index.html#about">À propos de moi</a></li>
-      <li><a href="#portfolio">Mes Projets</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </header>
-  <main>
-    <section class="section" id="description-motion-projet">
-  <div class="section-title">
-    <h2>Production Web Tv</h2>
-  </div>
-  <button class="btn-retour" onclick="window.history.back();">← Retour à Production vidéo</button>
-<div class="desc-affiche-block">
-<div class="desc-affiche-media">
-    <a href="https://youtu.be/ujm5XW8dv6s" target="_blank" rel="noopener noreferrer">Voir la vidéo sur YouTube</a>
-</div>
-  <div class="desc-titre-zone">
-    <p class="desc-affiche-date">2025</p>
-    <h3>Production Web Tv</h3>
-  </div>
-  <div class="desc-affiche-texte">
-    <p>
-    Cette web TV a été créée entièrement de zéro dans le cadre d’un projet scolaire. Nous avons utilisé quatre caméras, des micros-cravates, ainsi qu’une régie pour gérer le son. Chaque personne de la classe avait une mission précise à accomplir. Pour ma part, je me suis occupé d’une des quatre caméras, ce qui m’a permis d’apprendre à paramétrer les équipements, à varier les angles de prise de vue, et de mieux comprendre le fonctionnement global d’une production audiovisuelle.
-    </p>
-  </div>
-</div>
-</section>
+  <title>Production Web TV | Thomas Colmant</title>
 
-     <!-- Portfolio Section -->
-    <section class="section" id="portfolio">
-        <div class="section-title">
-            <h2>Mes Projets</h2>
+  <!-- Modern typography: Poppins -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Thomas<span>Colmant</span></a>
+      <nav class="main-nav">
+        <a href="index.html#home">Accueil</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#about">À propos</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="description-motion-projet" style="padding-top: 8rem;">
+      <div class="container" style="max-width: 800px;">
+        <div class="section-head">
+          <h2>Production Web TV</h2>
         </div>
-        
-        <div class="portfolio-filter">
-            <button class="filter-btn active" data-filter="all">Tout</button>
-            <button class="filter-btn" data-filter="audiovisuel">Audiovisuel</button>
-            <button class="filter-btn" data-filter="graphisme">Affiches / Graphisme</button>
-            <button class="filter-btn" data-filter="motion">Montage / Motion Design</button>
+
+        <button class="btn-ghost" onclick="window.history.back();" style="margin-bottom: 2.5rem;">← Retour à Production
+          vidéo</button>
+
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <a href="https://youtu.be/ujm5XW8dv6s" target="_blank" rel="noopener noreferrer" class="btn-primary"
+            style="display: inline-block; margin-bottom: 1.5rem;">
+            Voir la vidéo sur YouTube
+          </a>
+          <p
+            style="color: var(--muted); font-size: 0.85rem; margin: 1rem 0; display: inline-block; padding: 0.4rem 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; backdrop-filter: blur(10px);">
+            2025</p>
         </div>
-        
-        <div class="portfolio-grid">
-            <div class="portfolio-item" data-category="audiovisuel">
-                <a href="photographie.html">
-                  <img src="./img/paysages/DSC_0071.jpg" alt="Project 1" class="portfolio-img">
-                  <div class="portfolio-overlay">
-                    <h3>Photographie</h3>
-                  </div>
-                </a>
-              </div>
-            
-              <div class="portfolio-item" data-category="graphisme">
-                <a href="Affiche_Graphisme.html">
-                  <img src="Capture_decran_2025-09-15_162636.png" alt="Project 2" class="portfolio-img">
-                  <div class="portfolio-overlay">
-                    <h3>Affiches / Graphisme</h3>
-                  </div>
-                </a>
-              </div>
-            
-              <div class="portfolio-item" data-category="motion">
-                <a href="Montage_Motion_Design.html">
-                  <img src="photo_motion_design_categorie.png" alt="Project 3" class="portfolio-img">
-                  <div class="portfolio-overlay">
-                    <h3>Montage / Motion Design</h3>
-                  </div>
-                </a>
-              </div>
-            
-               <div class="portfolio-item" data-category="audiovisuel">
-                <a href="production_vidéo.html">
-                  <img src="fond ecran prod audioviusle.png" alt="Project 3" class="portfolio-img">
-                  <div class="portfolio-overlay">
-                    <h3>Production vidéo</h3>
-                  </div>
-                </a>
-              </div>
-              
+
+        <div
+          style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2.5rem; backdrop-filter: blur(10px); margin-top: 3rem;">
+          <h3 style="color: var(--text); font-size: 1.4rem; font-weight: 600; margin-bottom: 1.2rem;">À propos du projet
+          </h3>
+          <p style="color: rgba(255, 255, 255, 0.75); font-size: 1.05rem; line-height: 1.8; margin: 0;">
+            Cette web TV a été créée entièrement de zéro dans le cadre d'un projet scolaire. Nous avons utilisé quatre
+            caméras, des micros-cravates, ainsi qu'une régie pour gérer le son. Chaque personne de la classe avait une
+            mission précise à accomplir. Pour ma part, je me suis occupé d'une des quatre caméras, ce qui m'a permis
+            d'apprendre à paramétrer les équipements, à varier les angles de prise de vue, et de mieux comprendre le
+            fonctionnement global d'une production audiovisuelle.
+          </p>
         </div>
+      </div>
     </section>
 
+    <!-- Portfolio : Mes projets -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Mes projets</h2>
+        </div>
 
-        
-    
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <div class="section-title">
-            <h2>Me contacter</h2>
-        </div>
-        
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Location</h3>
-                        <p>France</p>
-                    </div>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Email</h3>
-                        <p>Colmant.thomas@gmail.com</p>
-                    </div>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Téléphone</h3>
-                        <p>06 34 68 50 03</p>
-                    </div>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">
-                       
-                    </div>
-                    
-                </div>
+        <div class="grid-portfolio">
+          <a href="photographie.html" class="portfolio-card">
+            <img src="./img/paysages/DSC_0071.jpg" alt="Série photographie">
+            <div class="portfolio-info">
+              <h3>Photographie</h3>
             </div>
-            
-            <div class="contact-form">
-               <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST">
-  <div class="form-group">
-    <input type="text" name="Nom" class="form-control" placeholder="Nom" required>
-  </div>
-  
-  <div class="form-group">
-    <input type="email" name="Email" class="form-control" placeholder="Email" required>
-  </div>
-  
-  <div class="form-group">
-    <input type="text" name="Sujet" class="form-control" placeholder="Sujet">
-  </div>
-  
-  <div class="form-group">
-    <textarea name="Message" class="form-control" placeholder="Message" required></textarea>
-  </div>
-  
-  <div>
-    <button type="submit" class="btn btn-primary">Envoyer un message</button>
-  </div>
-</form>
+          </a>
+
+          <a href="production_vidéo.html" class="portfolio-card">
+            <img src="fond ecran prod audioviusle.png" alt="Production vidéo">
+            <div class="portfolio-info">
+              <h3>Production vidéo</h3>
             </div>
+          </a>
+
+          <a href="Montage_Motion_Design.html" class="portfolio-card">
+            <img src="photo_motion_design_categorie.png" alt="Montage et motion design">
+            <div class="portfolio-info">
+              <h3>Montage & motion design</h3>
+            </div>
+          </a>
+
+          <a href="Affiche_Graphisme.html" class="portfolio-card">
+            <img src="Capture_decran_2025-09-15_162636.png" alt="Affiches et graphisme">
+            <div class="portfolio-info">
+              <h3>Affiches & graphisme</h3>
+            </div>
+          </a>
         </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Me Contacter</h2>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-info">
+            <p><strong>Email</strong><br>colmant.thomas@gmail.com</p>            <p><strong>Localisation</strong><br>France</p>
+            <p>
+              <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank">
+                LinkedIn
+              </a>
+            </p>
+          </div>
+
+          <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST" class="contact-form">
+            <input type="text" name="Nom" placeholder="Nom" required>
+            <input type="email" name="Email" placeholder="Email" required>
+            <input type="text" name="Sujet" placeholder="Sujet">
+            <textarea name="Message" placeholder="Message" required></textarea>
+            <button type="submit" class="btn-primary">Envoyer un message</button>
+          </form>
+        </div>
+      </div>
     </section>
   </main>
-  <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <a href="#" class="footer-logo">Thomas<span>Colmant</span></a>
-            
-            <ul class="footer-links">
-                <li><a href="index.html#home">Accueil</a></li>
-                <li><a href="index.html#about">A propos</a></li>
-                <li><a href="#portfolio">Mes Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/thomas-colmant-506629382"><i class="fab fa-linkedin-in"></i></a>
 
-            </div>
-            
-            <p class="copyright">© 2025 Thomas Colmant. Tous droits réservés.</p>
-        </div>
-    </footer>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2025 Thomas Colmant.</span>
+    </div>
+  </footer>
 
-     <script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Mobile nav (si présent)
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  const navItems = document.querySelectorAll('.nav-links li');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburger.classList.toggle('active');
-      navItems.forEach((link, index) => {
-        link.style.animation = link.style.animation ? '' : `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-      });
-    });
-    navItems.forEach(li => li.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      hamburger.classList.remove('active');
-      navItems.forEach(li => li.style.animation = '');
-    }));
-  }
-
-  // Sticky header
-  const header = document.getElementById('header');
-  if (header) window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 100));
-
-  // Scroll to top (si présent)
-  const scrollTopBtn = document.querySelector('.scroll-top');
-  if (scrollTopBtn) {
-    window.addEventListener('scroll', () => scrollTopBtn.classList.toggle('active', window.pageYOffset > 300));
-    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-  }
-
-  // Portfolio filter
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  if (filterBtns.length) {
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-    filterBtns.forEach(btn => btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      portfolioItems.forEach(item => item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none');
-    }));
-  }
-
-  // NOUVEAU : Navigation active selon la section scrollée
-  const sections = document.querySelectorAll('section[id]');
-  const navLinksActive = document.querySelectorAll('.nav-links a[href*="#"]');
-
-  function activateNavLink() {
-    let current = '';
-    
-    // Sur cette page (détail affiche), toujours "Portfolio" actif sauf pour Contact
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      if (window.scrollY >= (sectionTop - 100)) {
-        current = section.getAttribute('id');
+  <script>
+    const header = document.querySelector('.site-header');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 150) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
       }
     });
 
-    // Enlever active de tous les liens
-    navLinksActive.forEach(link => link.classList.remove('active'));
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('form');
+      if (!form) return;
 
-    // Si on scroll sur la section Contact, activer Contact
-    if (current === 'contact') {
-      navLinksActive.forEach(link => {
-        if (link.getAttribute('href').includes('#contact')) {
-          link.classList.add('active');
-        }
-      });
-    } 
-    // Sinon, toujours activer "Portfolio" sur cette page
-    else {
-      navLinksActive.forEach(link => {
-        if (link.getAttribute('href').includes('#portfolio')) {
-          link.classList.add('active');
-        }
-      });
-    }
-  }
-
-  // Active au chargement et au scroll
-  activateNavLink();
-  window.addEventListener('scroll', activateNavLink);
-
-  // Smooth anchor scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      const target = document.querySelector(targetId);
-      if (target) {
+      form.addEventListener('submit', function (e) {
         e.preventDefault();
-        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-      }
-    });
-  });
+        const formData = new FormData(form);
 
-  // Contact form
-  const form = document.getElementById('form');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const formData = new FormData(form);
-      
-      fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          alert('Merci pour votre message ! Je vous répondrai rapidement.');
-          form.reset();
-        } else {
-          alert('Une erreur est survenue, veuillez réessayer.');
-        }
-      }).catch(() => {
-        alert('Une erreur réseau est survenue, veuillez réessayer.');
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        }).then(response => {
+          if (response.ok) {
+            alert('Merci pour votre message !');
+            form.reset();
+          } else {
+            alert('Une erreur est survenue, veuillez réessayer.');
+          }
+        }).catch(() => {
+          alert('Une erreur réseau est survenue, veuillez réessayer.');
+        });
       });
     });
-  }
-});
-</script>
+  </script>
 </body>
+
 </html>
-
-
-
-

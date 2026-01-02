@@ -1,496 +1,251 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thomas Colmant | Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    
-</head>
-<body>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thomas Colmant | Montage & Motion Design</title>
 
-    
-    <!-- Header -->
-    <header id="header">
-        <a href="index.html" class="logo">Thomas<span>Colmant</span></a>
-        
-        <ul class="nav-links">
-            <li><a href="index.html#home">Accueil</a></li>
-            <li><a href="index.html#about">À propos de moi</a></li>
-            <li><a href="#portfolio">Mes Projets</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        
-        <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </header>
-    
-    <section class="section" id="audiovisuel">
-       <div class="section-title">
-            <h2>Montage / Motion Design</h2>
-        </div>
+  <!-- Modern typography: Poppins -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 
-   
-        
-  <div class="motion-list">
-    <a href="detail_MotionDeisgn_logo_QG.html" class="motion-link">
-  <div class="motion-block">
-    <video class="motion-preview" src="./vidéo_montage/Composition_1_1 (2).mp4" controls></video>
-    <div class="motion-info">
-      <p class="motion-date">2025</p>
-      <h3 class="motion-titre">Animation du logo QG</h3>
-    </div></a>
-  </div>
+  <link rel="stylesheet" href="style.css">
 
-    <a href="detail_montage_ete.html" class="motion-link">
-  <div class="motion-block">
-    <video class="motion-preview" src="./vidéo_montage/Composition_ete.mp4" controls></video>
-    <div class="motion-info">
-      <p class="motion-date">2025</p>
-      <h3 class="motion-titre">Montage d'été </h3>
-    </div>
-  </div>
-  </a>
-
-  <a href="detail_animation_google.html" class="motion-link">
-  <div class="motion-block">
-    <video class="motion-preview" src="./vidéo_montage/animation google .mp4" controls></video>
-    <div class="motion-info">
-      <p class="motion-date">2025</p>
-      <h3 class="motion-titre">Animation Google</h3>
-    </div>
-  </div>
-  </a>
-
-       <a href="detail_animation_Discord.html" class="motion-link">
-  <div class="motion-block">
-    <video class="motion-preview" src="./vidéo_montage/animation_discord.mp4" controls></video>
-    <div class="motion-info">
-      <p class="motion-date">2025</p>
-      <h3 class="motion-titre">Animation Discord</h3>
-    </div>
-  </div>
-  </a>
-
-  <a href="detail_animation_mac.html" class="motion-link">
-  <div class="motion-block">
-    <video class="motion-preview" src="./vidéo_montage/aftereffect.mp4" controls></video>
-    <div class="motion-info">
-      <p class="motion-date">2025</p>
-      <h3 class="motion-titre">Animation interface mac</h3>
-    </div>
-  </div>
-  </a>
-
-  <a href="detail_Web_Tv.html" class="motion-link">
-  <div class="motion-block">
-    <img class="motion-preview" src="./vidéo_montage/web tv fond.png" alt="Production Web Tv">
-    <div class="motion-info">
-      <p class="motion-date">2025</p>
-      <h3 class="motion-titre">Montage Web Tv</h3>
-    </div>
-  </div>
-  </a>
-
-</div>
-
-
-
-        
-   </section>
-   
-
-<!-- Replace inline scripts with resilient script -->
-<script>
-/* filepath: c:\Users\colma\Desktop\portfolio\motion.html */
-document.addEventListener('DOMContentLoaded', () => {
-  // Mobile nav (guarded)
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  const navItems = document.querySelectorAll('.nav-links li');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburger.classList.toggle('active');
-      navItems.forEach((link, index) => {
-        link.style.animation = link.style.animation ? '' : `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-      });
-    });
-  }
-
-  // Sticky header
-  const header = document.getElementById('header');
-  if (header) window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 100));
-
-  // Scroll top
-  const scrollTopBtn = document.querySelector('.scroll-top');
-  if (scrollTopBtn) {
-    window.addEventListener('scroll', () => scrollTopBtn.classList.toggle('active', window.pageYOffset > 300));
-    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-  }
-
-  // Portfolio filter (guarded)
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  if (filterBtns.length) {
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-    filterBtns.forEach(btn => btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      portfolioItems.forEach(item => item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none');
-    }));
-  }
-
-
-
-  // Smooth anchors
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => anchor.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) { e.preventDefault(); window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' }); }
-  }));
-});
-</script>
-
-
-
-                
-      
-    </section>
-    
-    <!-- Portfolio Section -->
-    <section class="section" id="portfolio">
-        <div class="section-title">
-            <h2>Mes Projets</h2>
-        </div>
-        
-        <div class="portfolio-filter">
-            <button class="filter-btn active" data-filter="all">Tout</button>
-            <button class="filter-btn" data-filter="audiovisuel">Audiovisuel</button>
-            <button class="filter-btn" data-filter="graphisme">Affiches / Graphisme</button>
-            <button class="filter-btn" data-filter="motion">Montage / Motion Design</button>
-        </div>
-        
-        <div class="portfolio-grid">
-            <div class="portfolio-item" data-category="audiovisuel">
-                <a href="photographie.html">
-                  <img src="./img/paysages/DSC_0071.jpg" alt="Project 1" class="portfolio-img">
-                  <div class="portfolio-overlay">
-                    <h3>Photographie</h3>
-                  </div>
-                </a>
-              </div>
-            
-              <div class="portfolio-item" data-category="graphisme">
-                <a href="Affiche_Graphisme.html">
-                  <img src="Capture_decran_2025-09-15_162636.png" alt="Project 2" class="portfolio-img">
-                  <div class="portfolio-overlay">
-                    <h3>Affiches / Graphisme</h3>
-                  </div>
-                </a>
-              </div>
-            
-              <div class="portfolio-item" data-category="motion">
-                <a href="Montage_Motion_Design.html">
-                  <img src="photo_motion_design_categorie.png" alt="Project 3" class="portfolio-img">
-                  <div class="portfolio-overlay">
-                    <h3>Montage / Motion Design</h3>
-                  </div>
-                </a>
-              </div>
-      
-               <div class="portfolio-item" data-category="audiovisuel">
-                <a href="production_vidéo.html">
-                  <img src="fond ecran prod audioviusle.png" alt="Project 3" class="portfolio-img">
-                  <div class="portfolio-overlay">
-                    <h3>Production vidéo</h3>
-                  </div>
-                </a>
-              </div>
-            
-        </div>
-    </section>
-
-
-        
-    
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <div class="section-title">
-            <h2>Me contacter</h2>
-        </div>
-        
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Location</h3>
-                        <p>France</p>
-                    </div>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Email</h3>
-                        <p>Colmant.thomas@gmail.com</p>
-                    </div>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Téléphone</h3>
-                        <p>06 34 68 50 03</p>
-                    </div>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-icon">
-                       
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="contact-form">
-               <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST">
-  <div class="form-group">
-    <input type="text" name="Nom" class="form-control" placeholder="Nom" required>
-  </div>
-  
-  <div class="form-group">
-    <input type="email" name="Email" class="form-control" placeholder="Email" required>
-  </div>
-  
-  <div class="form-group">
-    <input type="text" name="Sujet" class="form-control" placeholder="Sujet">
-  </div>
-  
-  <div class="form-group">
-    <textarea name="Message" class="form-control" placeholder="Message" required></textarea>
-  </div>
-  
-  <div>
-    <button type="submit" class="btn btn-primary">Envoyer un message</button>
-  </div>
-</form>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <a href="#" class="footer-logo">Thomas<span>Colmant</span></a>
-            
-            <ul class="footer-links">
-                <li><a href="index.html#home">Accueil</a></li>
-                <li><a href="index.html#about">À propos de moi</a></li>
-          
-                <li><a href="#portfolio">Mes Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/thomas-colmant-506629382"><i class="fab fa-linkedin-in"></i></a>
-
-            </div>
-            
-            <p class="copyright">© 2025 Thomas Colmant. Tous droits réservés.</p>
-        </div>
-    </footer>
-    
-    <!-- Scroll to Top Button -->
-    <div class="scroll-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-    
-    <!-- Scripts -->
-     <script>
-document.addEventListener('DOMContentLoaded', () => {
-  // Mobile nav
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  const navItems = document.querySelectorAll('.nav-links li');
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburger.classList.toggle('active');
-      navItems.forEach((link, index) => {
-        link.style.animation = link.style.animation ? '' : `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-      });
-    });
-    navItems.forEach(li => li.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      hamburger.classList.remove('active');
-      navItems.forEach(li => li.style.animation = '');
-    }));
-  }
-
-  // Sticky header
-  const header = document.getElementById('header');
-  if (header) window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 100));
-
-  // Scroll to top
-  const scrollTopBtn = document.querySelector('.scroll-top');
-  if (scrollTopBtn) {
-    window.addEventListener('scroll', () => {
-      scrollTopBtn.classList.toggle('active', window.pageYOffset > 300);
-    });
-    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-  }
-
-  // Portfolio filter
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  if (filterBtns.length) {
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-    filterBtns.forEach(btn => btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      portfolioItems.forEach(item => item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none');
-    }));
-  }
-
-  // Slideshow (only if slides exist)
-  const slides = document.querySelectorAll('.mySlides');
-  if (slides.length) {
-    let idx = 0;
-    const show = () => {
-      slides.forEach(s => s.style.display = 'none');
-      slides[idx].style.display = 'block';
-    };
-    show();
-    setInterval(() => { idx = (idx + 1) % slides.length; show(); }, 5000);
-  }
-
-  // Animate skills (guard)
-  const skillProgress = document.querySelectorAll('.skill-progress');
-  const aboutSection = document.getElementById('about');
-  if (aboutSection && skillProgress.length) {
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          skillProgress.forEach(p => {
-            const w = p.style.width || '0%';
-            p.style.width = w;
-          });
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    observer.observe(aboutSection);
-  }
-
- // NOUVEAU : Navigation active selon la section scrollée
-const sections = document.querySelectorAll('section[id]');
-const navLinksActive = document.querySelectorAll('.nav-links a[href*="#"]');
-
-function activateNavLink() {
-  let current = '';
-  
-  // Sur cette page (Motion Design), toujours "Mes Projets" actif sauf pour Contact
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    if (window.scrollY >= (sectionTop - 100)) {
-      current = section.getAttribute('id');
+  <style>
+    /* Grid 3 colonnes pour les vidéos */
+    .grid-portfolio-3col {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.8rem;
     }
-  });
 
-  // Enlever active de tous les liens
-  navLinksActive.forEach(link => link.classList.remove('active'));
+    /* Style pour les vidéos */
+    .portfolio-video {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      background-color: #000;
+      border-radius: 12px 12px 0 0;
+      transition: transform 0.4s ease;
+    }
 
-  // Si on scroll sur la section Contact, activer Contact
-  if (current === 'contact') {
-    navLinksActive.forEach(link => {
-      if (link.getAttribute('href').includes('#contact')) {
-        link.classList.add('active');
+    .portfolio-card:hover .portfolio-video {
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 900px) {
+      .grid-portfolio-3col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 540px) {
+      .grid-portfolio-3col {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header minimal -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Thomas<span>Colmant</span></a>
+
+      <nav class="main-nav">
+        <a href="index.html#home">Accueil</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#about">À propos</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section Montage / Motion Design -->
+    <section class="section" id="audiovisuel" style="padding-top: 8rem;">
+      <div class="container">
+        <div class="section-head">
+          <h2>Montage / Motion Design</h2>
+        </div>
+
+        <div class="grid-portfolio-3col">
+          <a href="detail_animation_Discord.html" class="portfolio-card">
+            <video class="portfolio-video" src="./vidéo_montage/animation_discord.mp4" controls></video>
+            <div class="portfolio-info">
+              <h3>Animation Discord</h3>
+              <p>2025</p>
+            </div>
+          </a>
+
+          <a href="detail_MotionDeisgn_logo_QG.html" class="portfolio-card">
+            <video class="portfolio-video" src="./vidéo_montage/Composition_1_1 (2).mp4" controls></video>
+            <div class="portfolio-info">
+              <h3>Animation du logo QG</h3>
+              <p>2025</p>
+            </div>
+          </a>
+
+          <a href="detail_montage_ete.html" class="portfolio-card">
+            <video class="portfolio-video" src="./vidéo_montage/Composition_ete.mp4" controls></video>
+            <div class="portfolio-info">
+              <h3>Montage d'été</h3>
+              <p>2025</p>
+            </div>
+          </a>
+
+          <a href="detail_animation_google.html" class="portfolio-card">
+            <video class="portfolio-video" src="./vidéo_montage/animation google .mp4" controls></video>
+            <div class="portfolio-info">
+              <h3>Animation Google</h3>
+              <p>2025</p>
+            </div>
+          </a>
+
+          <a href="detail_animation_mac.html" class="portfolio-card">
+            <video class="portfolio-video" src="./vidéo_montage/aftereffect.mp4" controls></video>
+            <div class="portfolio-info">
+              <h3>Animation interface mac</h3>
+              <p>2025</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio : Mes projets -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Mes projets</h2>
+        </div>
+
+        <div class="grid-portfolio">
+          <a href="photographie.html" class="portfolio-card">
+            <img src="./img/paysages/DSC_0071.jpg" alt="Série photographie">
+            <div class="portfolio-info">
+              <h3>Photographie</h3>
+            </div>
+          </a>
+
+          <a href="production_vidéo.html" class="portfolio-card">
+            <img src="fond ecran prod audioviusle.png" alt="Production vidéo">
+            <div class="portfolio-info">
+              <h3>Production vidéo</h3>
+            </div>
+          </a>
+
+          <a href="Montage_Motion_Design.html" class="portfolio-card">
+            <img src="photo_motion_design_categorie.png" alt="Montage et motion design">
+            <div class="portfolio-info">
+              <h3>Montage & motion design</h3>
+            </div>
+          </a>
+
+          <a href="Affiche_Graphisme.html" class="portfolio-card">
+            <img src="Capture_decran_2025-09-15_162636.png" alt="Affiches et graphisme">
+            <div class="portfolio-info">
+              <h3>Affiches & graphisme</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Me Contacter</h2>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-info">
+            <p><strong>Email</strong><br>colmant.thomas@gmail.com</p>            <p><strong>Localisation</strong><br>France</p>
+            <p>
+              <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank">
+                LinkedIn
+              </a>
+            </p>
+          </div>
+
+          <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST" class="contact-form">
+            <input type="text" name="Nom" placeholder="Nom" required>
+            <input type="email" name="Email" placeholder="Email" required>
+            <input type="text" name="Sujet" placeholder="Sujet">
+            <textarea name="Message" placeholder="Message" required></textarea>
+            <button type="submit" class="btn-primary">Envoyer un message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2025 Thomas Colmant.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect
+    const header = document.querySelector('.site-header');
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 150) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
       }
     });
-  } 
-  // Sinon, toujours activer "Mes Projets" sur cette page
-  else {
-    navLinksActive.forEach(link => {
-      if (link.getAttribute('href').includes('#portfolio')) {
-        link.classList.add('active');
-      }
-    });
-  }
-}
 
-// Active au chargement et au scroll
-activateNavLink();
-window.addEventListener('scroll', activateNavLink);
+    // Formspree
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('form');
+      if (!form) return;
 
-
-  // Active au chargement
-  activateNavLink();
-  // Active au scroll
-  window.addEventListener('scroll', activateNavLink);
-
-  // Smooth anchor scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      const target = document.querySelector(targetId);
-      if (target) {
+      form.addEventListener('submit', function (e) {
         e.preventDefault();
-        window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-      }
-    });
-  });
-});
+        const formData = new FormData(form);
 
-// Contact form
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('form');
-  
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const formData = new FormData(form);
-      
-      fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          alert('Merci pour votre message ! Je vous répondrai rapidement.');
-          form.reset();
-        } else {
-          alert('Une erreur est survenue, veuillez réessayer.');
-        }
-      }).catch(() => {
-        alert('Une erreur réseau est survenue, veuillez réessayer.');
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        }).then(response => {
+          if (response.ok) {
+            alert('Merci pour votre message !');
+            form.reset();
+          } else {
+            alert('Une erreur est survenue, veuillez réessayer.');
+          }
+        }).catch(() => {
+          alert('Une erreur réseau est survenue, veuillez réessayer.');
+        });
       });
     });
-  }
-});
 
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
 
-
-</script> 
-
-
-
-
+        if (targetElement) {
+          e.preventDefault();
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
-
-
-
