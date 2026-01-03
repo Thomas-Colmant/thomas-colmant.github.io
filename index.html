@@ -173,11 +173,16 @@
           </div>
 
           <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST" class="contact-form">
-            <input type="text" name="Nom" placeholder="Nom" required>
-            <input type="email" name="Email" placeholder="Email" required>
-            <input type="text" name="Sujet" placeholder="Sujet">
-            <textarea name="Message" placeholder="Message" required></textarea>
-            <button type="submit" class="btn-primary">Envoyer un message</button>
+            <input type="text" name="name" placeholder="Nom" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="subject" placeholder="Sujet">
+            <textarea name="message" placeholder="Message" required></textarea>
+
+            <input type="text" name="_gotcha" style="display:none">
+            <input type="hidden" name="_subject" value="Nouveau message depuis ton portfolio !">
+            <input type="hidden" name="_next" value="https://thomas-colmant.github.io/index.html#contact">
+
+            <button type="submit" id="submit-btn" class="btn-primary">Envoyer un message</button>
           </form>
         </div>
       </div>
@@ -203,31 +208,53 @@
       }
     });
 
-    // Formspree
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.getElementById('form');
-      if (!form) return;
+    // Form submission handling
+    const form = document.getElementById('form');
+    const submitBtn = document.getElementById('submit-btn');
 
-      form.addEventListener('submit', function (e) {
+    if (form) {
+      form.addEventListener('submit', async function (e) {
         e.preventDefault();
-        const formData = new FormData(form);
 
-        fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        }).then(response => {
+        // Disable button and show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Envoi en cours...';
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+
           if (response.ok) {
-            alert('Merci pour votre message !');
+            alert('✅ Merci pour votre message ! Je vous répondrai bientôt.');
             form.reset();
           } else {
-            alert('Une erreur est survenue, veuillez réessayer.');
+            const data = await response.json();
+            console.error('Response data:', data);
+
+            if (data.errors) {
+              alert('❌ Erreur : ' + data.errors.map(e => e.message).join(', '));
+            } else if (data.error) {
+              alert('❌ Erreur : ' + data.error);
+            } else {
+              alert('❌ Erreur ' + response.status + '. Ouvre la console (F12) pour plus de détails.');
+            }
           }
-        }).catch(() => {
-          alert('Une erreur réseau est survenue, veuillez réessayer.');
-        });
+        } catch (error) {
+          console.error('Erreur:', error);
+          alert('❌ Erreur de connexion. Veuillez vérifier votre connexion internet.');
+        } finally {
+          // Re-enable button
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Envoyer un message';
+        }
       });
-    });
+    }
+
   </script>
 </body>
 

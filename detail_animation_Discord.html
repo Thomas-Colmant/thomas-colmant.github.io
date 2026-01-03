@@ -115,7 +115,8 @@
 
         <div class="contact-layout">
           <div class="contact-info">
-            <p><strong>Email</strong><br>colmant.thomas@gmail.com</p>            <p><strong>Localisation</strong><br>France</p>
+            <p><strong>Email</strong><br>colmant.thomas@gmail.com</p>
+            <p><strong>Localisation</strong><br>France</p>
             <p>
               <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank">
                 LinkedIn
@@ -124,11 +125,15 @@
           </div>
 
           <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST" class="contact-form">
-            <input type="text" name="Nom" placeholder="Nom" required>
-            <input type="email" name="Email" placeholder="Email" required>
-            <input type="text" name="Sujet" placeholder="Sujet">
-            <textarea name="Message" placeholder="Message" required></textarea>
-            <button type="submit" class="btn-primary">Envoyer un message</button>
+            <input type="text" name="name" placeholder="Nom" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="subject" placeholder="Sujet">
+            <textarea name="message" placeholder="Message" required></textarea>
+            <input type="text" name="_gotcha" style="display:none">
+            <input type="hidden" name="_subject" value="Nouveau message depuis ton portfolio !">
+            <input type="hidden" name="_next" value="https://thomas-colmant.github.io/index.html#contact">
+
+            <button type="submit" id="submit-btn" class="btn-primary">Envoyer un message</button>
           </form>
         </div>
       </div>
@@ -150,32 +155,10 @@
         header.classList.remove('scrolled');
       }
     });
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.getElementById('form');
-      if (!form) return;
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const formData = new FormData(form);
-
-        fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        }).then(response => {
-          if (response.ok) {
-            alert('Merci pour votre message !');
-            form.reset();
-          } else {
-            alert('Une erreur est survenue, veuillez réessayer.');
-          }
-        }).catch(() => {
-          alert('Une erreur réseau est survenue, veuillez réessayer.');
-        });
       });
     });
   </script>
+  <script src="form-handler.js"></script>
 </body>
 
 </html>
