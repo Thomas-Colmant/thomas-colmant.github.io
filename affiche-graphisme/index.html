@@ -4,88 +4,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thomas Colmant | Photographie</title>
+  <title>Thomas Colmant | Affiches & Graphisme</title>
 
   <!-- Modern typography: Poppins -->
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    /* Grid 3 colonnes pour les affiches */
+    .grid-portfolio-3col {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-portfolio-3col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 540px) {
+      .grid-portfolio-3col {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
   <!-- Header minimal -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo">Thomas<span>Colmant</span></a>
+      <a href="/" class="logo">Thomas<span>Colmant</span></a>
 
       <nav class="main-nav">
-        <a href="index.html#home">Accueil</a>
-        <a href="index.html#portfolio">Portfolio</a>
-        <a href="index.html#about">À propos</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="/#home">Accueil</a>
+        <a href="/#portfolio">Portfolio</a>
+        <a href="/#about">À propos</a>
+        <a href="/#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Section Photographie -->
+    <!-- Section Affiches / Graphisme -->
     <section class="section" id="audiovisuel" style="padding-top: 8rem;">
       <div class="container">
         <div class="section-head">
-          <h2>Photographie</h2>
+          <h2>Affiches / Graphisme</h2>
         </div>
 
-        <div class="grid-portfolio" style="display: flex; justify-content: center; gap: 1.8rem;">
-          <a href="photographie_salon_aristochiens.html" class="portfolio-card" style="width: 400px; flex-shrink: 0;">
-            <span class="client-badge">Projet Client</span>
-            <img src="./img/photo_aristochiens/3M7A9579.jpg" alt="Photographie Salon Aristochiens"
-              style="height: 280px; object-fit: cover;">
+        <div class="grid-portfolio-3col">
+          <a href="/affiche-mohammed-ali" class="portfolio-card">
+            <img src="../img/affiches/affiche_mohammed_ali.jpg" alt="Affiche Mohammed Ali">
             <div class="portfolio-info">
-              <h3>Photographie Salon Aristochiens</h3>
+              <h3>Affiche Mohammed Ali</h3>
               <p>2025</p>
             </div>
           </a>
 
-          <a href="photographie-personelle.html" class="portfolio-card" style="width: 400px; flex-shrink: 0;">
-            <img src="./img/zoo/DSC_0091.jpg" alt="Photographie personnelle" style="height: 280px; object-fit: cover;">
+          <a href="/affiche-bmw" class="portfolio-card">
+            <img src="../img/affiches/affiche_bmw2.jpg" alt="Affiche BMW">
             <div class="portfolio-info">
-              <h3>Photographie personnelle</h3>
+              <h3>Affiche BMW</h3>
+              <p>2025</p>
+            </div>
+          </a>
+
+          <a href="/affiche-ronaldo" class="portfolio-card">
+            <img src="../img/affiches/afficge_ronaldo.png" alt="Affiche Ronaldo">
+            <div class="portfolio-info">
+              <h3>Affiche Ronaldo</h3>
+              <p>2025</p>
+            </div>
+          </a>
+
+          <a href="/affiche-programme" class="portfolio-card">
+            <img src="../img/affiches/page_dacceuil_programme.jpg" alt="Affiche programme">
+            <div class="portfolio-info">
+              <h3>Affiche programme</h3>
+              <p>2025</p>
+            </div>
+          </a>
+
+          <a href="/affiche-psg-toulouse" class="portfolio-card">
+            <img src="../img/affiches/affiche_psg_vs_toulouse.jpg" alt="Affiche PSG vs Toulouse">
+            <div class="portfolio-info">
+              <h3>Affiche PSG vs Toulouse</h3>
+              <p>2025</p>
+            </div>
+          </a>
+
+          <a href="/affiche-sensibilisation" class="portfolio-card">
+            <img src="../img/affiches/affiche de sensibilisation infograpie.png" alt="Affiche sensibilisation">
+            <div class="portfolio-info">
+              <h3>Affiche sensibilisation</h3>
+              <p>2024</p>
+            </div>
+          </a>
+
+          <a href="/affiche-thomas-pesquet-megumi" class="portfolio-card">
+            <img src="../img/affiches/megumi x thomas pesquet-min.jpg" alt="Affiche Thomas Pesquet x Megumi">
+            <div class="portfolio-info">
+              <h3>Affiche Thomas Pesquet x Megumi</h3>
+              <p>2025</p>
             </div>
           </a>
         </div>
-      </div>
-    </section>
-
-    <!-- Mon Appareil Photo -->
-    <section class="section" id="appareil-photo">
-      <div class="container">
-        <div class="section-head">
-          <h2>Les Appareils Photo utilisés :</h2>
-        </div>
-        <style>
-          .camera-image:hover {
-            transform: scale(1.05);
-          }
-        </style>
-        <div class="appareil-contenu"
-          style="display: flex; justify-content: center; align-items: flex-end; gap: 4rem; flex-wrap: wrap; text-align: center;">
-          <div class="camera-item">
-            <img src="FrontLeft-25412_D80_-kugYeAkr.png" alt="Nikon D80" class="camera-image"
-              style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); margin-bottom: 1.5rem; transition: transform 0.3s ease; cursor: pointer;" />
-            <h3 style="color: var(--text); font-weight: 700; font-size: 1.7rem; margin-bottom: 1rem;">Nikon D80</h3>
-          </div>
-          <div class="camera-item">
-            <img src="Canon r7.png" alt="Canon R7" class="camera-image"
-              style="width: 100%; max-width: 408px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); margin-bottom: 1.5rem; transition: transform 0.3s ease; cursor: pointer;" />
-            <h3 style="color: var(--text); font-weight: 700; font-size: 1.7rem; margin-bottom: 1rem;">Canon R7</h3>
-          </div>
-        </div>
-
-
-      </div>
       </div>
     </section>
 
@@ -97,33 +126,29 @@
         </div>
 
         <div class="grid-portfolio">
-          <!-- Photo -->
-          <a href="photographie.html" class="portfolio-card">
-            <img src="./img/paysages/DSC_0071.jpg" alt="Série photographie">
+          <a href="/photographie" class="portfolio-card">
+            <img src="../img/paysages/DSC_0071.jpg" alt="Série photographie">
             <div class="portfolio-info">
               <h3>Photographie</h3>
             </div>
           </a>
 
-          <!-- Vidéo -->
           <a href="production_vidéo.html" class="portfolio-card">
-            <img src="fond ecran prod audioviusle.png" alt="Production vidéo">
+            <img src="../fond ecran prod audioviusle.png" alt="Production vidéo">
             <div class="portfolio-info">
               <h3>Production vidéo</h3>
             </div>
           </a>
 
-          <!-- Motion / montage -->
-          <a href="Montage_Motion_Design.html" class="portfolio-card">
-            <img src="photo_motion_design_categorie.png" alt="Montage et motion design">
+          <a href="/montage-motion-design" class="portfolio-card">
+            <img src="../photo_motion_design_categorie.png" alt="Montage et motion design">
             <div class="portfolio-info">
               <h3>Montage & motion design</h3>
             </div>
           </a>
 
-          <!-- Affiches / graphisme -->
-          <a href="Affiche_Graphisme.html" class="portfolio-card">
-            <img src="Capture_decran_2025-09-15_162636.png" alt="Affiches et graphisme">
+          <a href="/affiche-graphisme" class="portfolio-card">
+            <img src="../Capture_decran_2025-09-15_162636.png" alt="Affiches et graphisme">
             <div class="portfolio-info">
               <h3>Affiches & graphisme</h3>
             </div>
@@ -244,17 +269,6 @@
         }
       });
     });
-
-    // Hover effect on camera image
-    const cameraImg = document.querySelector('.camera-image');
-    if (cameraImg) {
-      cameraImg.addEventListener('mouseenter', function () {
-        this.style.transform = 'scale(1.05)';
-      });
-      cameraImg.addEventListener('mouseleave', function () {
-        this.style.transform = 'scale(1)';
-      });
-    }
   </script>
 </body>
 
