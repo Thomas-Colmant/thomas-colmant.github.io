@@ -12,6 +12,44 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="../style.css">
+
+  <style>
+    /* Grid 3 colonnes pour les vidéos */
+    .grid-portfolio-3col {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.8rem;
+    }
+
+    /* Style pour les vidéos et images */
+    .portfolio-video,
+    .portfolio-thumbnail {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      background-color: #000;
+      border-radius: 12px 12px 0 0;
+      transition: transform 0.4s ease;
+    }
+
+    .portfolio-card:hover .portfolio-video,
+    .portfolio-card:hover .portfolio-thumbnail {
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 900px) {
+      .grid-portfolio-3col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 540px) {
+      .grid-portfolio-3col {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -38,7 +76,7 @@
         </div>
 
 
-        <div class="grid-portfolio" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+        <div class="grid-portfolio-3col">
 
           <a href="/clip-etudiant-honeypie" class="portfolio-card">
             <img class="portfolio-thumbnail" src="../vidéo_montage/honeypie clip.jpg" alt="Clip Étudiant Honeypie">
