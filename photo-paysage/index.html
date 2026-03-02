@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photographie Paysage | Thomas Colmant</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .photo-grid {
+            column-count: 3;
+            column-gap: 1.2rem;
+        }
+
+        .photo-item {
+            break-inside: avoid;
+            margin-bottom: 1.2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(174, 198, 255, 0.25);
+            border-color: rgba(174, 198, 255, 0.3);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+            min-height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 900px) {
+            .photo-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .photo-grid {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">Thomas<span>Colmant</span></a>
+            <nav class="main-nav">
+                <a href="/#home">Accueil</a>
+                <a href="/#portfolio">Portfolio</a>
+                <a href="/#about">À propos</a>
+                <a href="/#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" id="photographie" style="padding-top: 8rem;">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Paysages</h2>
+                </div>
+
+                <button class="btn-ghost" onclick="window.history.back();" style="margin-bottom: 2.5rem;">← Retour à
+                    Photographie</button>
+
+                <div class="photo-grid">
+                    <div class="photo-item">
+                        <img src="../img/paysages/DSC_0071.jpg" alt="Paysage" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/paysages/DSC_0066-2.jpg" alt="Paysage" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/paysages/DSC_0094.jpg" alt="Paysage" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/paysages/DSC_0068-2.jpg" alt="Paysage" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/paysages/DSC_0076-2.jpg" alt="Paysage" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/paysages/DSC_0080-2.jpg" alt="Paysage" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/paysages/DSC_0048.jpg" alt="Paysage" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/paysages/DSC_0046.jpg" alt="Paysage" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/paysages/DSC_0050.jpg" alt="Paysage" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/paysages/DSC_0060.jpg" alt="Paysage" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/paysages/DSC_0010-3.jpg" alt="Paysage" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio : Mes projets -->
+        <section id="portfolio" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Mes projets</h2>
+                </div>
+
+                <div class="grid-portfolio">
+                    <a href="/photographie" class="portfolio-card">
+                        <img src="../img/paysages/DSC_0071.jpg" alt="Série photographie">
+                        <div class="portfolio-info">
+                            <h3>Photographie</h3>
+                        </div>
+                    </a>
+
+                    <a href="/production-video" class="portfolio-card">
+                        <img src="../fond ecran prod audioviusle.png" alt="Production vidéo">
+                        <div class="portfolio-info">
+                            <h3>Production vidéo</h3>
+                        </div>
+                    </a>
+
+                    <a href="/montage-motion-design" class="portfolio-card">
+                        <img src="../photo_motion_design_categorie.png" alt="Montage et motion design">
+                        <div class="portfolio-info">
+                            <h3>Montage & motion design</h3>
+                        </div>
+                    </a>
+
+                    <a href="/affiche-graphisme" class="portfolio-card">
+                        <img src="../Capture_decran_2025-09-15_162636.png" alt="Affiches et graphisme">
+                        <div class="portfolio-info">
+                            <h3>Affiches & graphisme</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Me Contacter</h2>
+                </div>
+
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <p><strong>Email</strong><br>colmant.thomas@gmail.com</p>
+                        <p><strong>Localisation</strong><br>France</p>
+                        <p>
+                            <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank">LinkedIn</a>
+                        </p>
+                    </div>
+
+                    <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST" class="contact-form">
+                        <input type="text" name="Nom" placeholder="Nom" required>
+                        <input type="email" name="Email" placeholder="Email" required>
+                        <input type="text" name="Sujet" placeholder="Sujet">
+                        <textarea name="Message" placeholder="Message" required></textarea>
+                        <button type="submit" id="submit-btn" class="btn-primary">Envoyer un message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <span>© 2025 Thomas Colmant.</span>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.querySelector('.site-header');
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 150) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+    <script src="../form-handler.js"></script>
+</body>
+
+</html>
