@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photographie Salon Aristochiens | Thomas Colmant</title>
+    <title>Photographie Sportive | Thomas Colmant</title>
 
-    <!-- Modern typography: Poppins -->
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
@@ -14,15 +13,14 @@
     <link rel="stylesheet" href="../style.css">
 
     <style>
-        /* Photo grid masonry layout */
         .photo-grid {
-            column-count: 3;
-            column-gap: 1.2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
 
         .photo-item {
-            break-inside: avoid;
-            margin-bottom: 1.2rem;
+            position: relative;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             overflow: hidden;
@@ -30,6 +28,13 @@
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(10px);
             cursor: pointer;
+            aspect-ratio: 3 / 2;
+        }
+
+        .photo-item.portrait {
+            grid-row: span 2;
+            aspect-ratio: 2 / 3;
+            height: 100%;
         }
 
         .photo-item:hover {
@@ -40,9 +45,11 @@
 
         .photo-item img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
             transition: transform 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .photo-item:hover img {
@@ -51,24 +58,34 @@
 
         @media (max-width: 900px) {
             .photo-grid {
-                column-count: 2;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.2rem;
             }
         }
 
         @media (max-width: 540px) {
             .photo-grid {
-                column-count: 1;
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .photo-item {
+                aspect-ratio: 3 / 2;
+            }
+
+            .photo-item.portrait {
+                grid-row: span 1;
+                aspect-ratio: 2 / 3;
+                height: auto;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Header minimal -->
     <header class="site-header">
         <div class="container header-inner">
             <a href="/" class="logo">Thomas<span>Colmant</span></a>
-
             <nav class="main-nav">
                 <a href="/#home">Accueil</a>
                 <a href="/#portfolio">Portfolio</a>
@@ -79,52 +96,67 @@
     </header>
 
     <main>
-        <!-- Section Photographie Salon Aristochiens -->
         <section class="section" id="photographie" style="padding-top: 8rem;">
             <div class="container">
                 <div class="section-head">
-                    <h2>Photographie Salon Aristochiens</h2>
+                    <h2>Photographie Sportive</h2>
                 </div>
 
                 <button class="btn-ghost" onclick="window.history.back();" style="margin-bottom: 2.5rem;">← Retour à
                     Photographie</button>
 
-                <!-- Grille de photos masonry -->
                 <div class="photo-grid">
-                    <!-- Photos Salon Aristochiens -->
                     <div class="photo-item">
-                        <img src="../img/photo_aristochiens/3M7A9579.jpg" alt="Salon Aristochiens" loading="lazy">
+                        <img src="../img/basketball/DSC03770.jpg" alt="Photographie Sportive" loading="lazy">
+                    </div>
+                    <div class="photo-item portrait">
+                        <img src="../img/basketball/DSC03653-2.jpg" alt="Photographie Sportive" loading="lazy">
                     </div>
                     <div class="photo-item">
-                        <img src="../img/photo_aristochiens/3M7A9720.jpg" alt="Salon Aristochiens" loading="lazy">
+                        <img src="../img/basketball/DSC03710.jpg" alt="Photographie Sportive" loading="lazy">
                     </div>
                     <div class="photo-item">
-                        <img src="../img/photo_aristochiens/1B7A0471.jpg" alt="Salon Aristochiens" loading="lazy">
+                        <img src="../img/basketball/DSC03776.jpg" alt="Photographie Sportive" loading="lazy">
                     </div>
                     <div class="photo-item">
-                        <img src="../img/photo_aristochiens/3M7A9527.jpg" alt="Salon Aristochiens" loading="lazy">
+                        <img src="../img/basketball/DSC03801.jpg" alt="Photographie Sportive" loading="lazy">
                     </div>
                     <div class="photo-item">
-                        <img src="../img/photo_aristochiens/3M7A9800.jpg" alt="Salon Aristochiens" loading="lazy">
+                        <img src="../img/basketball/DSC03829.jpg" alt="Photographie Sportive" loading="lazy">
                     </div>
                     <div class="photo-item">
-                        <img src="../img/photo_aristochiens/3M7A9913.jpg" alt="Salon Aristochiens" loading="lazy">
+                        <img src="../img/basketball/DSC03847.jpg" alt="Photographie Sportive" loading="lazy">
                     </div>
                     <div class="photo-item">
-                        <img src="../img/photo_aristochiens/1B7A0068.jpg" alt="Salon Aristochiens" loading="lazy">
+                        <img src="../img/basketball/DSC03899.jpg" alt="Photographie Sportive" loading="lazy">
                     </div>
                     <div class="photo-item">
-                        <img src="../img/photo_aristochiens/3M7A9976.jpg" alt="Salon Aristochiens" loading="lazy">
+                        <img src="../img/basketball/DSC04267.jpg" alt="Photographie Sportive" loading="lazy">
                     </div>
                     <div class="photo-item">
-                        <img src="../img/photo_aristochiens/3M7A0014.jpg" alt="Salon Aristochiens" loading="lazy">
+                        <img src="../img/basketball/DSC04985.jpg" alt="Photographie Sportive" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/basketball/DSC05002.jpg" alt="Photographie Sportive" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/basketball/DSC05056.jpg" alt="Photographie Sportive" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/basketball/DSC05074.jpg" alt="Photographie Sportive" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/basketball/DSC05088-2.jpg" alt="Photographie Sportive" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/basketball/DSC05153.jpg" alt="Photographie Sportive" loading="lazy">
+                    </div>
+                    <div class="photo-item">
+                        <img src="../img/basketball/DSC05194.jpg" alt="Photographie Sportive" loading="lazy">
                     </div>
                 </div>
             </div>
-            </div>
         </section>
-
-
 
         <!-- Portfolio : Mes projets -->
         <section id="portfolio" class="section">
@@ -177,9 +209,7 @@
                         <p><strong>Email</strong><br>colmant.thomas@gmail.com</p>
                         <p><strong>Localisation</strong><br>France</p>
                         <p>
-                            <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank">
-                                LinkedIn
-                            </a>
+                            <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank">LinkedIn</a>
                         </p>
                     </div>
 
@@ -188,14 +218,13 @@
                         <input type="email" name="Email" placeholder="Email" required>
                         <input type="text" name="Sujet" placeholder="Sujet">
                         <textarea name="Message" placeholder="Message" required></textarea>
-                        <button type="submit" class="btn-primary">Envoyer un message</button>
+                        <button type="submit" id="submit-btn" class="btn-primary">Envoyer un message</button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-inner">
             <span>© 2025 Thomas Colmant.</span>
@@ -203,9 +232,7 @@
     </footer>
 
     <script>
-        // Navbar scroll effect
         const header = document.querySelector('.site-header');
-
         window.addEventListener('scroll', function () {
             if (window.scrollY > 150) {
                 header.classList.add('scrolled');
@@ -213,54 +240,8 @@
                 header.classList.remove('scrolled');
             }
         });
-
-        // Form submission handling
-        const form = document.getElementById('form');
-        const submitBtn = document.getElementById('submit-btn');
-
-        if (form) {
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-
-                // Disable button and show loading state
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Envoi en cours...';
-
-                try {
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: new FormData(form),
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-
-                    if (response.ok) {
-                        alert('✅ Merci pour votre message ! Je vous répondrai bientôt.');
-                        form.reset();
-                    } else {
-                        const data = await response.json();
-                        console.error('Response data:', data);
-
-                        if (data.errors) {
-                            alert('❌ Erreur : ' + data.errors.map(e => e.message).join(', '));
-                        } else if (data.error) {
-                            alert('❌ Erreur : ' + data.error);
-                        } else {
-                            alert('❌ Erreur ' + response.status + '. Ouvre la console (F12) pour plus de détails.');
-                        }
-                    }
-                } catch (error) {
-                    console.error('Erreur:', error);
-                    alert('❌ Erreur de connexion. Veuillez vérifier votre connexion internet.');
-                } finally {
-                    // Re-enable button
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Envoyer un message';
-                }
-            });
-        }
     </script>
+    <script src="../form-handler.js"></script>
     <script src="../lightbox.js"></script>
 </body>
 
