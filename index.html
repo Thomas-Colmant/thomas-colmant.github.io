@@ -1,266 +1,406 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thomas Colmant | Photographe & Vidéaste</title>
+  <meta name="description"
+    content="Portfolio de Thomas Colmant — Photographe & Vidéaste étudiant en BUT MMI. Photographie, production vidéo, motion design.">
 
-  <!-- Modern typography: Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- Header minimal -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#" class="logo">Thomas<span>Colmant</span></a>
+  <!-- ===== NAVIGATION ===== -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="#home" class="logo">
+        Thomas<span class="logo-dot"></span>Colmant
+      </a>
 
-      <nav class="main-nav">
+      <nav class="main-nav" id="main-nav">
         <a href="#home">Accueil</a>
-        <a href="#portfolio">Portfolio</a>
         <a href="#about">À propos</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
       </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
-  <!-- Hero : focus texte -->
+  <!-- Mobile drawer -->
+  <nav class="nav-drawer" id="nav-drawer">
+    <a href="#home" class="drawer-link">Accueil</a>
+    <a href="#about" class="drawer-link">À propos</a>
+    <a href="#portfolio" class="drawer-link">Portfolio</a>
+    <a href="#contact" class="drawer-link">Contact</a>
+  </nav>
+
   <main>
+
+    <!-- ===== HERO ===== -->
     <section id="home" class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <p class="hero-kicker">Étudiant MMI · <span class="accent-text">Création numérique & audiovisuelle</span></p>
-          <h1>Thomas Colmant</h1>
-          <h1 class="hero-subtitle"><span class="accent-strong">Étudiant MMI</span></h1>
-          <p class="hero-sub">
-            Actuellement en 2ᵉ année de BUT MMI, je me spécialise en
-            <strong class="accent-text">photographie</strong>, <strong class="accent-text">vidéo</strong> et <strong
-              class="accent-text">montage</strong>
-            pour des projets scolaires et professionnels.
-          </p>
+      <div class="hero-bg">
+        <img src="./img/paysages/DSC_0071.jpg" alt="Photographie de Thomas Colmant" loading="eager">
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-overlay-noise"></div>
 
-          <div class="hero-actions">
-            <a href="#portfolio" class="btn-primary">Portfolio</a>
-            <a href="#contact" class="btn-ghost">Contact</a>
-          </div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Photographe &amp; Vidéaste</p>
+        <h1 class="hero-title">Thomas<br><em>Colmant</em></h1>
+        <p class="hero-subtitle">BUT MMI · Création audiovisuelle · France</p>
+
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn-primary">Voir le portfolio</a>
+          <a href="#contact" class="btn-ghost">Me contacter</a>
         </div>
       </div>
     </section>
 
-    <!-- À propos + mini compétences -->
-    <section id="about" class="section section-alt">
-      <div class="container about-inner">
-        <div class="about-photo">
-          <img src="./img/moi/moii.jpg" alt="Thomas Colmant">
-        </div>
-
-        <div class="about-text">
-          <h2>À propos</h2>
-          <p>
-            Étudiant en BUT MMI (Métiers du Multimédia et de l'Internet), je me concentre sur la création audiovisuelle
-            et le design. Mon parcours me permet de combiner créativité et technique dans la production, la
-            post-production et le graphisme.
-          </p>
-          <p>
-            Toujours curieux et motivé, j'explore constamment de nouvelles approches pour créer des contenus visuels
-            percutants et des expériences multimédias qui marquent.
-          </p>
-
-          <div class="about-tags">
-            <span class="icon-tag" title="DaVinci Resolve">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/DaVinci_Resolve_Studio.png/330px-DaVinci_Resolve_Studio.png"
-                alt="DaVinci_Resolve">
-            </span>
-            <span class="icon-tag" title="Adobe Photoshop">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"
-                alt="Photoshop">
-            </span>
-            <span class="icon-tag" title="Adobe Premiere Pro">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg"
-                alt="Premiere Pro">
-            </span>
-            <span class="icon-tag" title="Adobe After Effects">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg"
-                alt="After Effects">
-            </span>
-            <span class="icon-tag" title="Adobe Lightroom">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Adobe_Photoshop_Lightroom_CC_logo.svg"
-                alt="Lightroom">
-            </span>
-            <span class="icon-tag" title="Adobe Illustrator">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg"
-                alt="Illustrator">
-            </span>
-            <span class="icon-tag" title="HTML5">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-            </span>
-            <span class="icon-tag" title="CSS3">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-            </span>
-            <span class="icon-tag" title="JavaScript">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                alt="JavaScript">
-            </span>
-            <span class="icon-tag" title="PHP">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
-            </span>
-          </div>
-
-          <a href="img/moi/CV_Thomas_Colmant.pdf" class="btn-ghost" download>Télécharger mon CV</a>
-        </div>
+    <!-- ===== TICKER ===== -->
+    <div class="ticker">
+      <div class="ticker-track">
+        <span class="ticker-item">Photographie<span class="ticker-sep"></span></span>
+        <span class="ticker-item">Production Vidéo<span class="ticker-sep"></span></span>
+        <span class="ticker-item">Motion Design<span class="ticker-sep"></span></span>
+        <span class="ticker-item">Montage<span class="ticker-sep"></span></span>
+        <span class="ticker-item">DaVinci Resolve<span class="ticker-sep"></span></span>
+        <span class="ticker-item">Adobe Premiere<span class="ticker-sep"></span></span>
+        <span class="ticker-item">After Effects<span class="ticker-sep"></span></span>
+        <span class="ticker-item">Lightroom<span class="ticker-sep"></span></span>
+        <span class="ticker-item">Photographie<span class="ticker-sep"></span></span>
+        <span class="ticker-item">Production Vidéo<span class="ticker-sep"></span></span>
+        <span class="ticker-item">Motion Design<span class="ticker-sep"></span></span>
+        <span class="ticker-item">Montage<span class="ticker-sep"></span></span>
+        <span class="ticker-item">DaVinci Resolve<span class="ticker-sep"></span></span>
+        <span class="ticker-item">Adobe Premiere<span class="ticker-sep"></span></span>
+        <span class="ticker-item">After Effects<span class="ticker-sep"></span></span>
+        <span class="ticker-item">Lightroom<span class="ticker-sep"></span></span>
       </div>
-    </section>
+    </div>
 
-    <!-- Portfolio : Mes projets -->
-    <section id="portfolio" class="section">
+    <!-- ===== À PROPOS ===== -->
+    <section id="about" class="section">
       <div class="container">
-        <div class="section-head">
-          <h2>Mes projets</h2>
-        </div>
+        <div class="about-inner">
 
-        <div class="grid-portfolio">
-          <!-- Photo -->
-          <a href="/photographie" class="portfolio-card">
-            <img src="./img/paysages/DSC_0071.jpg" alt="Série photographie">
-            <div class="portfolio-info">
-              <h3>Photographie</h3>
+          <div class="about-img-wrap reveal">
+            <img src="./img/moi/moii.jpg" alt="Thomas Colmant">
+            <div class="about-counter">
+              <div class="num">2+</div>
+              <div class="label">Ans d'expérience</div>
             </div>
-          </a>
+          </div>
 
-          <!-- Vidéo -->
-          <a href="/production-video" class="portfolio-card">
-            <img src="/web tv layover point.png" alt="Production vidéo">
-            <div class="portfolio-info">
-              <h3>Production vidéo</h3>
-            </div>
-          </a>
+          <div class="about-content reveal reveal-delay-2">
+            <p class="section-label">À propos</p>
+            <h2 class="section-title">Créer,<br><em>c'est raconter</em></h2>
 
-          <!-- Motion / montage -->
-          <a href="/montage-motion-design" class="portfolio-card">
-            <img src="photo_motion_design_categorie.png" alt="Montage et motion design">
-            <div class="portfolio-info">
-              <h3>Montage & motion design</h3>
-            </div>
-          </a>
+            <p style="margin-top: 1.5rem;">
+              Étudiant en BUT MMI (Métiers du Multimédia et de l'Internet), je me concentre sur la création
+              audiovisuelle et le design. Mon parcours me permet de combiner créativité et technique dans la production,
+              la post-production et le graphisme.
+            </p>
+            <p>
+              Toujours curieux et motivé, j'explore constamment de nouvelles approches pour créer des contenus visuels
+              percutants et des expériences multimédias qui marquent.
+            </p>
 
-          <!-- Affiches / graphisme -->
-          <a href="/affiche-graphisme" class="portfolio-card">
-            <img src="Capture_decran_2025-09-15_162636.png" alt="Affiches et graphisme">
-            <div class="portfolio-info">
-              <h3>Affiches & graphisme</h3>
+            <div class="skills-grid">
+              <span class="skill-tag">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/DaVinci_Resolve_Studio.png/330px-DaVinci_Resolve_Studio.png"
+                  alt="DaVinci">
+                DaVinci Resolve
+              </span>
+              <span class="skill-tag">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg"
+                  alt="Premiere">
+                Premiere Pro
+              </span>
+              <span class="skill-tag">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg"
+                  alt="After Effects">
+                After Effects
+              </span>
+              <span class="skill-tag">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Adobe_Photoshop_Lightroom_CC_logo.svg"
+                  alt="Lightroom">
+                Lightroom
+              </span>
+              <span class="skill-tag">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"
+                  alt="Photoshop">
+                Photoshop
+              </span>
+              <span class="skill-tag">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg"
+                  alt="Illustrator">
+                Illustrator
+              </span>
+              <span class="skill-tag">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                HTML / CSS
+              </span>
+              <span class="skill-tag">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                  alt="JS">
+                JavaScript
+              </span>
             </div>
-          </a>
+
+            <a href="img/moi/CV_Thomas_Colmant.pdf" class="btn-ghost" download>
+              Télécharger mon CV
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- ===== PORTFOLIO ===== -->
+    <section id="portfolio" class="section" style="background: var(--bg-alt);">
+      <div class="container">
+        <div class="portfolio-header reveal">
+          <div>
+            <p class="section-label">Mes projets</p>
+            <h2 class="section-title">Ce que je crée</h2>
+          </div>
+
+          <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">Tout</button>
+            <button class="filter-btn" data-filter="photo">Photographie</button>
+            <button class="filter-btn" data-filter="video">Vidéo</button>
+            <button class="filter-btn" data-filter="motion">Motion</button>
+            <button class="filter-btn" data-filter="graphisme">Affiches</button>
+          </div>
+        </div>
+
+        <div class="portfolio-grid" id="portfolio-grid">
+
+          <a href="/photographie" class="portfolio-card reveal" data-category="photo">
+            <img src="./img//basketball/DSC03770.jpg" alt="Photographie">
+            <div class="card-overlay">
+              <span class="card-tag">Photographie</span>
+              <h3 class="card-title">Photographie</h3>
+            </div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </div>
+          </a>
+
+          <a href="/production-video" class="portfolio-card reveal reveal-delay-1" data-category="video">
+            <img src="./web tv layover point.png" alt="Production Vidéo">
+            <div class="card-overlay">
+              <span class="card-tag">Vidéo</span>
+              <h3 class="card-title">Production Vidéo</h3>
+            </div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </div>
+          </a>
+
+
+          <a href="/affiche-graphisme" class="portfolio-card reveal reveal-delay-3" data-category="graphisme">
+            <img src="./Capture_decran_2025-09-15_162636.png" alt="Affiches & Graphisme">
+            <div class="card-overlay">
+              <span class="card-tag">Affiches</span>
+              <h3 class="card-title">Affiches</h3>
+            </div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </div>
+          </a>
+
+          <a href="/montage-motion-design" class="portfolio-card reveal reveal-delay-2" data-category="motion">
+            <img src="./photo_motion_design_categorie.png" alt="Montage & Motion Design">
+            <div class="card-overlay">
+              <span class="card-tag">Motion Design</span>
+              <h3 class="card-title">Montage &amp; Motion</h3>
+            </div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24" stroke-width="1.5">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </div>
+          </a>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
     <section id="contact" class="section">
       <div class="container">
-        <div class="section-head">
-          <h2>Me Contacter</h2>
-        </div>
+        <div class="contact-inner">
 
-        <div class="contact-layout">
-          <div class="contact-info">
-            <p><strong>Email</strong><br>colmant.thomas@gmail.com</p>
-            <p><strong>Localisation</strong><br>France</p>
-            <p>
-              <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank">
-                LinkedIn
-              </a>
+          <div class="reveal">
+            <p class="section-label">Contact</p>
+            <h2 class="section-title">Travaillons<br><em>ensemble</em></h2>
+
+            <p style="margin-top: 1.5rem;">
+              Disponible pour des projets photographiques, vidéo ou de graphisme. N'hésitez pas à me contacter.
             </p>
+
+            <div class="contact-links">
+              <div class="contact-link-item">
+                <span class="contact-link-label">Email</span>
+                <a href="mailto:colmant.thomas@gmail.com" class="contact-link-value">colmant.thomas@gmail.com</a>
+              </div>
+              <div class="contact-link-item">
+                <span class="contact-link-label">Localisation</span>
+                <span class="contact-link-value">France</span>
+              </div>
+              <div class="contact-link-item">
+                <span class="contact-link-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank" rel="noopener"
+                  class="contact-link-value">thomas-colmant</a>
+              </div>
+              <div class="contact-link-item">
+                <span class="contact-link-label">Instagram</span>
+                <a href="https://www.instagram.com/tho.masprod/" target="_blank" rel="noopener"
+                  class="contact-link-value">@tho.masprod</a>
+              </div>
+            </div>
           </div>
 
-          <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST" class="contact-form">
-            <input type="text" name="name" placeholder="Nom" required>
-            <input type="email" name="email" placeholder="Email" required>
+          <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST"
+            class="contact-form reveal reveal-delay-1">
+            <div class="form-row">
+              <input type="text" name="name" placeholder="Nom" required>
+              <input type="email" name="email" placeholder="Email" required>
+            </div>
             <input type="text" name="subject" placeholder="Sujet">
-            <textarea name="message" placeholder="Message" required></textarea>
-
+            <textarea name="message" placeholder="Votre message..." required></textarea>
             <input type="text" name="_gotcha" style="display:none">
-            <input type="hidden" name="_subject" value="Nouveau message depuis ton portfolio !">
-            <input type="hidden" name="_next" value="https://thomas-colmant.github.io/index.html#contact">
-
-            <button type="submit" id="submit-btn" class="btn-primary">Envoyer un message</button>
+            <input type="hidden" name="_subject" value="Nouveau message — Portfolio Thomas Colmant">
+            <button type="submit" id="submit-btn" class="btn-primary">Envoyer le message</button>
           </form>
+
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer -->
+  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>© 2025 Thomas Colmant.</span>
+      <span class="footer-copy">© 2025 Thomas Colmant — Tous droits réservés</span>
+      <div class="footer-links">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
+        <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/tho.masprod/" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </div>
   </footer>
 
   <script>
-    // Navbar scroll effect
-    const header = document.querySelector('.site-header');
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
 
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 150) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+    const navToggle = document.getElementById('nav-toggle');
+    const navDrawer = document.getElementById('nav-drawer');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navDrawer.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Form submission handling
+    document.querySelectorAll('.drawer-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navDrawer.classList.remove('open');
+        navToggle.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('#portfolio-grid .portfolio-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          const show = filter === 'all' || card.dataset.category === filter;
+          card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          if (show) {
+            card.style.opacity = '1'; card.style.transform = '';
+            card.classList.remove('hidden');
+          } else {
+            card.style.opacity = '0'; card.style.transform = 'scale(0.95)';
+            setTimeout(() => { if (card.style.opacity === '0') card.classList.add('hidden'); }, 400);
+          }
+        });
+      });
+    });
+
     const form = document.getElementById('form');
     const submitBtn = document.getElementById('submit-btn');
-
     if (form) {
-      form.addEventListener('submit', async function (e) {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
-
-        // Disable button and show loading state
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Envoi en cours...';
-
+        submitBtn.textContent = 'Envoi…';
         try {
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: {
-              'Accept': 'application/json'
-            }
-          });
-
-          if (response.ok) {
-            alert('✅ Merci pour votre message ! Je vous répondrai bientôt.');
+          const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+          if (res.ok) {
+            submitBtn.textContent = '✓ Message envoyé !';
             form.reset();
-          } else {
-            const data = await response.json();
-            console.error('Response data:', data);
-
-            if (data.errors) {
-              alert('❌ Erreur : ' + data.errors.map(e => e.message).join(', '));
-            } else if (data.error) {
-              alert('❌ Erreur : ' + data.error);
-            } else {
-              alert('❌ Erreur ' + response.status + '. Ouvre la console (F12) pour plus de détails.');
-            }
-          }
-        } catch (error) {
-          console.error('Erreur:', error);
-          alert('❌ Erreur de connexion. Veuillez vérifier votre connexion internet.');
-        } finally {
-          // Re-enable button
+            setTimeout(() => { submitBtn.textContent = 'Envoyer le message'; submitBtn.disabled = false; }, 3000);
+          } else { throw new Error(); }
+        } catch {
+          alert('❌ Une erreur est survenue. Merci de réessayer.');
+          submitBtn.textContent = 'Envoyer le message';
           submitBtn.disabled = false;
-          submitBtn.textContent = 'Envoyer un message';
         }
       });
     }
-
   </script>
+
 </body>
 
 </html>

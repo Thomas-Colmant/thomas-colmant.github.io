@@ -1,268 +1,350 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thomas Colmant | Montage & Motion Design</title>
+  <meta name="description" content="Montage et motion design de Thomas Colmant — animations, logo reveals, After Effects.">
 
-  <!-- Modern typography: Poppins -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../style.css">
 
   <style>
-    /* Grid 3 colonnes pour les vidéos */
-    .grid-portfolio-3col {
+    .page-hero { height: 45vh; min-height: 320px; position: relative; display: flex; align-items: flex-end; overflow: hidden; }
+    .page-hero-bg { position: absolute; inset: 0; }
+    .page-hero-bg img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.3) saturate(0.6); animation: kenBurns 20s ease-in-out infinite alternate; }
+    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(5,5,10,1) 0%, rgba(5,5,10,0.1) 60%); }
+    .page-hero-content { position: relative; z-index: 2; padding: 0 0 3rem; width: 100%; }
+    .page-hero-content .container { display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .motion-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.8rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
     }
 
-    /* Style pour les vidéos */
-    .portfolio-video {
-      width: 100%;
-      height: 200px;
+    .video-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all var(--t-slow);
+    }
+
+    .video-card:hover {
+      border-color: var(--blue-border);
+      transform: translateY(-6px);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+    }
+
+    .video-thumb {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .video-thumb video {
+      width: 100%; height: 100%;
       object-fit: cover;
       display: block;
-      background-color: #000;
-      border-radius: 12px 12px 0 0;
-      transition: transform 0.4s ease;
+      filter: brightness(0.7);
+      transition: transform 0.6s ease, filter 0.4s ease;
+      pointer-events: none;
     }
 
-    .portfolio-card:hover .portfolio-video {
-      transform: scale(1.02);
+    .video-card:hover .video-thumb video {
+      transform: scale(1.04);
+      filter: brightness(0.9);
     }
 
-    @media (max-width: 900px) {
-      .grid-portfolio-3col {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+    .video-play-btn {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(5,5,10,0.2);
+      transition: background 0.3s ease;
     }
 
-    @media (max-width: 540px) {
-      .grid-portfolio-3col {
-        grid-template-columns: 1fr;
-      }
+    .video-card:hover .video-play-btn { background: rgba(5,5,10,0.05); }
+
+    .play-circle {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s ease;
     }
+
+    .video-card:hover .play-circle {
+      background: rgba(90,171,255,0.2);
+      border-color: var(--blue-bright);
+      box-shadow: 0 0 30px rgba(90,171,255,0.3);
+      transform: scale(1.1);
+    }
+
+    .play-circle svg { width: 20px; height: 20px; fill: #fff; margin-left: 3px; }
+
+    .video-info { padding: 1.2rem 1.5rem 1.5rem; }
+
+    .video-year {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue-bright);
+      margin-bottom: 0.4rem;
+    }
+
+    .video-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--text);
+      margin: 0 0 0.4rem;
+    }
+
+    .video-desc { font-size: 0.8rem; color: var(--text-muted); margin: 0; }
+
+    /* Modal */
+    .video-modal {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.97);
+      z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+      backdrop-filter: blur(12px);
+    }
+    .video-modal.active { opacity: 1; pointer-events: all; }
+    .modal-inner { position: relative; width: 90vw; max-width: 1000px; }
+    .modal-inner video {
+      width: 100%; border-radius: var(--radius);
+      max-height: 80vh; background: #000;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+    }
+    .modal-close {
+      position: fixed; top: 1.5rem; right: 1.5rem;
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.7); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s ease; font-size: 1.2rem;
+      backdrop-filter: blur(10px);
+    }
+    .modal-close:hover { border-color: rgba(255,255,255,0.4); color: #fff; transform: rotate(90deg); }
+    .modal-title { color: rgba(255,255,255,0.4); font-size: 0.75rem; letter-spacing: 0.12em; text-align: center; margin-top: 1rem; }
+
+    @media (max-width: 768px) { .motion-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 
 <body>
-  <!-- Header minimal -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="logo">Thomas<span>Colmant</span></a>
 
+  <header class="site-header scrolled" id="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">Thomas<span class="logo-dot"></span>Colmant</a>
       <nav class="main-nav">
         <a href="/#home">Accueil</a>
-        <a href="/#portfolio">Portfolio</a>
         <a href="/#about">À propos</a>
+        <a href="/#portfolio">Portfolio</a>
         <a href="/#contact">Contact</a>
       </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
+  <nav class="nav-drawer" id="nav-drawer">
+    <a href="/" class="drawer-link">Accueil</a>
+    <a href="/#about" class="drawer-link">À propos</a>
+    <a href="/#portfolio" class="drawer-link">Portfolio</a>
+    <a href="/#contact" class="drawer-link">Contact</a>
+  </nav>
+
+  <!-- Modal -->
+  <div class="video-modal" id="video-modal">
+    <div class="modal-inner">
+      <video id="modal-video" controls></video>
+      <p class="modal-title" id="modal-title"></p>
+    </div>
+    <button class="modal-close" id="modal-close">✕</button>
+  </div>
+
   <main>
-    <!-- Section Montage / Motion Design -->
-    <section class="section" id="audiovisuel" style="padding-top: 8rem;">
-      <div class="container">
-        <div class="section-head">
-          <h2>Montage / Motion Design</h2>
-        </div>
 
-
-        <div class="grid-portfolio-3col">
-          <a href="/animation-discord" class="portfolio-card">
-            <video class="portfolio-video" src="../vidéo_montage/animation_discord.mp4" controls></video>
-            <div class="portfolio-info">
-              <h3>Animation Discord</h3>
-              <p>2025</p>
-            </div>
+    <div class="page-hero">
+      <div class="page-hero-bg">
+        <img src="../photo_motion_design_categorie.png" alt="Motion Design">
+      </div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <div class="container">
+          <a href="/" class="back-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+            Retour
           </a>
-
-          <a href="/motion-design-logo-qg" class="portfolio-card">
-            <video class="portfolio-video" src="../vidéo_montage/Composition_1_1 (2).mp4" controls></video>
-            <div class="portfolio-info">
-              <h3>Animation du logo QG</h3>
-              <p>2025</p>
-            </div>
-          </a>
-
-
-          <a href="/animation-google" class="portfolio-card">
-            <video class="portfolio-video" src="../vidéo_montage/animation google .mp4" controls></video>
-            <div class="portfolio-info">
-              <h3>Animation Google</h3>
-              <p>2025</p>
-            </div>
-          </a>
-
-          <a href="/animation-mac" class="portfolio-card">
-            <video class="portfolio-video" src="../vidéo_montage/aftereffect.mp4" controls></video>
-            <div class="portfolio-info">
-              <h3>Animation interface mac</h3>
-              <p>2025</p>
-            </div>
-          </a>
+          <p class="section-label">Portfolio</p>
+          <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:300;color:#fff;line-height:1.05;margin:0;">
+            Montage &amp; Motion Design
+          </h1>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Portfolio : Mes projets -->
-    <section id="portfolio" class="section">
+    <section class="section">
       <div class="container">
-        <div class="section-head">
-          <h2>Mes projets</h2>
-        </div>
+        <div class="motion-grid">
 
-        <div class="grid-portfolio">
-          <a href="/photographie" class="portfolio-card">
-            <img src="../img/paysages/DSC_0071.jpg" alt="Série photographie">
-            <div class="portfolio-info">
-              <h3>Photographie</h3>
+          <div class="video-card" data-src="../vidéo_montage/animation_discord.mp4" data-title="Animation Discord">
+            <div class="video-thumb">
+              <video src="../vidéo_montage/animation_discord.mp4" muted loop preload="metadata"></video>
+              <div class="video-play-btn">
+                <div class="play-circle">
+                  <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
             </div>
-          </a>
-
-          <a href="/production-video" class="portfolio-card">
-            <img src="../web tv layover point.png" alt="Production vidéo">
-            <div class="portfolio-info">
-              <h3>Production vidéo</h3>
+            <div class="video-info">
+              <div class="video-year">2025</div>
+              <h3 class="video-title">Animation Discord</h3>
+              <p class="video-desc">Animation d'interface inspirée de l'univers Discord, réalisée sous After Effects.</p>
             </div>
-          </a>
-
-          <a href="/montage-motion-design" class="portfolio-card">
-            <img src="../photo_motion_design_categorie.png" alt="Montage et motion design">
-            <div class="portfolio-info">
-              <h3>Montage & motion design</h3>
-            </div>
-          </a>
-
-          <a href="/affiche-graphisme" class="portfolio-card">
-            <img src="../Capture_decran_2025-09-15_162636.png" alt="Affiches et graphisme">
-            <div class="portfolio-info">
-              <h3>Affiches & graphisme</h3>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Me Contacter</h2>
-        </div>
-
-        <div class="contact-layout">
-          <div class="contact-info">
-            <p><strong>Email</strong><br>colmant.thomas@gmail.com</p>
-            <p><strong>Localisation</strong><br>France</p>
-            <p>
-              <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank">
-                LinkedIn
-              </a>
-            </p>
           </div>
 
-          <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST" class="contact-form">
-            <input type="text" name="Nom" placeholder="Nom" required>
-            <input type="email" name="Email" placeholder="Email" required>
-            <input type="text" name="Sujet" placeholder="Sujet">
-            <textarea name="Message" placeholder="Message" required></textarea>
-            <button type="submit" class="btn-primary">Envoyer un message</button>
-          </form>
+          <div class="video-card" data-src="../vidéo_montage/Composition_1_1 (2).mp4" data-title="Animation du logo QG">
+            <div class="video-thumb">
+              <video src="../vidéo_montage/Composition_1_1 (2).mp4" muted loop preload="metadata"></video>
+              <div class="video-play-btn">
+                <div class="play-circle">
+                  <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="video-info">
+              <div class="video-year">2025</div>
+              <h3 class="video-title">Animation du logo QG</h3>
+              <p class="video-desc">Logo reveal animé pour la marque QG — motion design After Effects.</p>
+            </div>
+          </div>
+
+          <div class="video-card" data-src="../vidéo_montage/animation google .mp4" data-title="Animation Google">
+            <div class="video-thumb">
+              <video src="../vidéo_montage/animation google .mp4" muted loop preload="metadata"></video>
+              <div class="video-play-btn">
+                <div class="play-circle">
+                  <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="video-info">
+              <div class="video-year">2025</div>
+              <h3 class="video-title">Animation Google</h3>
+              <p class="video-desc">Recréation animée de l'identité Google avec motion design.</p>
+            </div>
+          </div>
+
+          <div class="video-card" data-src="../vidéo_montage/aftereffect.mp4" data-title="Animation interface Mac">
+            <div class="video-thumb">
+              <video src="../vidéo_montage/aftereffect.mp4" muted loop preload="metadata"></video>
+              <div class="video-play-btn">
+                <div class="play-circle">
+                  <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="video-info">
+              <div class="video-year">2025</div>
+              <h3 class="video-title">Animation interface Mac</h3>
+              <p class="video-desc">Animation d'interface macOS stylisée, réalisée sous After Effects.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>© 2025 Thomas Colmant.</span>
+      <span class="footer-copy">© 2025 Thomas Colmant — Tous droits réservés</span>
+      <div class="footer-links">
+        <a href="/#portfolio">Portfolio</a>
+        <a href="/#about">À propos</a>
+        <a href="/#contact">Contact</a>
+        <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/tho.masprod/" target="_blank" rel="noopener">Instagram</a>
+      </div>
     </div>
   </footer>
 
   <script>
-    // Navbar scroll effect
-    const header = document.querySelector('.site-header');
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
+    header.classList.add('scrolled');
 
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 150) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+    const navToggle = document.getElementById('nav-toggle');
+    const navDrawer = document.getElementById('nav-drawer');
+    navToggle.addEventListener('click', () => {
+      const open = navDrawer.classList.toggle('open');
+      navToggle.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    document.querySelectorAll('.drawer-link').forEach(l => l.addEventListener('click', () => {
+      navDrawer.classList.remove('open'); navToggle.classList.remove('open'); document.body.style.overflow = '';
+    }));
+
+    // Hover preview
+    document.querySelectorAll('.video-thumb video').forEach(v => {
+      const card = v.closest('.video-card');
+      card.addEventListener('mouseenter', () => v.play());
+      card.addEventListener('mouseleave', () => { v.pause(); v.currentTime = 0; });
     });
 
-    // Form submission handling
-    const form = document.getElementById('form');
-    const submitBtn = document.getElementById('submit-btn');
+    // Modal
+    const modal = document.getElementById('video-modal');
+    const modalVideo = document.getElementById('modal-video');
+    const modalTitle = document.getElementById('modal-title');
+    const modalClose = document.getElementById('modal-close');
 
-    if (form) {
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-
-        // Disable button and show loading state
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Envoi en cours...';
-
-        try {
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: {
-              'Accept': 'application/json'
-            }
-          });
-
-          if (response.ok) {
-            alert('✅ Merci pour votre message ! Je vous répondrai bientôt.');
-            form.reset();
-          } else {
-            const data = await response.json();
-            console.error('Response data:', data);
-
-            if (data.errors) {
-              alert('❌ Erreur : ' + data.errors.map(e => e.message).join(', '));
-            } else if (data.error) {
-              alert('❌ Erreur : ' + data.error);
-            } else {
-              alert('❌ Erreur ' + response.status + '. Ouvre la console (F12) pour plus de détails.');
-            }
-          }
-        } catch (error) {
-          console.error('Erreur:', error);
-          alert('❌ Erreur de connexion. Veuillez vérifier votre connexion internet.');
-        } finally {
-          // Re-enable button
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Envoyer un message';
-        }
+    document.querySelectorAll('.video-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const src = card.dataset.src;
+        if (!src) return;
+        // Stop thumb preview
+        const thumb = card.querySelector('.video-thumb video');
+        if (thumb) { thumb.pause(); }
+        modalVideo.src = src;
+        modalTitle.textContent = card.dataset.title;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        modalVideo.play();
       });
+    });
+
+    function closeModal() {
+      modal.classList.remove('active');
+      modalVideo.pause(); modalVideo.src = '';
+      document.body.style.overflow = '';
     }
 
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-
-        if (targetElement) {
-          e.preventDefault();
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
-</body>
 
+</body>
 </html>
