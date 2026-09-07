@@ -14,12 +14,13 @@
 
     <style>
         .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            column-count: 3;
+            column-gap: 1.2rem;
         }
 
         .photo-item {
+            break-inside: avoid;
+            margin-bottom: 1.2rem;
             position: relative;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -28,13 +29,7 @@
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(10px);
             cursor: pointer;
-            aspect-ratio: 3 / 2;
-        }
-
-        .photo-item.portrait {
-            grid-row: span 2;
-            aspect-ratio: 2 / 3;
-            height: 100%;
+            display: block;
         }
 
         .photo-item:hover {
@@ -45,8 +40,7 @@
 
         .photo-item img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
             display: block;
             transition: transform 0.3s ease;
             background: rgba(255, 255, 255, 0.05);
@@ -58,25 +52,13 @@
 
         @media (max-width: 900px) {
             .photo-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.2rem;
+                column-count: 2;
             }
         }
 
         @media (max-width: 540px) {
             .photo-grid {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-            }
-
-            .photo-item {
-                aspect-ratio: 3 / 2;
-            }
-
-            .photo-item.portrait {
-                grid-row: span 1;
-                aspect-ratio: 2 / 3;
-                height: auto;
+                column-count: 1;
             }
         }
     </style>
@@ -118,7 +100,7 @@
                     <div class="photo-item">
                         <img src="../img/basketball/DSC03801.jpg" alt="Photographie Sportive" loading="lazy">
                     </div>
-                    <div class="photo-item portrait">
+                    <div class="photo-item">
                         <img src="../img/basketball/DSC03710.jpg" alt="Photographie Sportive" loading="lazy">
                     </div>
                     <div class="photo-item">
@@ -127,7 +109,7 @@
                     <div class="photo-item">
                         <img src="../img/basketball/DSC03899.jpg" alt="Photographie Sportive" loading="lazy">
                     </div>
-                    <div class="photo-item portrait">
+                    <div class="photo-item">
                         <img src="../img/basketball/DSC03829.jpg" alt="Photographie Sportive" loading="lazy">
                     </div>
                     <div class="photo-item">
