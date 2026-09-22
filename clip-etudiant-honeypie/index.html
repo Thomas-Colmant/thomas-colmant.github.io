@@ -15,17 +15,27 @@
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <a href="/" class="logo">Thomas<span>Colmant</span></a>
-            <nav class="main-nav">
-                <a href="/#home">Accueil</a>
-                <a href="/#portfolio">Portfolio</a>
-                <a href="/#about">À propos</a>
-                <a href="/#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">Thomas<span class="logo-dot"></span>Colmant</a>
+      <nav class="main-nav">
+        <a href="/#home">Accueil</a>
+        <a href="/#about">À propos</a>
+        <a href="/#portfolio">Portfolio</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="nav-drawer" id="nav-drawer">
+    <a href="/" class="drawer-link">Accueil</a>
+    <a href="/#about" class="drawer-link">À propos</a>
+    <a href="/#portfolio" class="drawer-link">Portfolio</a>
+    <a href="/#contact" class="drawer-link">Contact</a>
+  </nav>
 
     <main>
         <section class="section" id="description-motion-projet" style="padding-top: 8rem;">
@@ -160,6 +170,22 @@
             }
         });
 
+        const navToggle = document.getElementById('nav-toggle');
+        const navDrawer = document.getElementById('nav-drawer');
+        if (navToggle && navDrawer) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = navDrawer.classList.toggle('open');
+                navToggle.classList.toggle('open', isOpen);
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+            });
+            document.querySelectorAll('.drawer-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navDrawer.classList.remove('open');
+                    navToggle.classList.remove('open');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
     </script>
     <script src="../form-handler.js"></script>
 </body>

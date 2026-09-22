@@ -67,18 +67,27 @@
 
 <body>
   <!-- Header minimal -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="/" class="logo">Thomas<span>Colmant</span></a>
-
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">Thomas<span class="logo-dot"></span>Colmant</a>
       <nav class="main-nav">
         <a href="/#home">Accueil</a>
-        <a href="/#portfolio">Portfolio</a>
         <a href="/#about">À propos</a>
+        <a href="/#portfolio">Portfolio</a>
         <a href="/#contact">Contact</a>
       </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+
+  <nav class="nav-drawer" id="nav-drawer">
+    <a href="/" class="drawer-link">Accueil</a>
+    <a href="/#about" class="drawer-link">À propos</a>
+    <a href="/#portfolio" class="drawer-link">Portfolio</a>
+    <a href="/#contact" class="drawer-link">Contact</a>
+  </nav>
 
   <main>
     <!-- Section Photographie Personnelle -->
@@ -93,36 +102,59 @@
 
         <!-- Grille de photos masonry -->
         <div class="photo-grid">
-          <!-- Nouveautés Zoo -->
           <div class="photo-item">
             <img src="../img/zoo/DSC05914.jpg" alt="Photographie animalière" loading="lazy">
+          </div>
+          <div class="photo-item portrait">
+            <img src="../img/chiens/DSC07392.jpg" alt="Photographie animalière" loading="lazy">
           </div>
           <div class="photo-item">
             <img src="../img/zoo/DSC06065-2.jpg" alt="Photographie animalière" loading="lazy">
           </div>
           <div class="photo-item">
-            <img src="../img/zoo/DSC06067-2.jpg" alt="Photographie animalière" loading="lazy">
+            <img src="../img/chat/chat1.jpg" alt="Photographie animalière" loading="lazy">
           </div>
           <div class="photo-item">
-            <img src="../img/zoo/DSC06076-2.jpg" alt="Photographie animalière" loading="lazy">
+            <img src="../img/zoo/DSC06067-2.jpg" alt="Photographie animalière" loading="lazy">
+          </div>
+          <div class="photo-item portrait">
+            <img src="../img/chiens/DSC07423.jpg" alt="Photographie animalière" loading="lazy">
           </div>
           <div class="photo-item">
             <img src="../img/zoo/DSC06079-2.jpg" alt="Photographie animalière" loading="lazy">
           </div>
+          <div class="photo-item portrait">
+            <img src="../img/chiens/DSC_0019.jpg" alt="Photographie animalière" loading="lazy">
+          </div>
           <div class="photo-item">
             <img src="../img/zoo/DSC05497.jpg" alt="Photographie animalière" loading="lazy">
+          </div>
+          <div class="photo-item portrait">
+            <img src="../img/chat/chat2.jpg" alt="Photographie animalière" loading="lazy">
           </div>
           <div class="photo-item">
             <img src="../img/zoo/DSC05501.jpg" alt="Photographie animalière" loading="lazy">
           </div>
+          <div class="photo-item portrait">
+            <img src="../img/chiens/DSC07451.jpg" alt="Photographie animalière" loading="lazy">
+          </div>
           <div class="photo-item">
             <img src="../img/zoo/DSC06759.jpg" alt="Photographie animalière" loading="lazy">
+          </div>
+          <div class="photo-item portrait">
+            <img src="../img/chiens/DSC_0026.jpg" alt="Photographie animalière" loading="lazy">
           </div>
           <div class="photo-item">
             <img src="../img/zoo/DSC06763-2.jpg" alt="Photographie animalière" loading="lazy">
           </div>
           <div class="photo-item">
+            <img src="../img/chat/chat3.jpg" alt="Photographie animalière" loading="lazy">
+          </div>
+          <div class="photo-item">
             <img src="../img/zoo/DSC06769.jpg" alt="Photographie animalière" loading="lazy">
+          </div>
+          <div class="photo-item portrait">
+            <img src="../img/chiens/DSC07480.jpg" alt="Photographie animalière" loading="lazy">
           </div>
           <div class="photo-item">
             <img src="../img/zoo/DSC06783.jpg" alt="Photographie animalière" loading="lazy">
@@ -134,9 +166,6 @@
             <img src="../img/zoo/DSC06820.jpg" alt="Photographie animalière" loading="lazy">
           </div>
           <div class="photo-item">
-            <img src="../img/zoo/DSC06949.jpg" alt="Photographie animalière" loading="lazy">
-          </div>
-          <div class="photo-item">
             <img src="../img/zoo/DSC06824-2.jpg" alt="Photographie animalière" loading="lazy">
           </div>
           <div class="photo-item">
@@ -146,16 +175,10 @@
             <img src="../img/zoo/DSC07027.jpg" alt="Photographie animalière" loading="lazy">
           </div>
           <div class="photo-item">
-            <img src="../img/zoo/DSC07066.jpg" alt="Photographie animalière" loading="lazy">
-          </div>
-          <div class="photo-item">
             <img src="../img/zoo/DSC07088.jpg" alt="Photographie animalière" loading="lazy">
           </div>
           <div class="photo-item">
             <img src="../img/zoo/DSC07103.jpg" alt="Photographie animalière" loading="lazy">
-          </div>
-          <div class="photo-item">
-            <img src="../img/zoo/DSC07161.jpg" alt="Photographie animalière" loading="lazy">
           </div>
           <div class="photo-item portrait">
             <img src="../img/zoo/DSC07192.jpg" alt="Photographie animalière" loading="lazy">
@@ -164,13 +187,7 @@
             <img src="../img/zoo/DSC07208.jpg" alt="Photographie animalière" loading="lazy">
           </div>
           <div class="photo-item">
-            <img src="../img/zoo/DSC07238.jpg" alt="Photographie animalière" loading="lazy">
-          </div>
-          <div class="photo-item">
             <img src="../img/zoo/DSC07273-2.jpg" alt="Photographie animalière" loading="lazy">
-          </div>
-          <div class="photo-item">
-            <img src="../img/zoo/DSC07287.jpg" alt="Photographie animalière" loading="lazy">
           </div>
 
           <!-- Anciennes photos Zoo -->
@@ -191,23 +208,6 @@
           </div>
           <div class="photo-item portrait">
             <img src="../img/zoo/DSC_0176.jpg" alt="Photographie animalière" loading="lazy">
-          </div>
-
-          <!-- Chats & Chiens -->
-          <div class="photo-item">
-            <img src="../img/chat/chat1.jpg" alt="Photographie animalière" loading="lazy">
-          </div>
-          <div class="photo-item portrait">
-            <img src="../img/chat/chat2.jpg" alt="Photographie animalière" loading="lazy">
-          </div>
-          <div class="photo-item">
-            <img src="../img/chat/chat3.jpg" alt="Photographie animalière" loading="lazy">
-          </div>
-          <div class="photo-item portrait">
-            <img src="../img/chiens/DSC_0019.jpg" alt="Photographie animalière" loading="lazy">
-          </div>
-          <div class="photo-item portrait">
-            <img src="../img/chiens/DSC_0026.jpg" alt="Photographie animalière" loading="lazy">
           </div>
         </div>
       </div>
@@ -302,6 +302,23 @@
         header.classList.remove('scrolled');
       }
     });
+
+    const navToggle = document.getElementById('nav-toggle');
+    const navDrawer = document.getElementById('nav-drawer');
+    if (navToggle && navDrawer) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navDrawer.classList.toggle('open');
+        navToggle.classList.toggle('open', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      document.querySelectorAll('.drawer-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navDrawer.classList.remove('open');
+          navToggle.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      });
+    }
 
     // Form submission handling
     const form = document.getElementById('form');
