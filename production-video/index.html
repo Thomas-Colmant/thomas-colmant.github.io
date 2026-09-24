@@ -333,6 +333,7 @@
       <div class="container">
         <div class="video-grid">
 
+
           <!-- Court-métrage .Onion -->
           <div class="video-card" data-link="https://mmiflix.fr/movie/ee3d3610-896c-4d79-aadc-de3ac130ac4c"
             data-title=".Onion">
@@ -434,6 +435,26 @@
             </div>
           </div>
 
+          <!-- Video Mapping — Zimny Tyen -->
+          <div class="video-card" data-src="../video mapping/Mapping Zimny Tyen comp.mp4"
+            data-title="Mapping Vidéo Big Ben">
+            <div class="video-thumb">
+              <img src="../video mapping/Capture d'écran 2026-09-24 134432.png" alt="Mapping Vidéo Big Ben">
+              <div class="video-play-btn">
+                <div class="play-circle">
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="video-info">
+              <div class="video-year">2026</div>
+              <h3 class="video-title">Mapping Vidéo Big Ben</h3>
+              <p class="video-desc">Projet de Video Mapping réalisé sur le Big Ben en miniature.</p>
+            </div>
+          </div>
+
           <!-- Vidéo Cinématographique -->
           <div class="video-card" data-src="../vidéo_montage/Vidéo Cinématographique.mp4"
             data-title="Vidéo Cinématographique">
@@ -514,6 +535,15 @@
       navDrawer.classList.remove('open'); navToggle.classList.remove('open'); document.body.style.overflow = '';
     }));
 
+    // ── Hover preview pour les vidéos ──
+    document.querySelectorAll('.video-thumb video').forEach(v => {
+      const card = v.closest('.video-card');
+      if (card) {
+        card.addEventListener('mouseenter', () => v.play().catch(() => { }));
+        card.addEventListener('mouseleave', () => { v.pause(); v.currentTime = 0.5; });
+      }
+    });
+
     // ── Modal vidéo ──
     const modal = document.getElementById('video-modal');
     const modalVideo = document.getElementById('modal-video');
@@ -523,6 +553,9 @@
 
     document.querySelectorAll('.video-card').forEach(card => {
       card.addEventListener('click', () => {
+        const thumbVideo = card.querySelector('.video-thumb video');
+        if (thumbVideo) { thumbVideo.pause(); }
+
         const link = card.dataset.link;
         if (link) {
           window.open(link, '_blank');
