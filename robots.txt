@@ -2,3 +2,5 @@ User-agent: *
 Disallow: /signature.html
 Disallow: /x7k2-signature/
 Disallow: /secret-signature/
+
+Sitemap: https://thomas-colmant.github.io/sitemap.xml
