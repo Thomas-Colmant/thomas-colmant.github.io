@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma Signature Email — Gmail</title>
+
+  <!-- Protection contre le répertoriage par les moteurs de recherche -->
+  <meta name="robots" content="noindex, nofollow, noarchive">
+
+  <!-- Police Google Fonts pour la page (hors signature) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Styles de la page hôte (non inclus dans la signature) */
+    :root {
+      --primary: #0A66C2;
+      --primary-hover: #084e96;
+      --bg: #f4f6f9;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --success: #10b981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px 16px;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 640px;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+      border: 1px solid var(--border);
+      padding: 32px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Steps list */
+    .instructions {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 28px;
+    }
+
+    .instructions-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      color: #334155;
+    }
+
+    .step-number {
+      background: var(--primary);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Signature Box Container */
+    .signature-wrapper {
+      margin-bottom: 24px;
+    }
+
+    .signature-wrapper-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Box wrapping signature to isolate it visually */
+    #signature {
+      background-color: #ffffff;
+      border: 1px solid #d0d7de;
+      border-radius: 8px;
+      padding: 24px;
+      overflow-x: auto;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    }
+
+    /* Copy Button Controls */
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-copy {
+      background-color: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 14px 28px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 12px rgba(10, 102, 194, 0.25);
+    }
+
+    .btn-copy:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(10, 102, 194, 0.35);
+    }
+
+    .btn-copy:active {
+      transform: translateY(0);
+    }
+
+    .btn-copy.copied {
+      background-color: var(--success);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+    }
+
+    .feedback-message {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--success);
+      display: none;
+      align-items: center;
+      gap: 6px;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-4px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Section d'aide à la personnalisation & confidentialité */
+    .info-section {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .info-section h3 {
+      font-size: 14px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .info-section ul {
+      margin-left: 18px;
+      margin-bottom: 12px;
+    }
+
+    .info-section li {
+      margin-bottom: 4px;
+    }
+
+    code {
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 12px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px 16px;
+      }
+
+      #signature {
+        padding: 16px 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>Ma signature email</h1>
+      <p>Signature professionnelle optimisée pour Gmail</p>
+    </div>
+
+    <!-- Instructions d'utilisation (Ne font PAS partie de #signature) -->
+    <div class="instructions">
+      <div class="instructions-title">
+        <span>📋</span> Directives de configuration :
+      </div>
+      <ol class="steps">
+        <li class="step-item">
+          <span class="step-number">1</span>
+          <span>Cliquer sur le bouton <strong>« Copier la signature »</strong> ci-dessous.</span>
+        </li>
+        <li class="step-item">
+          <span class="step-number">2</span>
+          <span>Ouvrir Gmail → <strong>Paramètres</strong> (⚙️) → <strong>Voir tous les paramètres</strong> → Onglet
+            <strong>Général</strong> → Section <strong>Signature</strong>.</span>
+        </li>
+        <li class="step-item">
+          <span class="step-number">3</span>
+          <span>Coller dans le champ d'édition (Ctrl+V ou Cmd+V) et enregistrer les modifications en bas de page.</span>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Zone réservée à la signature (Contenu HTML collable) -->
+    <div class="signature-wrapper">
+      <div class="signature-wrapper-label">Aperçu du rendu :</div>
+      <div id="signature">
+        <!-- ================================================================= -->
+        <!-- DÉBUT DU DE LA SIGNATURE (STRICTEMENT TABLES ET CSS INLINE ONLY)  -->
+        <!-- ================================================================= -->
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0"
+          style="max-width: 500px; width: 100%; border-collapse: collapse; font-family: Arial, Helvetica, sans-serif; color: #222222; background-color: #ffffff;">
+          <tbody>
+            <tr>
+              <!-- COLONNE GAUCHE : Photo de profil (Ronde 90x90) -->
+              <td valign="middle" align="center" style="padding-right: 16px; vertical-align: middle; width: 90px;">
+                <img src="https://thomas-colmant.github.io/img/moi/moii.jpg" alt="Thomas Colmant" width="90" height="90"
+                  style="display: block; width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 0; outline: none; text-decoration: none;" />
+              </td>
+
+              <!-- COLONNE DROITE : Informations séparées par bordure verticale 2px #0A66C2 -->
+              <td valign="middle"
+                style="border-left: 2px solid #0A66C2; padding-left: 16px; vertical-align: middle; font-family: Arial, Helvetica, sans-serif;">
+
+                <!-- Nom & Prénom -->
+                <div
+                  style="font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #222222; line-height: 1.2; margin-bottom: 4px;">
+                  Thomas Colmant
+                </div>
+
+                <!-- Ligne d'accroche / Postulation -->
+                <div
+                  style="font-family: Arial, Helvetica, sans-serif; font-size: 12.5px; color: #666666; line-height: 1.35; margin-bottom: 8px;">
+                  Étudiant en BUT MMI – Photographe & Vidéaste
+                </div>
+
+                <!-- Contact (Téléphone & Email) -->
+                <div
+                  style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1.6; color: #222222; margin-bottom: 8px;">
+                  <div>
+                    <span style="color: #666666;">Tél : </span>
+                    <a href="tel:+33634685003" style="color: #0A66C2; text-decoration: none; font-weight: 500;">06 34 68
+                      50 03</a>
+                  </div>
+                  <div>
+                    <span style="color: #666666;">Email : </span>
+                    <a href="mailto:colmant.thomas@gmail.com"
+                      style="color: #0A66C2; text-decoration: none; font-weight: 500;">colmant.thomas@gmail.com</a>
+                  </div>
+                </div>
+
+                <!-- Liens Sociaux & Portfolio (Icônes PNG 20x20 avec texte alt) -->
+                <div style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 1; margin: 0;">
+                  <a href="https://thomas-colmant.github.io/" target="_blank" title="Site web / Portfolio"
+                    style="text-decoration: none; display: inline-block; margin-right: 8px;">
+                    <img src="https://img.icons8.com/color/48/domain.png" alt="Site web" width="20" height="20"
+                      style="display: inline-block; vertical-align: middle; border: 0; width: 20px; height: 20px;" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank" title="LinkedIn"
+                    style="text-decoration: none; display: inline-block; margin-right: 8px;">
+                    <img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn" width="20" height="20"
+                      style="display: inline-block; vertical-align: middle; border: 0; width: 20px; height: 20px;" />
+                  </a>
+                  <a href="https://www.instagram.com/by_thomascmt/" target="_blank" title="Instagram"
+                    style="text-decoration: none; display: inline-block; margin-right: 8px;">
+                    <img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram" width="20" height="20"
+                      style="display: inline-block; vertical-align: middle; border: 0; width: 20px; height: 20px;" />
+                  </a>
+                  <a href="https://www.tiktok.com/@by_thomascmt" target="_blank" title="TikTok"
+                    style="text-decoration: none; display: inline-block;">
+                    <img src="https://img.icons8.com/color/48/tiktok--v1.png" alt="TikTok" width="20" height="20"
+                      style="display: inline-block; vertical-align: middle; border: 0; width: 20px; height: 20px;" />
+                  </a>
+                </div>
+
+                <!-- 
+                =================================================================
+                OPTION ALTERNATIVE : LIENS TEXTE SÉPARÉS PAR " | "
+                (Si vous préférez ne pas utiliser d'icônes d'images)
+                =================================================================
+                <div style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #666666; margin-top: 4px;">
+                  <a href="https://thomas-colmant.github.io/" target="_blank" style="color: #0A66C2; text-decoration: none;">Site web</a>
+                  <span style="color: #cccccc; margin: 0 4px;">|</span>
+                  <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank" style="color: #0A66C2; text-decoration: none;">LinkedIn</a>
+                  <span style="color: #cccccc; margin: 0 4px;">|</span>
+                  <a href="https://www.instagram.com/by_thomascmt/" target="_blank" style="color: #0A66C2; text-decoration: none;">Instagram</a>
+                  <span style="color: #cccccc; margin: 0 4px;">|</span>
+                  <a href="https://www.tiktok.com/@by_thomascmt" target="_blank" style="color: #0A66C2; text-decoration: none;">TikTok</a>
+                </div>
+                =================================================================
+                -->
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- ================================================================= -->
+        <!-- FIN DE LA SIGNATURE                                              -->
+        <!-- ================================================================= -->
+      </div>
+    </div>
+
+    <!-- Bouton & Feedback de Copie -->
+    <div class="actions">
+      <button type="button" class="btn-copy" id="copyBtn" onclick="copySignature()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        Copier la signature
+      </button>
+      <div class="feedback-message" id="copyFeedback">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        Copiée ✔
+      </div>
+    </div>
+
+    <!-- Section d'aide pour le déploiement sécurisé -->
+    <div class="info-section">
+      <h3>🔒 Confidentialité & Masquage de la page</h3>
+      <ul>
+        <li>Cette page comporte la balise <code>noindex, nofollow, noarchive</code> afin d'empêcher son référencement
+          par les moteurs de recherche.</li>
+        <li>Il est recommandé de placer cette page dans un dossier secret à nom aléatoire, par exemple :
+          <code>/x7k2-signature/signature.html</code>.</li>
+        <li>Un fichier <code>robots.txt</code> à la racine du site complète le blocage des robots d'exploration.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    /**
+     * Copie le rendu HTML exact de la signature dans le presse-papier
+     * au format rich text (text/html) et fallback texte brut.
+     */
+    async function copySignature() {
+      const signatureEl = document.getElementById('signature');
+      const btnEl = document.getElementById('copyBtn');
+      const feedbackEl = document.getElementById('copyFeedback');
+
+      let copied = false;
+
+      // Méthode 1 : API Clipboard moderne (ClipboardItem)
+      if (navigator.clipboard && window.ClipboardItem) {
+        try {
+          const htmlBlob = new Blob([signatureEl.innerHTML], { type: 'text/html' });
+          const textBlob = new Blob([signatureEl.innerText], { type: 'text/plain' });
+
+          const clipboardItem = new ClipboardItem({
+            'text/html': htmlBlob,
+            'text/plain': textBlob
+          });
+
+          await navigator.clipboard.write([clipboardItem]);
+          copied = true;
+        } catch (err) {
+          console.warn('API ClipboardItem indisponible ou restreinte, passage au fallback...', err);
+        }
+      }
+
+      // Méthode 2 : Fallback avec sélection de plage (Selection + execCommand)
+      if (!copied) {
+        try {
+          const range = document.createRange();
+          range.selectNodeContents(signatureEl);
+
+          const selection = window.getSelection();
+          selection.removeAllRanges();
+          selection.addRange(range);
+
+          copied = document.execCommand('copy');
+          selection.removeAllRanges();
+        } catch (err) {
+          console.error('Échec du copier fallback :', err);
+        }
+      }
+
+      // Feedback visuel pendant 2 secondes
+      if (copied) {
+        btnEl.classList.add('copied');
+        feedbackEl.style.display = 'inline-flex';
+
+        setTimeout(() => {
+          btnEl.classList.remove('copied');
+          feedbackEl.style.display = 'none';
+        }, 2000);
+      } else {
+        alert('Copie automatique impossible. Veuillez sélectionner le bloc de signature à la souris et faire Ctrl+C.');
+      }
+    }
+  </script>
+</body>
+
+</html>
