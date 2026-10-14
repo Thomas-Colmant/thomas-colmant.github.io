@@ -1,6 +1,4 @@
 User-agent: *
-Disallow: /signature.html
-Disallow: /x7k2-signature/
-Disallow: /secret-signature/
+Allow: /
 
 Sitemap: https://thomas-colmant.com/sitemap.xml

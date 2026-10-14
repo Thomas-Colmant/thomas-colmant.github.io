@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://thomas-colmant.com/">
   <title>Thomas Colmant | Photographe & Vidéaste</title>
   <meta name="description"
     content="Portfolio de Thomas Colmant — Photographe & Vidéaste étudiant en BUT MMI. Photographie, production vidéo, motion design.">
@@ -16,14 +17,17 @@
   <meta property="og:url" content="https://thomas-colmant.com/">
   <meta property="og:title" content="Thomas Colmant | Photographe & Vidéaste">
   <meta property="og:description" content="Portfolio de Thomas Colmant — Photographe & Vidéaste.">
-  <meta property="og:image" content="https://thomas-colmant.com/img/moi/moii.jpg">
+  <meta property="og:image" content="https://thomas-colmant.com/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="fr_FR">
 
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://thomas-colmant.com/">
-  <meta property="twitter:title" content="Thomas Colmant | Photographe & Vidéaste">
-  <meta property="twitter:description" content="Portfolio de Thomas Colmant — Photographe & Vidéaste.">
-  <meta property="twitter:image" content="https://thomas-colmant.com/img/moi/moii.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://thomas-colmant.com/">
+  <meta name="twitter:title" content="Thomas Colmant | Photographe & Vidéaste">
+  <meta name="twitter:description" content="Portfolio de Thomas Colmant — Photographe & Vidéaste.">
+  <meta name="twitter:image" content="https://thomas-colmant.com/img/og-image.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,6 +36,52 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://thomas-colmant.com/#thomas",
+      "name": "Thomas Colmant",
+      "url": "https://thomas-colmant.com/",
+      "image": "https://thomas-colmant.com/img/moi/moii.webp",
+      "jobTitle": "Photographe & vidéaste",
+      "description": "Photographe et vidéaste, étudiant en BUT MMI : photographie, production vidéo, montage et motion design.",
+      "knowsAbout": [
+        "Photographie",
+        "Production vidéo",
+        "Montage vidéo",
+        "Motion design",
+        "Graphisme",
+        "DaVinci Resolve",
+        "Adobe Premiere Pro",
+        "After Effects",
+        "Lightroom"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "FR"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/thomas-colmant-506629382",
+        "https://www.instagram.com/by_thomascmt/",
+        "https://www.tiktok.com/@by_thomascmt"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://thomas-colmant.com/#site",
+      "url": "https://thomas-colmant.com/",
+      "name": "Thomas Colmant — Photographe & Vidéaste",
+      "inLanguage": "fr-FR",
+      "publisher": {
+        "@id": "https://thomas-colmant.com/#thomas"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 
 <body>
@@ -71,7 +121,7 @@
     <!-- ===== HERO ===== -->
     <section id="home" class="hero">
       <div class="hero-bg">
-        <img src="./img/paysages/DSC_0071.jpg" alt="Photographie de Thomas Colmant" loading="eager">
+        <img src="./img/paysages/DSC_0071.webp" alt="Lac de montagne et sommet vus à travers les branches au coucher du soleil" loading="eager" srcset="./img/paysages/DSC_0071-800w.webp 800w, ./img/paysages/DSC_0071.webp 1920w" sizes="100vw">
       </div>
       <div class="hero-overlay"></div>
       <div class="hero-overlay-noise"></div>
@@ -116,7 +166,7 @@
         <div class="about-inner">
 
           <div class="about-img-wrap reveal">
-            <img src="./img/moi/moii.jpg" alt="Thomas Colmant">
+            <img src="./img/moi/moii.webp" alt="Thomas Colmant, appareil photo en main, photographiant un caniche abricot" srcset="./img/moi/moii-800w.webp 800w, ./img/moi/moii.webp 1920w" sizes="(max-width: 768px) 100vw, 50vw">
             <div class="about-counter">
               <div class="num">2+</div>
               <div class="label">Ans d'expérience</div>
@@ -210,7 +260,7 @@
         <div class="portfolio-grid" id="portfolio-grid">
 
           <a href="/photographie" class="portfolio-card reveal" data-category="photo">
-            <img src="./img//basketball/DSC03770.jpg" alt="Photographie">
+            <img src="./img//basketball/DSC03770.webp" alt="Photographie" srcset="./img//basketball/DSC03770-800w.webp 800w, ./img//basketball/DSC03770.webp 1920w" sizes="(max-width: 768px) 100vw, 50vw">
             <div class="card-overlay">
               <span class="card-tag">Photographie</span>
               <h3 class="card-title">Photographie</h3>
@@ -224,7 +274,7 @@
           </a>
 
           <a href="/production-video" class="portfolio-card reveal reveal-delay-1" data-category="video">
-            <img src="./web tv layover point.png" alt="Production Vidéo">
+            <img src="./web tv layover point.webp" alt="Production Vidéo" srcset="./web%20tv%20layover%20point-800w.webp 800w, ./web%20tv%20layover%20point.webp 1282w" sizes="(max-width: 768px) 100vw, 50vw">
             <div class="card-overlay">
               <span class="card-tag">Vidéo</span>
               <h3 class="card-title">Production Vidéo</h3>
@@ -239,7 +289,7 @@
 
 
           <a href="/affiche-graphisme" class="portfolio-card reveal reveal-delay-3" data-category="graphisme">
-            <img src="./Capture_decran_2025-09-15_162636.png" alt="Affiches & Graphisme">
+            <img src="./Capture_decran_2025-09-15_162636.webp" alt="Affiches & Graphisme">
             <div class="card-overlay">
               <span class="card-tag">Affiches</span>
               <h3 class="card-title">Affiches</h3>
@@ -253,7 +303,7 @@
           </a>
 
           <a href="/montage-motion-design" class="portfolio-card reveal reveal-delay-2" data-category="motion">
-            <img src="./photo_motion_design_categorie.png" alt="Montage & Motion Design">
+            <img src="./photo_motion_design_categorie.webp" alt="Montage & Motion Design" srcset="./photo_motion_design_categorie-800w.webp 800w, ./photo_motion_design_categorie.webp 1810w" sizes="(max-width: 768px) 100vw, 50vw">
             <div class="card-overlay">
               <span class="card-tag">Motion Design</span>
               <h3 class="card-title">Montage &amp; Motion</h3>
