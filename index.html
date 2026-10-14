@@ -7,7 +7,7 @@
   <link rel="canonical" href="https://thomas-colmant.com/">
   <title>Thomas Colmant | Photographe & Vidéaste</title>
   <meta name="description"
-    content="Portfolio de Thomas Colmant — Photographe & Vidéaste étudiant en BUT MMI. Photographie, production vidéo, motion design.">
+    content="Portfolio de Thomas Colmant — Photographe & vidéaste près de Lens (62), étudiant en BUT MMI. Photo de sport, vidéo, montage et motion design.">
   <meta name="keywords" content="Thomas Colmant, photographe, vidéaste, portfolio, BUT MMI, motion design, montage, création audiovisuelle, graphisme, France">
   <meta name="author" content="Thomas Colmant">
   <meta name="robots" content="index, follow">
@@ -61,8 +61,11 @@
       ],
       "address": {
         "@type": "PostalAddress",
+        "addressLocality": "Lens",
+        "addressRegion": "Hauts-de-France",
         "addressCountry": "FR"
       },
+      "areaServed": ["Pas-de-Calais", "Nord", "Somme"],
       "sameAs": [
         "https://www.linkedin.com/in/thomas-colmant-506629382",
         "https://www.instagram.com/by_thomascmt/",
@@ -94,11 +97,13 @@
       </a>
 
       <nav class="main-nav" id="main-nav">
-        <a href="#home">Accueil</a>
         <a href="#about">À propos</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#travaux">Projets</a>
+        <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </nav>
+
+      <a href="#contact" class="btn-primary nav-cta">Me contacter</a>
 
       <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu">
         <span></span>
@@ -110,55 +115,35 @@
 
   <!-- Mobile drawer -->
   <nav class="nav-drawer" id="nav-drawer">
-    <a href="#home" class="drawer-link">Accueil</a>
     <a href="#about" class="drawer-link">À propos</a>
-    <a href="#portfolio" class="drawer-link">Portfolio</a>
+    <a href="#travaux" class="drawer-link">Projets</a>
+    <a href="#services" class="drawer-link">Services</a>
     <a href="#contact" class="drawer-link">Contact</a>
   </nav>
 
   <main>
 
     <!-- ===== HERO ===== -->
-    <section id="home" class="hero">
+    <section id="home" class="hero hero--home">
       <div class="hero-bg">
-        <img src="./img/paysages/DSC_0071.webp" alt="Lac de montagne et sommet vus à travers les branches au coucher du soleil" loading="eager" srcset="./img/paysages/DSC_0071-800w.webp 800w, ./img/paysages/DSC_0071.webp 1920w" sizes="100vw">
+        <img src="./img/basketball/DSC03770.webp" alt="Jeune basketteur en maillot vert préparant un tir dans un gymnase" loading="eager" fetchpriority="high" srcset="./img/basketball/DSC03770-800w.webp 800w, ./img/basketball/DSC03770.webp 1920w" sizes="100vw">
       </div>
       <div class="hero-overlay"></div>
       <div class="hero-overlay-noise"></div>
 
       <div class="hero-content">
-        <p class="hero-eyebrow">Photographe &amp; Vidéaste</p>
+        <p class="hero-eyebrow">Photographe &amp; Vidéaste · Près de Lens</p>
         <h1 class="hero-title">Thomas<br><em>Colmant</em></h1>
-        <p class="hero-subtitle">BUT MMI · Création audiovisuelle · France</p>
+        <p class="hero-lead">Je filme et photographie le sport, l’événementiel et les marques, de la captation au montage final.</p>
 
         <div class="hero-actions">
-          <a href="#portfolio" class="btn-primary">Voir le portfolio</a>
+          <a href="#travaux" class="btn-primary">Voir mes projets</a>
           <a href="#contact" class="btn-ghost">Me contacter</a>
         </div>
       </div>
-    </section>
 
-    <!-- ===== TICKER ===== -->
-    <div class="ticker">
-      <div class="ticker-track">
-        <span class="ticker-item">Photographie<span class="ticker-sep"></span></span>
-        <span class="ticker-item">Production Vidéo<span class="ticker-sep"></span></span>
-        <span class="ticker-item">Motion Design<span class="ticker-sep"></span></span>
-        <span class="ticker-item">Montage<span class="ticker-sep"></span></span>
-        <span class="ticker-item">DaVinci Resolve<span class="ticker-sep"></span></span>
-        <span class="ticker-item">Adobe Premiere<span class="ticker-sep"></span></span>
-        <span class="ticker-item">After Effects<span class="ticker-sep"></span></span>
-        <span class="ticker-item">Lightroom<span class="ticker-sep"></span></span>
-        <span class="ticker-item">Photographie<span class="ticker-sep"></span></span>
-        <span class="ticker-item">Production Vidéo<span class="ticker-sep"></span></span>
-        <span class="ticker-item">Motion Design<span class="ticker-sep"></span></span>
-        <span class="ticker-item">Montage<span class="ticker-sep"></span></span>
-        <span class="ticker-item">DaVinci Resolve<span class="ticker-sep"></span></span>
-        <span class="ticker-item">Adobe Premiere<span class="ticker-sep"></span></span>
-        <span class="ticker-item">After Effects<span class="ticker-sep"></span></span>
-        <span class="ticker-item">Lightroom<span class="ticker-sep"></span></span>
-      </div>
-    </div>
+      <p class="hero-status"><span class="status-dot"></span>Disponible pour vos projets</p>
+    </section>
 
     <!-- ===== À PROPOS ===== -->
     <section id="about" class="section">
@@ -166,10 +151,10 @@
         <div class="about-inner">
 
           <div class="about-img-wrap reveal">
-            <img src="./img/moi/moii.webp" alt="Thomas Colmant, appareil photo en main, photographiant un caniche abricot" srcset="./img/moi/moii-800w.webp 800w, ./img/moi/moii.webp 1920w" sizes="(max-width: 768px) 100vw, 50vw">
+            <img src="./img/moi/moii.webp" alt="Thomas Colmant, appareil photo en main, photographiant un caniche abricot" loading="lazy" srcset="./img/moi/moii-800w.webp 800w, ./img/moi/moii.webp 1920w" sizes="(max-width: 1024px) 100vw, 460px">
             <div class="about-counter">
-              <div class="num">2+</div>
-              <div class="label">Ans d'expérience</div>
+              <div class="num">MMI</div>
+              <div class="label">Étudiant BUT</div>
             </div>
           </div>
 
@@ -191,41 +176,41 @@
               <span class="skill-tag">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/DaVinci_Resolve_Studio.png/330px-DaVinci_Resolve_Studio.png"
-                  alt="DaVinci">
+                  alt="" loading="lazy">
                 DaVinci Resolve
               </span>
               <span class="skill-tag">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg"
-                  alt="Premiere">
+                  alt="" loading="lazy">
                 Premiere Pro
               </span>
               <span class="skill-tag">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Adobe_After_Effects_CC_icon.svg"
-                  alt="After Effects">
+                  alt="" loading="lazy">
                 After Effects
               </span>
               <span class="skill-tag">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Adobe_Photoshop_Lightroom_CC_logo.svg"
-                  alt="Lightroom">
+                  alt="" loading="lazy">
                 Lightroom
               </span>
               <span class="skill-tag">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"
-                  alt="Photoshop">
+                  alt="" loading="lazy">
                 Photoshop
               </span>
               <span class="skill-tag">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Illustrator_CC_icon.svg"
-                  alt="Illustrator">
+                  alt="" loading="lazy">
                 Illustrator
               </span>
               <span class="skill-tag">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" loading="lazy">
                 HTML / CSS
               </span>
               <span class="skill-tag">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                  alt="JS">
+                  alt="" loading="lazy">
                 JavaScript
               </span>
             </div>
@@ -239,84 +224,164 @@
       </div>
     </section>
 
-    <!-- ===== PORTFOLIO ===== -->
-    <section id="portfolio" class="section" style="background: var(--bg-alt);">
+    <!-- ===== PROJETS (carrousel 3D) ===== -->
+    <section id="travaux" class="section">
       <div class="container">
-        <div class="portfolio-header reveal">
-          <div>
-            <p class="section-label">Mes projets</p>
-            <h2 class="section-title">Ce que je crée</h2>
-          </div>
-
-          <div class="portfolio-filters">
-            <button class="filter-btn active" data-filter="all">Tout</button>
-            <button class="filter-btn" data-filter="photo">Photographie</button>
-            <button class="filter-btn" data-filter="video">Vidéo</button>
-            <button class="filter-btn" data-filter="motion">Motion</button>
-            <button class="filter-btn" data-filter="graphisme">Affiches</button>
-          </div>
+        <div class="reveal">
+          <p class="section-label">Projets</p>
+          <h2 class="section-title">Ce que je <em>crée</em></h2>
         </div>
 
-        <div class="portfolio-grid" id="portfolio-grid">
+        <div class="work-more reveal">
+          <span class="work-more-label">Tous mes projets :</span>
+          <a href="/photographie" class="btn-ghost">Toutes les photos</a>
+          <a href="/production-video" class="btn-ghost">Toutes les vidéos</a>
+          <a href="/montage-motion-design" class="btn-ghost">Motion design</a>
+          <a href="/affiche-graphisme" class="btn-ghost">Affiches</a>
+        </div>
 
-          <a href="/photographie" class="portfolio-card reveal" data-category="photo">
-            <img src="./img//basketball/DSC03770.webp" alt="Photographie" srcset="./img//basketball/DSC03770-800w.webp 800w, ./img//basketball/DSC03770.webp 1920w" sizes="(max-width: 768px) 100vw, 50vw">
-            <div class="card-overlay">
-              <span class="card-tag">Photographie</span>
-              <h3 class="card-title">Photographie</h3>
-            </div>
-            <div class="card-arrow">
-              <svg viewBox="0 0 24 24" stroke-width="1.5">
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
-            </div>
-          </a>
+        <div class="cf reveal" id="cf" tabindex="0" aria-roledescription="carrousel" aria-label="Projets">
+          <button class="cf-btn cf-btn--prev" id="cf-prev" aria-label="Projet précédent">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6" /></svg>
+          </button>
 
-          <a href="/production-video" class="portfolio-card reveal reveal-delay-1" data-category="video">
-            <img src="./web tv layover point.webp" alt="Production Vidéo" srcset="./web%20tv%20layover%20point-800w.webp 800w, ./web%20tv%20layover%20point.webp 1282w" sizes="(max-width: 768px) 100vw, 50vw">
-            <div class="card-overlay">
-              <span class="card-tag">Vidéo</span>
-              <h3 class="card-title">Production Vidéo</h3>
-            </div>
-            <div class="card-arrow">
-              <svg viewBox="0 0 24 24" stroke-width="1.5">
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
-            </div>
-          </a>
+          <div class="cf-stage" id="cf-stage">
+
+            <a href="/web-tv-production-video" class="cf-card" data-cat="Web TV · 2026" data-title="Layover Point" data-link="Voir le projet"
+              data-desc="Émission web TV tournée en équipe : j’ai réalisé les pubs, participé à l’installation du plateau et aux thèmes de l’émission."
+              data-roles="Réalisation des pubs|Installation|Thèmes de l’émission">
+              <img src="./web%20tv%20layover%20point-800w.webp" alt="Plateau de l’émission web TV Layover Point">
+              <span class="work-play" aria-hidden="true"></span>
+            </a>
+
+            <a href="/match-gala-basket" class="cf-card" data-cat="Vidéo · Sport · 2026" data-title="Gala Team BCL × Team Fox" data-link="Voir le projet" data-client="Team BCL"
+              data-desc="Captation vidéo du match de gala de basket. J’ai aussi créé les affiches de l’événement."
+              data-roles="Vidéaste|Affiches">
+              <img src="./img/autres/Capture%20d'%C3%A9cran%202026-07-02%20121244-800w.webp" alt="Captation vidéo du match de basket de gala : joueurs Team BCL et Team Fox" loading="lazy">
+              <span class="work-play" aria-hidden="true"></span>
+            </a>
+
+            <a href="/match-basket-nm2" class="cf-card" data-cat="Vidéo · Sport · 2026" data-title="Match de basket NM2" data-link="Voir le projet"
+              data-desc="Captation vidéo d’un match de basket de Nationale 2."
+              data-roles="Vidéaste">
+              <img src="./img/autres/Capture%20d'%C3%A9cran%202026-07-02%20121152-800w.webp" alt="Captation vidéo d’un match de basket NM2 devant les tribunes" loading="lazy">
+              <span class="work-play" aria-hidden="true"></span>
+            </a>
+
+            <a href="/clip-etudiant-honeypie" class="cf-card" data-cat="Clip · 2025" data-title="Clip — Honeypie" data-link="Voir le projet"
+              data-desc="Clip musical tourné en équipe dans le cadre du BUT MMI."
+              data-roles="Scénario|Découpage technique|Cadreur">
+              <img src="./vid%C3%A9o_montage/honeypie%20clip.webp" alt="Image du clip Honey Pie : chanteur face caméra avec le titre en lettres dorées" loading="lazy">
+              <span class="work-play" aria-hidden="true"></span>
+            </a>
+
+            <a href="/court-metrage-onion" class="cf-card" data-cat="Court-métrage · 2026" data-title=".Onion" data-link="Voir le projet"
+              data-desc="Court-métrage étudiant, disponible sur MMIFlix."
+              data-roles="Découpage technique|Cadreur|Montage">
+              <img src="./img/autres/Onion.webp" alt="Ordinateur portable affichant « .ONION » sur fond rouge, court-métrage .Onion" loading="lazy">
+              <span class="work-play" aria-hidden="true"></span>
+            </a>
+
+            <a href="/presentation-salon" class="cf-card" data-cat="Vidéo &amp; photo · 2025" data-title="Salon Aristochiens" data-link="Voir le projet" data-client="Salon Aristochiens"
+              data-desc="Vidéo de présentation et reportage photo pour un salon de toilettage canin."
+              data-roles="Réalisation|Montage|Photo">
+              <img src="./vid%C3%A9o_montage/presentation_salon.webp" alt="Caniche abricot attendant son toilettage, vidéo de présentation du Salon Aristochiens" loading="lazy">
+              <span class="work-play" aria-hidden="true"></span>
+            </a>
+
+            <a href="/photographie-sportive" class="cf-card" data-cat="Photo · Sport" data-title="Basketball" data-link="Voir la série"
+              data-desc="L’action, les duels et les émotions des matchs en salle."
+              data-roles="Photographe">
+              <img src="./img/basketball/DSC03801-800w.webp" alt="Jeune basketteur montant au panier face à un contreur en jaune" loading="lazy">
+            </a>
+
+            <a href="/photographie-automobile" class="cf-card" data-cat="Photo · Automobile" data-title="Supercars à Monaco" data-link="Voir la série"
+              data-desc="Série personnelle dans les rues de Monaco."
+              data-roles="Photographe">
+              <img src="./img/automobile/DSC06390-2-800w.webp" alt="Chevrolet Corvette rouge négociant un virage" loading="lazy">
+            </a>
+
+            <a href="/photographie-animali%C3%A8re/" class="cf-card" data-cat="Photo · Animalier" data-title="Animalier" data-link="Voir la série"
+              data-desc="Portraits d’animaux, du chat de jardin au tigre."
+              data-roles="Photographe">
+              <img src="./img/zoo/DSC07103-800w.webp" alt="Tigre couché dans les feuilles mortes, regard fixe" loading="lazy">
+            </a>
+
+            <a href="/animation-discord" class="cf-card" data-cat="Motion design · After Effects" data-title="Animation Discord" data-link="Voir le projet"
+              data-desc="Animation d’interface inspirée de l’univers Discord."
+              data-roles="Motion design">
+              <video muted loop playsinline preload="metadata" src="./vid%C3%A9o_montage/animation_discord.mp4#t=1.5" aria-label="Animation d’interface inspirée de Discord"></video>
+            </a>
+
+            <a href="/affiche-mohammed-ali" class="cf-card cf-card--poster" data-cat="Affiche · 2025" data-title="Mohammed Ali" data-link="Voir l’affiche"
+              data-desc="Affiche hommage « Never Give Up »."
+              data-roles="Photoshop">
+              <img src="./img/affiches/affiche_mohammed_ali-800w.webp" alt="Affiche « Never Give Up » hommage à Mohammed Ali" loading="lazy">
+            </a>
+
+          </div>
+
+          <button class="cf-btn cf-btn--next" id="cf-next" aria-label="Projet suivant">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6" /></svg>
+          </button>
+        </div>
+
+        <div class="cf-caption" id="cf-caption" aria-live="polite">
+          <span class="work-cat" id="cf-cat"></span>
+          <h3 class="cf-title" id="cf-title"></h3>
+          <p id="cf-desc"></p>
+          <div class="work-roles" id="cf-roles"></div>
+          <a class="slide-link" id="cf-link" href="#"></a>
+        </div>
 
 
-          <a href="/affiche-graphisme" class="portfolio-card reveal reveal-delay-3" data-category="graphisme">
-            <img src="./Capture_decran_2025-09-15_162636.webp" alt="Affiches & Graphisme">
-            <div class="card-overlay">
-              <span class="card-tag">Affiches</span>
-              <h3 class="card-title">Affiches</h3>
-            </div>
-            <div class="card-arrow">
-              <svg viewBox="0 0 24 24" stroke-width="1.5">
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
-            </div>
-          </a>
+      </div>
+    </section>
 
-          <a href="/montage-motion-design" class="portfolio-card reveal reveal-delay-2" data-category="motion">
-            <img src="./photo_motion_design_categorie.webp" alt="Montage & Motion Design" srcset="./photo_motion_design_categorie-800w.webp 800w, ./photo_motion_design_categorie.webp 1810w" sizes="(max-width: 768px) 100vw, 50vw">
-            <div class="card-overlay">
-              <span class="card-tag">Motion Design</span>
-              <h3 class="card-title">Montage &amp; Motion</h3>
-            </div>
-            <div class="card-arrow">
-              <svg viewBox="0 0 24 24" stroke-width="1.5">
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
-            </div>
-          </a>
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label">Services</p>
+          <h2 class="section-title">Ce que je peux <em>faire pour vous</em></h2>
+        </div>
 
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="service-num">01</span>
+            <h3>Couverture sportive</h3>
+            <p>Photos et vidéos de vos matchs, prêtes à publier sur les réseaux du club.</p>
+            <ul>
+              <li>Photos d’action retouchées</li>
+              <li>Captation et résumé vidéo</li>
+              <li>Formats verticaux Reels &amp; TikTok</li>
+            </ul>
+            <a href="#contact" class="service-cta" data-service="Couverture sportive">Demander un devis →</a>
+          </article>
 
+          <article class="service-card reveal reveal-delay-1">
+            <span class="service-num">02</span>
+            <h3>Vidéo événement &amp; marque</h3>
+            <p>Vidéo de présentation, aftermovie ou contenu pour vos réseaux.</p>
+            <ul>
+              <li>Tournage</li>
+              <li>Montage et étalonnage sous DaVinci Resolve</li>
+              <li>Titrages et motion design</li>
+            </ul>
+            <a href="#contact" class="service-cta" data-service="Vidéo événement / marque">Demander un devis →</a>
+          </article>
+
+          <article class="service-card reveal reveal-delay-2">
+            <span class="service-num">03</span>
+            <h3>Photo &amp; graphisme</h3>
+            <p>Shooting (animalier, automobile, portrait) et création d’affiches.</p>
+            <ul>
+              <li>Prise de vue en extérieur ou en salon</li>
+              <li>Sélection et retouche Lightroom</li>
+              <li>Affiches et visuels Photoshop</li>
+            </ul>
+            <a href="#contact" class="service-cta" data-service="Photo / graphisme">Demander un devis →</a>
+          </article>
         </div>
       </div>
     </section>
@@ -331,44 +396,46 @@
             <h2 class="section-title">Travaillons<br><em>ensemble</em></h2>
 
             <p style="margin-top: 1.5rem;">
-              Disponible pour des projets photographiques, vidéo ou de graphisme. N'hésitez pas à me contacter.
+              Un match, un événement, un projet de marque ? Parlez-moi de votre projet.<br>Basé près de Lens, je me déplace dans le Pas-de-Calais, le Nord, la Somme et plus loin selon les projets.
             </p>
 
-            <div class="contact-links">
-              <div class="contact-link-item">
-                <span class="contact-link-label">Email</span>
-                <a href="mailto:colmant.thomas@gmail.com" class="contact-link-value">colmant.thomas@gmail.com</a>
-              </div>
-              <div class="contact-link-item">
-                <span class="contact-link-label">Localisation</span>
-                <span class="contact-link-value">France</span>
-              </div>
-              <div class="contact-link-item">
-                <span class="contact-link-label">LinkedIn</span>
-                <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank" rel="noopener"
-                  class="contact-link-value">thomas-colmant</a>
-              </div>
-              <div class="contact-link-item">
-                <span class="contact-link-label">Instagram</span>
-                <a href="https://www.instagram.com/by_thomascmt/" target="_blank" rel="noopener"
-                  class="contact-link-value">@by_thomascmt</a>
-              </div>
-              <div class="contact-link-item">
-                <span class="contact-link-label">TikTok</span>
-                <a href="https://www.tiktok.com/@by_thomascmt" target="_blank" rel="noopener"
-                  class="contact-link-value">@by_thomascmt</a>
-              </div>
+            <div class="contact-fast">
+              <a href="mailto:colmant.thomas@gmail.com" class="contact-fast-item">
+                <span><small>E-mail</small>colmant.thomas@gmail.com</span><span aria-hidden="true">→</span>
+              </a>
+              <a href="https://www.instagram.com/by_thomascmt/" target="_blank" rel="noopener" class="contact-fast-item">
+                <span><small>Instagram</small>@by_thomascmt</span><span aria-hidden="true">→</span>
+              </a>
+              <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank" rel="noopener" class="contact-fast-item">
+                <span><small>LinkedIn</small>thomas-colmant</span><span aria-hidden="true">→</span>
+              </a>
             </div>
           </div>
 
           <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST"
             class="contact-form reveal reveal-delay-1">
             <div class="form-row">
-              <input type="text" name="name" placeholder="Nom" required>
-              <input type="email" name="email" placeholder="Email" required>
+              <input type="text" name="name" placeholder="Nom" aria-label="Nom" required>
+              <input type="email" name="email" placeholder="Email" aria-label="Email" required>
             </div>
-            <input type="text" name="subject" placeholder="Sujet">
-            <textarea name="message" placeholder="Votre message..." required></textarea>
+            <div class="form-row">
+              <select name="type_projet" id="type-projet" aria-label="Type de projet">
+                <option value="">Type de projet</option>
+                <option>Couverture sportive</option>
+                <option>Vidéo événement / marque</option>
+                <option>Photo / graphisme</option>
+                <option>Autre</option>
+              </select>
+              <input type="text" name="date" placeholder="Date souhaitée" aria-label="Date souhaitée">
+            </div>
+            <select name="budget" aria-label="Budget indicatif">
+              <option value="">Budget indicatif</option>
+              <option>Moins de 200 €</option>
+              <option>200 – 500 €</option>
+              <option>500 – 1 000 €</option>
+              <option>Plus de 1 000 €</option>
+            </select>
+            <textarea name="message" placeholder="Parlez-moi de votre projet…" aria-label="Message" required></textarea>
             <input type="text" name="_gotcha" style="display:none">
             <input type="hidden" name="_subject" value="Nouveau message — Portfolio Thomas Colmant">
             <button type="submit" id="submit-btn" class="btn-primary">Envoyer le message</button>
@@ -383,10 +450,11 @@
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span class="footer-copy">© 2025 Thomas Colmant — Tous droits réservés</span>
+      <span class="footer-copy">© 2026 Thomas Colmant — Photographe &amp; vidéaste</span>
       <div class="footer-links">
-        <a href="#portfolio">Portfolio</a>
         <a href="#about">À propos</a>
+        <a href="#travaux">Projets</a>
+        <a href="#services">Services</a>
         <a href="#contact">Contact</a>
         <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://www.instagram.com/by_thomascmt/" target="_blank" rel="noopener">Instagram</a>
@@ -429,25 +497,142 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
     revealEls.forEach(el => revealObserver.observe(el));
 
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('#portfolio-grid .portfolio-card');
+    // Carrousel 3D de projets (boucle infinie)
+    const cf = document.getElementById('cf');
+    const cfCards = [...cf.querySelectorAll('.cf-card')];
+    const cfN = cfCards.length;
+    const cap = {
+      cat: document.getElementById('cf-cat'),
+      title: document.getElementById('cf-title'),
+      desc: document.getElementById('cf-desc'),
+      roles: document.getElementById('cf-roles'),
+      link: document.getElementById('cf-link'),
+      box: document.getElementById('cf-caption')
+    };
+    let cfIndex = 0;
 
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        cards.forEach(card => {
-          const show = filter === 'all' || card.dataset.category === filter;
-          card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-          if (show) {
-            card.style.opacity = '1'; card.style.transform = '';
-            card.classList.remove('hidden');
-          } else {
-            card.style.opacity = '0'; card.style.transform = 'scale(0.95)';
-            setTimeout(() => { if (card.style.opacity === '0') card.classList.add('hidden'); }, 400);
-          }
-        });
+    // Distance circulaire la plus courte entre une carte et la carte active
+    const offsetOf = i => {
+      let d = i - cfIndex;
+      if (d > cfN / 2) d -= cfN;
+      if (d < -cfN / 2) d += cfN;
+      return d;
+    };
+
+    function renderCf() {
+      const narrow = window.innerWidth <= 768;
+      const step = narrow ? 42 : 62;        // décalage horizontal en % de la largeur de carte
+      cfCards.forEach((card, i) => {
+        const d = offsetOf(i);
+        const a = Math.abs(d);
+        const visible = a <= 2;
+        card.style.transform =
+          `translateX(${d * step}%) translateZ(${-a * 140}px) rotateY(${d === 0 ? 0 : (d > 0 ? -38 : 38)}deg) scale(${1 - a * 0.06})`;
+        card.style.opacity = visible ? (a === 2 ? 0.35 : 1) : 0;
+        card.style.zIndex = 10 - a;
+        card.style.pointerEvents = visible ? 'auto' : 'none';
+        card.classList.toggle('is-active', d === 0);
+        card.tabIndex = d === 0 ? 0 : -1;
+        card.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
+        const v = card.querySelector('video');
+        if (v) d === 0 ? v.play().catch(() => {}) : v.pause();
+      });
+
+      const c = cfCards[cfIndex].dataset;
+      cap.box.classList.remove('show');
+      void cap.box.offsetWidth;
+      cap.cat.textContent = c.client ? `${c.cat} · Client ${c.client}` : c.cat;
+      cap.title.textContent = c.title;
+      cap.desc.textContent = c.desc;
+      cap.roles.innerHTML = '';
+      c.roles.split('|').forEach(r => {
+        const s = document.createElement('span');
+        s.textContent = r;
+        cap.roles.appendChild(s);
+      });
+      const active = cfCards[cfIndex];
+      cap.link.href = active.href;
+      cap.link.textContent = `${c.link} →`;
+      cap.box.classList.add('show');
+    }
+
+    const cfGo = i => { cfIndex = (i + cfN) % cfN; renderCf(); };
+
+    document.getElementById('cf-prev').addEventListener('click', () => cfGo(cfIndex - 1));
+    document.getElementById('cf-next').addEventListener('click', () => cfGo(cfIndex + 1));
+
+    // Clic sur une carte latérale : elle passe au centre au lieu d'ouvrir le lien
+    cfCards.forEach((card, i) => card.addEventListener('click', e => {
+      if (cfDragged) { e.preventDefault(); return; }
+      if (i !== cfIndex) { e.preventDefault(); cfGo(i); }
+    }));
+
+    cf.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); cfGo(cfIndex + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); cfGo(cfIndex - 1); }
+    });
+
+    // Glisser (souris ou doigt)
+    let cfStartX = null, cfDragged = false;
+    const stage = document.getElementById('cf-stage');
+    stage.addEventListener('pointerdown', e => { cfStartX = e.clientX; cfDragged = false; });
+    stage.addEventListener('pointermove', e => {
+      if (cfStartX !== null && Math.abs(e.clientX - cfStartX) > 10) cfDragged = true;
+    });
+    window.addEventListener('pointerup', e => {
+      if (cfStartX === null) return;
+      const dx = e.clientX - cfStartX;
+      cfStartX = null;
+      if (Math.abs(dx) > 40) cfGo(cfIndex + (dx < 0 ? 1 : -1));
+      setTimeout(() => { cfDragged = false; }, 0);
+    });
+    window.addEventListener('pointercancel', () => { cfStartX = null; cfDragged = false; });
+    stage.addEventListener('dragstart', e => e.preventDefault());
+
+    // Pavé tactile : un glissement horizontal à deux doigts = un projet.
+    // L'inertie qui suit est ignorée, mais un nouveau glissement pendant l'inertie est bien pris en compte.
+    let accX = 0, accY = 0, wheelLocked = false, lastAbsX = 0, lastTrigger = 0, wheelIdle;
+    cf.addEventListener('wheel', e => {
+      const unit = e.deltaMode === 1 ? 16 : 1;
+      const dx = e.deltaX * unit, dy = e.deltaY * unit;
+      const ax = Math.abs(dx);
+
+      clearTimeout(wheelIdle);
+      wheelIdle = setTimeout(() => { wheelLocked = false; accX = accY = 0; lastAbsX = 0; }, 150);
+
+      if (wheelLocked) {
+        // Un nouveau geste se reconnaît à l'amplitude qui remonte nettement au lieu de décroître
+        if (performance.now() - lastTrigger > 180 && ax > 6 && ax > lastAbsX * 1.4) {
+          wheelLocked = false;
+          accX = accY = 0;
+        }
+        lastAbsX = ax;
+        if (wheelLocked) {
+          if (ax > Math.abs(dy)) e.preventDefault();
+          return;
+        }
+      }
+
+      accX += dx;
+      accY += dy;
+      if (Math.abs(accX) <= Math.abs(accY)) return;   // geste plutôt vertical : la page défile normalement
+      e.preventDefault();
+      if (Math.abs(accX) > 40) {
+        cfGo(cfIndex + (accX > 0 ? 1 : -1));
+        wheelLocked = true;
+        lastTrigger = performance.now();
+        lastAbsX = ax;
+        accX = accY = 0;
+      }
+    }, { passive: false });
+
+    window.addEventListener('resize', renderCf, { passive: true });
+    renderCf();
+
+    // « Demander un devis » pré-remplit le type de projet
+    document.querySelectorAll('.service-cta').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('type-projet').value = link.dataset.service;
       });
     });
 

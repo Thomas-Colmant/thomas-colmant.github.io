@@ -13,11 +13,6 @@
   <meta name="twitter:card" content="summary_large_image">
     <title>Clip Étudiant Honeypie | Thomas Colmant</title>
 
-    <!-- Modern typography: Poppins -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -25,22 +20,26 @@
     <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="/" class="logo">Thomas<span class="logo-dot"></span>Colmant</a>
+
       <nav class="main-nav">
-        <a href="/#home">Accueil</a>
         <a href="/#about">À propos</a>
-        <a href="/#portfolio">Portfolio</a>
+        <a href="/#travaux">Projets</a>
+        <a href="/#services">Services</a>
         <a href="/#contact">Contact</a>
       </nav>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+
+      <a href="/#contact" class="btn-primary nav-cta">Me contacter</a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
   <nav class="nav-drawer" id="nav-drawer">
-    <a href="/" class="drawer-link">Accueil</a>
     <a href="/#about" class="drawer-link">À propos</a>
-    <a href="/#portfolio" class="drawer-link">Portfolio</a>
+    <a href="/#travaux" class="drawer-link">Projets</a>
+    <a href="/#services" class="drawer-link">Services</a>
     <a href="/#contact" class="drawer-link">Contact</a>
   </nav>
 
@@ -88,84 +87,43 @@
                 </div>
         </section>
 
-        <!-- Portfolio : Mes projets -->
-        <section id="portfolio" class="section">
-            <div class="container">
-                <div class="section-head">
-                    <h2>Mes projets</h2>
-                </div>
+        <!-- Autres projets + contact -->
+    <section class="section project-next">
+      <div class="container">
+        <div class="work-more">
+          <span class="work-more-label">Tous mes projets :</span>
+          <a href="/photographie" class="btn-ghost">Toutes les photos</a>
+          <a href="/production-video" class="btn-ghost">Toutes les vidéos</a>
+          <a href="/montage-motion-design" class="btn-ghost">Motion design</a>
+          <a href="/affiche-graphisme" class="btn-ghost">Affiches</a>
+        </div>
 
-                <div class="grid-portfolio">
-                    <a href="/photographie" class="portfolio-card">
-                        <img src="../img/paysages/DSC_0071.webp" alt="Série photographie" srcset="../img/paysages/DSC_0071-800w.webp 800w, ../img/paysages/DSC_0071.webp 1920w" sizes="(max-width: 768px) 100vw, 50vw">
-                        <div class="portfolio-info">
-                            <h3>Photographie</h3>
-                        </div>
-                    </a>
-
-                    <a href="/production-video" class="portfolio-card">
-                        <img src="../web tv layover point.webp" alt="Production vidéo" srcset="../web%20tv%20layover%20point-800w.webp 800w, ../web%20tv%20layover%20point.webp 1282w" sizes="(max-width: 768px) 100vw, 50vw">
-                        <div class="portfolio-info">
-                            <h3>Production vidéo</h3>
-                        </div>
-                    </a>
-
-                    <a href="/montage-motion-design" class="portfolio-card">
-                        <img src="../photo_motion_design_categorie.webp" alt="Montage et motion design" srcset="../photo_motion_design_categorie-800w.webp 800w, ../photo_motion_design_categorie.webp 1810w" sizes="(max-width: 768px) 100vw, 50vw">
-                        <div class="portfolio-info">
-                            <h3>Montage & motion design</h3>
-                        </div>
-                    </a>
-
-                    <a href="/affiche-graphisme" class="portfolio-card">
-                        <img src="../Capture_decran_2025-09-15_162636.webp" alt="Affiches et graphisme">
-                        <div class="portfolio-info">
-                            <h3>Affiches & graphisme</h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="section">
-            <div class="container">
-                <div class="section-head">
-                    <h2>Me Contacter</h2>
-                </div>
-
-                <div class="contact-layout">
-                    <div class="contact-info">
-                        <p><strong>Email</strong><br>colmant.thomas@gmail.com</p>
-                        <p><strong>Localisation</strong><br>France</p>
-                        <p>
-                            <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank">
-                                LinkedIn
-                            </a>
-                        </p>
-                    </div>
-
-                    <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST" class="contact-form">
-                        <input type="text" name="name" placeholder="Nom" required>
-                        <input type="email" name="email" placeholder="Email" required>
-                        <input type="text" name="subject" placeholder="Sujet">
-                        <textarea name="message" placeholder="Message" required></textarea>
-                        <input type="text" name="_gotcha" style="display:none">
-                        <input type="hidden" name="_subject" value="Nouveau message depuis ton portfolio !">
-                        <input type="hidden" name="_next" value="https://thomas-colmant.com/index.html#contact">
-
-                        <button type="submit" id="submit-btn" class="btn-primary">Envoyer un message</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+        <div class="project-cta">
+          <h2 class="section-title">Travaillons <em>ensemble</em></h2>
+          <p>Un match, un événement, un projet de marque ? Basé près de Lens, je me déplace dans le Pas-de-Calais, le Nord, la Somme et plus loin selon les projets.</p>
+          <div class="hero-actions">
+            <a href="/#contact" class="btn-primary">Me contacter</a>
+            <a href="mailto:colmant.thomas@gmail.com" class="btn-ghost">colmant.thomas@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
     <footer class="site-footer">
-        <div class="container footer-inner">
-            <span>© 2025 Thomas Colmant.</span>
-        </div>
-    </footer>
+    <div class="container footer-inner">
+      <span class="footer-copy">© 2026 Thomas Colmant — Photographe &amp; vidéaste</span>
+      <div class="footer-links">
+        <a href="/#about">À propos</a>
+        <a href="/#travaux">Projets</a>
+        <a href="/#services">Services</a>
+        <a href="/#contact">Contact</a>
+        <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/by_thomascmt/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@by_thomascmt" target="_blank" rel="noopener">TikTok</a>
+      </div>
+    </div>
+  </footer>
 
     <script>
         const header = document.querySelector('.site-header');
