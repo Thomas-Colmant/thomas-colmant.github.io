@@ -693,6 +693,15 @@
 
     buildSrcList('all');
 
+    // ── Catégorie demandée dans l'adresse (ex. /photographie/#sport depuis l'accueil) ──
+    function applyHashFilter() {
+      const cat = decodeURIComponent(location.hash.slice(1));
+      const btn = cat && document.querySelector(`.photo-filters .filter-btn[data-cat="${cat}"]`);
+      if (btn) btn.click();
+    }
+    applyHashFilter();
+    window.addEventListener('hashchange', applyHashFilter);
+
     // ── Lightbox ──
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lb-img');
