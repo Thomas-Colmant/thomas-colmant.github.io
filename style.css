@@ -1864,3 +1864,5 @@ p {
   .project-cta .hero-actions { flex-direction: column; }
   .project-cta .btn-ghost { text-transform: none; letter-spacing: 0.02em; }
 }
+
+.photo-series { margin-top: 3rem; justify-content: center; }
