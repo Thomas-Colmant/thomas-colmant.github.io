@@ -1487,36 +1487,6 @@ p {
   animation: heroReveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
 }
 
-.hero-status {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7rem;
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
-  white-space: nowrap;
-  animation: heroReveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
-}
-
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #4ade80;
-  box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.18);
-  animation: statusPulse 2s ease-in-out infinite;
-}
-
-@keyframes statusPulse {
-  50% { opacity: 0.4; }
-}
 
 /* Carrousel 3D de projets */
 #travaux { background: var(--bg); }
@@ -1565,8 +1535,6 @@ p {
   filter: brightness(0.55) saturate(0.85);
   transition: filter 0.6s ease;
 }
-
-.cf-card--poster img { object-position: center 30%; }
 
 .cf-card.is-active { border-color: var(--blue-border); }
 
@@ -1694,25 +1662,43 @@ p {
 }
 
 .work-more {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.6rem;
-  margin-top: 0.5rem;
-}
-
-.work-more .btn-ghost {
-  padding: 0.55rem 1.2rem;
-  font-size: 0.7rem;
+  margin-top: 1.8rem;
 }
 
 .work-more-label {
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  margin-right: 0.4rem;
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
 }
+
+.work-more-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.work-more .btn-ghost {
+  padding: 0.85rem 1.7rem;
+  font-size: 0.8rem;
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.work-more .btn-ghost::after {
+  content: "→";
+  margin-left: 0.6rem;
+  color: var(--blue-bright);
+  transition: transform var(--t-base);
+}
+
+.work-more .btn-ghost:hover {
+  border-color: var(--blue-bright);
+  background: rgba(90, 171, 255, 0.08);
+}
+
+.work-more .btn-ghost:hover::after { transform: translateX(3px); }
 
 /* Services */
 #services { background: var(--bg-alt); }
@@ -1837,7 +1823,6 @@ p {
 
 @media (max-width: 768px) {
   .nav-cta { display: none; }
-  .hero-status { bottom: 1.5rem; font-size: 0.6rem; letter-spacing: 0.12em; }
   .cf-stage { height: 210px; }
   .cf-card { width: 300px; margin-left: -150px; }
   .cf-btn { top: calc(1rem + 105px); width: 40px; height: 40px; margin-top: -20px; }
@@ -1865,4 +1850,10 @@ p {
   .project-cta .btn-ghost { text-transform: none; letter-spacing: 0.02em; }
 }
 
-.photo-series { margin-top: 3rem; justify-content: center; }
+.photo-series { margin-top: 3rem; text-align: center; }
+.photo-series .work-more-links { justify-content: center; }
+
+
+@media (max-width: 480px) {
+  .work-more .btn-ghost { width: auto; flex: 1 1 calc(50% - 0.35rem); padding: 0.75rem 0.8rem; font-size: 0.72rem; }
+}
