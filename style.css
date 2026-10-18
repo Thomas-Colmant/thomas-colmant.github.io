@@ -2090,3 +2090,27 @@ p {
 .ap-what { background: var(--bg-blue); }
 .ap-how { background: var(--bg); }
 .ap ~ .project-next { background: var(--bg-blue); }
+
+.ap-photo img { object-position: center 35%; }
+
+/* Transitions douces entre bleu foncé et bleu plus clair */
+#contact,
+.project-next,
+.ap-what,
+.ap ~ .project-next {
+  background: linear-gradient(
+    180deg,
+    var(--bg) 0,
+    var(--bg-blue) 160px,
+    var(--bg-blue) calc(100% - 160px),
+    var(--bg) 100%
+  );
+}
+
+/* Plus de traits de séparation là où le dégradé fait la transition */
+.project-next,
+.ap-what,
+.ap-how { border-top: 0; }
+
+#contact::after { display: none; }
+
