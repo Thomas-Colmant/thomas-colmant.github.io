@@ -13,7 +13,8 @@
   <title>Thomas Colmant | Photographe & Vidéaste</title>
   <meta name="description"
     content="Portfolio de Thomas Colmant — Photographe & vidéaste près de Lens (62), étudiant en 3e année de BUT MMI à Lens. Photo, vidéo, captation d’événements, clips et montage.">
-  <meta name="keywords" content="Thomas Colmant, photographe, vidéaste, portfolio, BUT MMI, captation vidéo, montage, création audiovisuelle, graphisme, France">
+  <meta name="keywords"
+    content="Thomas Colmant, photographe, vidéaste, portfolio, BUT MMI, captation vidéo, montage, création audiovisuelle, graphisme, France">
   <meta name="author" content="Thomas Colmant">
   <meta name="robots" content="index, follow">
 
@@ -37,10 +38,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="/style.css?v=20261019e">
+  <link rel="stylesheet" href="/style.css?v=20261107u">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -126,24 +127,54 @@
   <main>
 
     <!-- ===== HERO ===== -->
-    <section id="home" class="hero hero--home">
-      <div class="hero-bg">
-        <img src="./img/basketball/DSC03770.webp" alt="Jeune basketteur en maillot vert préparant un tir dans un gymnase" loading="eager" fetchpriority="high" srcset="./img/basketball/DSC03770-800w.webp 800w, ./img/basketball/DSC03770.webp 1920w" sizes="100vw">
-      </div>
-      <div class="hero-overlay"></div>
-      <div class="hero-overlay-noise"></div>
-
-      <div class="hero-content">
-        <p class="hero-eyebrow">Photographe &amp; Vidéaste · Près de Lens</p>
-        <h1 class="hero-title">Thomas<br><em>Colmant</em></h1>
-        <p class="hero-lead">Je filme et photographie le sport, l’événementiel et les marques, de la captation au montage final.</p>
-
-        <div class="hero-actions">
-          <a href="#travaux" class="btn-primary">Voir mes projets</a>
-          <a href="#contact" class="btn-ghost">Me contacter</a>
+    <section id="home" class="hero hero--home hero-cine" aria-label="Accueil">
+      <div class="hero-sticky">
+        <div class="hero-frame">
+          <div class="hero-bg">
+            <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="./vidéo_fond/fond-portfolio-poster.webp">
+              <source src="./vidéo_fond/fond-portfolio.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="hero-overlay"></div>
+          <div class="hero-overlay-noise"></div>
         </div>
+
+        <!-- Bandes cinéma qui reviennent au défilement -->
+        <div class="scope scope--top" aria-hidden="true"></div>
+        <div class="scope scope--bot" aria-hidden="true"></div>
+
+        <!-- Ouverture : trait bleu puis barres qui s'écartent -->
+        <div class="lb lb--top" aria-hidden="true"></div>
+        <div class="lb lb--bot" aria-hidden="true"></div>
+        <div class="lb-line" aria-hidden="true"></div>
+
+        <div class="hero-content">
+          <p class="hero-eyebrow">Photographe &amp; Vidéaste · Près de Lens</p>
+          <h1 class="hero-title" aria-label="Thomas Colmant">
+            <span class="ht-line">Thomas</span>
+            <span class="ht-line"><em>Colmant</em></span>
+          </h1>
+
+          <div class="hero-actions">
+            <a href="#travaux" class="btn-primary">Voir mes projets</a>
+            <a href="#contact" class="btn-ghost">Me contacter</a>
+          </div>
+        </div>
+
+        <a href="#travaux" class="hero-scroll" aria-label="Descendre vers les projets">
+          <span>Défiler</span>
+          <span class="scroll-line"></span>
+        </a>
       </div>
     </section>
+
+    <!-- ===== BANDE DÉFILANTE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marquee-track">
+        <span>Photographie</span><span>Vidéo</span><span>Sport</span><span>Clips</span><span>Événementiel</span><span>Montage</span>
+        <span>Photographie</span><span>Vidéo</span><span>Sport</span><span>Clips</span><span>Événementiel</span><span>Montage</span>
+      </div>
+    </div>
 
     <!-- ===== PROJETS (carrousel 3D) ===== -->
     <section id="travaux" class="section">
@@ -153,87 +184,98 @@
           <h2 class="section-title">Ce que je <em>crée</em></h2>
         </div>
 
-        <div class="work-more reveal">
-          <span class="work-more-label">Voir tous mes projets par catégorie</span>
-          <div class="work-more-links">
-            <a href="/photographie" class="btn-ghost">Photographie</a>
-            <a href="/production-video" class="btn-ghost">Vidéo</a>
-            <a href="/affiche-graphisme" class="btn-ghost">Affiches</a>
-          </div>
-        </div>
-
         <div class="cf reveal" id="cf" tabindex="0" aria-roledescription="carrousel" aria-label="Projets">
           <button class="cf-btn cf-btn--prev" id="cf-prev" aria-label="Projet précédent">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6" /></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
           </button>
 
           <div class="cf-stage" id="cf-stage">
 
-            <a href="/web-tv-production-video" class="cf-card" data-cat="Web TV · 2026" data-title="Layover Point" data-link="Voir le projet"
+            <a href="/web-tv-production-video" class="cf-card" data-cat="Web TV · 2026" data-title="Layover Point"
+              data-link="Voir le projet"
               data-desc="Émission web TV tournée en équipe : j’ai réalisé les pubs, participé à l’installation du plateau et aux thèmes de l’émission."
               data-roles="Réalisation des pubs|Installation|Thèmes de l’émission">
               <img src="./web%20tv%20layover%20point-800w.webp" alt="Plateau de l’émission web TV Layover Point">
+              <video class="cf-prev" muted loop playsinline preload="none" aria-hidden="true" src="./vid%C3%A9o_montage/apercus/layover.mp4"></video>
               <span class="work-play" aria-hidden="true"></span>
             </a>
 
-            <a href="/match-gala-basket" class="cf-card" data-cat="Vidéo · Sport · 2026" data-title="Gala Team BCL × Team Fox" data-link="Voir le projet" data-client="Team BCL"
+            <a href="/match-gala-basket" class="cf-card" data-cat="Vidéo · Sport · 2026"
+              data-title="Gala Team BCL × Team Fox" data-link="Voir le projet" data-client="Team BCL"
               data-desc="Captation vidéo du match de gala de basket. J’ai aussi créé les affiches de l’événement."
               data-roles="Vidéaste|Affiches">
-              <img src="./img/autres/Capture%20d'%C3%A9cran%202026-07-02%20121244-800w.webp" alt="Captation vidéo du match de basket de gala : joueurs Team BCL et Team Fox" loading="lazy">
+              <img src="./img/autres/Capture%20d'%C3%A9cran%202026-07-02%20121244-800w.webp"
+                alt="Captation vidéo du match de basket de gala : joueurs Team BCL et Team Fox" loading="lazy">
+              <video class="cf-prev" muted loop playsinline preload="none" aria-hidden="true" src="./vid%C3%A9o_montage/apercus/gala.mp4"></video>
               <span class="work-play" aria-hidden="true"></span>
             </a>
 
-            <a href="/match-basket-nm2" class="cf-card" data-cat="Vidéo · Sport · 2026" data-title="Match de basket NM2" data-link="Voir le projet"
-              data-desc="Captation vidéo d’un match de basket de Nationale 2."
+            <a href="/match-basket-nm2" class="cf-card" data-cat="Vidéo · Sport · 2026" data-title="Match de basket NM2"
+              data-link="Voir le projet" data-desc="Captation vidéo d’un match de basket de Nationale 2."
               data-roles="Vidéaste">
-              <img src="./img/autres/Capture%20d'%C3%A9cran%202026-07-02%20121152-800w.webp" alt="Captation vidéo d’un match de basket NM2 devant les tribunes" loading="lazy">
+              <img src="./img/autres/Capture%20d'%C3%A9cran%202026-07-02%20121152-800w.webp"
+                alt="Captation vidéo d’un match de basket NM2 devant les tribunes" loading="lazy">
+              <video class="cf-prev" muted loop playsinline preload="none" aria-hidden="true" src="./vid%C3%A9o_montage/apercus/nm2.mp4"></video>
               <span class="work-play" aria-hidden="true"></span>
             </a>
 
-            <a href="/clip-etudiant-honeypie" class="cf-card" data-cat="Clip · 2025" data-title="Clip — Honeypie" data-link="Voir le projet"
-              data-desc="Clip musical tourné en équipe dans le cadre du BUT MMI."
+            <a href="/clip-etudiant-honeypie" class="cf-card" data-cat="Clip · 2025" data-title="Clip — Honeypie"
+              data-link="Voir le projet" data-desc="Clip musical tourné en équipe dans le cadre du BUT MMI."
               data-roles="Scénario|Découpage technique|Cadreur">
-              <img src="./vid%C3%A9o_montage/honeypie%20clip.webp" alt="Image du clip Honey Pie : chanteur face caméra avec le titre en lettres dorées" loading="lazy">
+              <img src="./vid%C3%A9o_montage/honeypie%20clip.webp"
+                alt="Image du clip Honey Pie : chanteur face caméra avec le titre en lettres dorées" loading="lazy">
+              <video class="cf-prev" muted loop playsinline preload="none" aria-hidden="true" src="./vid%C3%A9o_montage/apercus/honeypie.mp4"></video>
               <span class="work-play" aria-hidden="true"></span>
             </a>
 
-            <a href="/court-metrage-onion" class="cf-card" data-cat="Court-métrage · 2026" data-title=".Onion" data-link="Voir le projet"
-              data-desc="Court-métrage étudiant, disponible sur MMIFlix."
+            <a href="/court-metrage-onion" class="cf-card" data-cat="Court-métrage · 2026" data-title=".Onion"
+              data-link="Voir le projet" data-desc="Court-métrage étudiant, disponible sur MMIFlix."
               data-roles="Découpage technique|Cadreur|Montage">
-              <img src="./img/autres/Onion.webp" alt="Ordinateur portable affichant « .ONION » sur fond rouge, court-métrage .Onion" loading="lazy">
+              <img src="./img/autres/Onion.webp"
+                alt="Ordinateur portable affichant « .ONION » sur fond rouge, court-métrage .Onion" loading="lazy">
               <span class="work-play" aria-hidden="true"></span>
             </a>
 
-            <a href="/presentation-salon" class="cf-card" data-cat="Vidéo &amp; photo · 2025" data-title="Salon Aristochiens" data-link="Voir le projet" data-client="Salon Aristochiens"
+            <a href="/presentation-salon" class="cf-card" data-cat="Vidéo &amp; photo · 2025"
+              data-title="Salon Aristochiens" data-link="Voir le projet" data-client="Salon Aristochiens"
               data-desc="Vidéo de présentation et reportage photo pour un salon de toilettage canin."
               data-roles="Réalisation|Montage|Photo">
-              <img src="./vid%C3%A9o_montage/presentation_salon.webp" alt="Caniche abricot attendant son toilettage, vidéo de présentation du Salon Aristochiens" loading="lazy">
+              <img src="./vid%C3%A9o_montage/presentation_salon.webp"
+                alt="Caniche abricot attendant son toilettage, vidéo de présentation du Salon Aristochiens"
+                loading="lazy">
+              <video class="cf-prev" muted loop playsinline preload="none" aria-hidden="true" src="./vid%C3%A9o_montage/apercus/salon.mp4"></video>
               <span class="work-play" aria-hidden="true"></span>
             </a>
 
-            <a href="/photographie/#sport" class="cf-card" data-cat="Photo · Sport" data-title="Basketball" data-link="Voir les photos"
-              data-desc="L’action, les duels et les émotions des matchs en salle."
+            <a href="/photographie/#sport" class="cf-card" data-cat="Photo · Sport" data-title="Basketball"
+              data-link="Voir les photos" data-desc="L’action, les duels et les émotions des matchs en salle."
               data-roles="Photographe">
-              <img src="./img/basketball/DSC03801-800w.webp" alt="Jeune basketteur montant au panier face à un contreur en jaune" loading="lazy">
+              <img src="./img/basketball/DSC03801-800w.webp"
+                alt="Jeune basketteur montant au panier face à un contreur en jaune" loading="lazy">
             </a>
 
-            <a href="/photographie/#auto" class="cf-card" data-cat="Photo · Automobile" data-title="Supercars" data-link="Voir les photos"
-              data-desc="Série personnelle dans les rues de Monaco."
+            <a href="/photographie/#auto" class="cf-card" data-cat="Photo · Automobile" data-title="Supercars"
+              data-link="Voir les photos" data-desc="Série personnelle dans les rues de Monaco."
               data-roles="Photographe">
-              <img src="./img/automobile/DSC06658-800w.webp" alt="Marsien GT beige devant des palmiers et des drapeaux" loading="lazy">
+              <img src="./img/automobile/DSC06658-800w.webp" alt="Marsien GT beige devant des palmiers et des drapeaux"
+                loading="lazy">
             </a>
 
-            <a href="/photographie/#animal" class="cf-card" data-cat="Photo · Animalier" data-title="Animalier" data-link="Voir les photos"
-              data-desc="Portraits d’animaux, du chien au lion."
-              data-roles="Photographe">
-              <img src="./img/chiens/DSC07451-800w.webp" alt="Chien bringé courant vers l’objectif dans un champ" loading="lazy">
+            <a href="/photographie/#animal" class="cf-card" data-cat="Photo · Animalier" data-title="Animalier"
+              data-link="Voir les photos" data-desc="Portraits d’animaux, du chien au lion." data-roles="Photographe">
+              <img src="./img/chiens/DSC07451-800w.webp" alt="Chien bringé courant vers l’objectif dans un champ"
+                loading="lazy">
             </a>
 
 
           </div>
 
           <button class="cf-btn cf-btn--next" id="cf-next" aria-label="Projet suivant">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 18 15 12 9 6" /></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
           </button>
         </div>
 
@@ -245,6 +287,37 @@
           <a class="slide-link" id="cf-link" href="#"></a>
         </div>
 
+        <!-- Catégories : panneaux qui s'ouvrent au survol, clic = rideau vers la page -->
+        <nav class="cats reveal" id="cats" aria-label="Tous mes projets par catégorie">
+          <a href="/photographie" class="cat">
+            <img src="./img/basketball/DSC03801.webp" alt="" loading="lazy">
+            <span class="cat-num">01</span>
+            <span class="cat-body">
+              <span class="cat-name">Photographie</span>
+              <span class="cat-meta">Sport · Auto · Animalier</span>
+            </span>
+          </a>
+          <a href="/production-video" class="cat">
+            <img src="./vid%C3%A9o_montage/honeypie%20clip.webp" alt="" loading="lazy">
+            <video muted loop playsinline preload="none" aria-hidden="true">
+              <source src="./vidéo_fond/fond-portfolio.mp4" type="video/mp4">
+            </video>
+            <span class="cat-num">02</span>
+            <span class="cat-body">
+              <span class="cat-name">Vidéo</span>
+              <span class="cat-meta">Clips · Captations · Montage</span>
+            </span>
+          </a>
+          <a href="/affiche-graphisme" class="cat">
+            <img src="./img/affiches/affiche_bmw2.webp" alt="" loading="lazy">
+            <span class="cat-num">03</span>
+            <span class="cat-body">
+              <span class="cat-name">Affiches</span>
+              <span class="cat-meta">Graphisme · Événements</span>
+            </span>
+          </a>
+        </nav>
+
 
       </div>
     </section>
@@ -252,31 +325,37 @@
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="section">
       <div class="container">
-        <div class="contact-inner">
+        <div class="cta cta--split">
 
+          <div class="cta-side">
           <div class="reveal">
             <p class="section-label">Contact</p>
-            <h2 class="section-title">Travaillons<br><em>ensemble</em></h2>
-
-            <p style="margin-top: 1.5rem;">
-              Un match, un événement, un projet de marque ? Parlez-moi de votre projet.<br>Basé près de Lens, je me déplace dans le Pas-de-Calais, le Nord, la Somme et plus loin selon les projets.
+            <h2 class="section-title">Travaillons <em>ensemble</em></h2>
+            <p class="cta-lead">
+              Un match, un événement, un projet de marque ? Écrivez-moi directement.
+              Basé près de Lens, je me déplace dans le Pas-de-Calais, le Nord, la Somme et plus loin selon les projets.
             </p>
-
-            <div class="contact-fast">
-              <a href="mailto:colmant.thomas@gmail.com" class="contact-fast-item">
-                <span><small>E-mail</small>colmant.thomas@gmail.com</span><span aria-hidden="true">→</span>
-              </a>
-              <a href="https://www.instagram.com/by_thomascmt/" target="_blank" rel="noopener" class="contact-fast-item">
-                <span><small>Instagram</small>@by_thomascmt</span><span aria-hidden="true">→</span>
-              </a>
-              <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank" rel="noopener" class="contact-fast-item">
-                <span><small>LinkedIn</small>thomas-colmant</span><span aria-hidden="true">→</span>
-              </a>
-            </div>
           </div>
 
+          <!-- Le plus simple d'abord : l'e-mail en très grand -->
+          <div class="cta-main reveal reveal-delay-1">
+            <a href="mailto:colmant.thomas@gmail.com" class="cta-mail">
+              <small>Par e-mail</small>
+              <span class="cta-mail-addr">colmant.thomas@gmail.com</span>
+              <span class="cta-mail-arrow" aria-hidden="true">→</span>
+            </a>
+            <div class="cta-row">
+              <button type="button" class="cta-pill cta-copy" data-copy="colmant.thomas@gmail.com">Copier l’adresse</button>
+              <a href="https://www.instagram.com/by_thomascmt/" target="_blank" rel="noopener" class="cta-pill cta-pill--insta">Instagram · @by_thomascmt <span aria-hidden="true">↗</span></a>
+              <a href="https://www.tiktok.com/@by_thomascmt" target="_blank" rel="noopener" class="cta-pill">TikTok <span aria-hidden="true">↗</span></a>
+              <a href="https://www.linkedin.com/in/thomas-colmant-506629382" target="_blank" rel="noopener" class="cta-pill">LinkedIn <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          </div>
+
+          <!-- Formulaire, toujours visible à droite -->
           <form id="form" action="https://formspree.io/f/mvgwbzja" method="POST"
-            class="contact-form reveal reveal-delay-1">
+            class="contact-form reveal reveal-delay-2">
             <div class="form-row">
               <input type="text" name="name" placeholder="Nom" aria-label="Nom" required>
               <input type="email" name="email" placeholder="Email" aria-label="Email" required>
@@ -326,6 +405,72 @@
   </footer>
 
   <script>
+    // ===== Header cinéma =====
+    (() => {
+      const hero = document.getElementById('home');
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Titre découpé lettre par lettre
+      let n = 0;
+      hero.querySelectorAll('.ht-line').forEach(line => {
+        const target = line.querySelector('em') || line;
+        const txt = target.textContent.trim();
+        target.innerHTML = [...txt].map(c => `<span class="ch" aria-hidden="true" style="transition-delay:${1.25 + n++ * 0.045}s">${c}</span>`).join('');
+      });
+
+      // Ouverture : on attend que la vidéo puisse jouer (ou 1,2 s max)
+      const video = document.getElementById('hero-video');
+      let opened = false;
+      const open = () => { if (!opened) { opened = true; hero.classList.add('is-open'); } };
+      if (reduce) open();
+      else {
+        if (video.readyState >= 2) open(); else video.addEventListener('canplay', open, { once: true });
+        setTimeout(open, 1200);
+      }
+
+      // Recadrage au défilement (--p de 0 à 1)
+      let ticking = false;
+      const update = () => {
+        ticking = false;
+        const range = hero.offsetHeight - innerHeight;
+        const p = range > 0 ? Math.min(Math.max(scrollY / range, 0), 1) : 0;
+        hero.style.setProperty('--p', p.toFixed(4));
+      };
+      if (!reduce) {
+        addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+        addEventListener('resize', update, { passive: true });
+        update();
+      }
+    })();
+
+    // ===== Bande défilante : avance toute seule et accélère avec le défilement =====
+    (() => {
+      const track = document.getElementById('marquee-track');
+      if (!track || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      let x = 0, last = scrollY, boost = 0;
+      const loop = () => {
+        const dy = scrollY - last;
+        last = scrollY;
+        boost += (dy * 0.6 - boost) * 0.12;
+        x -= 0.6 + Math.abs(boost);
+        const half = track.scrollWidth / 2;
+        if (-x >= half) x += half;
+        track.style.transform = `translate3d(${x}px,0,0)`;
+        requestAnimationFrame(loop);
+      };
+      requestAnimationFrame(loop);
+    })();
+
+    // ===== Panneaux de catégories : la vidéo joue au survol =====
+    (() => {
+      document.querySelectorAll('#cats .cat').forEach(cat => {
+        const v = cat.querySelector('video');
+        if (!v) return;
+        cat.addEventListener('mouseenter', () => { v.preload = 'auto'; v.play().catch(() => { }); });
+        cat.addEventListener('mouseleave', () => v.pause());
+      });
+    })();
+
     const header = document.getElementById('site-header');
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 60);
@@ -373,6 +518,27 @@
     };
     let cfIndex = 0;
 
+    // Aperçus vidéo des cartes
+    const canHover = matchMedia('(hover: hover)').matches;
+    const cfPlay = card => {
+      const v = card.querySelector('video');
+      if (!v) return;
+      v.preload = 'auto';
+      v.play().then(() => card.classList.add('is-playing')).catch(() => { });
+    };
+    const cfStop = card => {
+      const v = card.querySelector('video');
+      if (!v) return;
+      card.classList.remove('is-playing');
+      v.pause();
+    };
+    if (canHover) {
+      cfCards.forEach(card => {
+        card.addEventListener('mouseenter', () => { if (card.classList.contains('is-active')) cfPlay(card); });
+        card.addEventListener('mouseleave', () => cfStop(card));
+      });
+    }
+
     // Distance circulaire la plus courte entre une carte et la carte active
     const offsetOf = i => {
       let d = i - cfIndex;
@@ -396,8 +562,12 @@
         card.classList.toggle('is-active', d === 0);
         card.tabIndex = d === 0 ? 0 : -1;
         card.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
+        // Aperçu vidéo : sur téléphone il joue tout seul sur la carte du milieu, sur ordi au survol
         const v = card.querySelector('video');
-        if (v) d === 0 ? v.play().catch(() => {}) : v.pause();
+        if (v) {
+          if (d === 0 && (!canHover || card.matches(':hover'))) cfPlay(card);
+          else cfStop(card);
+        }
       });
 
       const c = cfCards[cfIndex].dataset;
@@ -514,6 +684,7 @@
     }
   </script>
 
+  <script src="/anim.js?v=20261107u" defer></script>
 </body>
 
 </html>

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site-live",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:/Users/colma/AppData/Local/Temp/claude/C--Users-colma-AppData-Roaming-Claude-scratch-workspaces-fb95b651-e680-41c3-805a-c36dfd3a2b01-8f9b308d-665b-4350-a697-4de8c0ea34c7-scratch-2026-10-14-f72caa/03b1b5bc-ca69-424f-bd92-cd045892b324/scratchpad/live-server.js", ".", "5502"],
+      "port": 5502
+    }
+  ]
+}

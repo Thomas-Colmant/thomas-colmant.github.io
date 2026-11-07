@@ -23,10 +23,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="/style.css?v=20261019e">
+  <link rel="stylesheet" href="/style.css?v=20261107u">
 
   <style>
     .page-hero {
@@ -138,7 +138,7 @@
     }
 
     .poster-name {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: var(--font-display);
       font-size: 1.1rem;
       font-weight: 400;
       color: #fff;
@@ -323,7 +323,7 @@
           </a>
           <p class="section-label">Portfolio</p>
           <h1
-            style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:300;color:#fff;line-height:1.05;margin:0;">
+            style="font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4.5rem);font-weight:600;font-stretch:112%;letter-spacing:-0.03em;color:#fff;line-height:1;margin:0;">
             Affiches &amp; Graphisme
           </h1>
         </div>
@@ -409,9 +409,18 @@
         <div class="project-cta project-cta--first">
           <h2 class="section-title">Travaillons <em>ensemble</em></h2>
           <p>Un match, un événement, un projet de marque ? Basé près de Lens, je me déplace dans le Pas-de-Calais, le Nord, la Somme et plus loin selon les projets.</p>
-          <div class="hero-actions">
-            <a href="/#contact" class="btn-primary">Me contacter</a>
-            <a href="mailto:colmant.thomas@gmail.com" class="btn-ghost">colmant.thomas@gmail.com</a>
+          <div class="cta-main cta-main--center">
+            <a href="mailto:colmant.thomas@gmail.com" class="cta-mail">
+              <small>Par e-mail</small>
+              <span class="cta-mail-addr">colmant.thomas@gmail.com</span>
+              <span class="cta-mail-arrow" aria-hidden="true">→</span>
+            </a>
+            <div class="cta-row">
+              <button type="button" class="cta-pill cta-copy" data-copy="colmant.thomas@gmail.com">Copier l’adresse</button>
+              <a href="https://www.instagram.com/by_thomascmt/" target="_blank" rel="noopener" class="cta-pill cta-pill--insta">Instagram · @by_thomascmt <span aria-hidden="true">↗</span></a>
+              <a href="https://www.tiktok.com/@by_thomascmt" target="_blank" rel="noopener" class="cta-pill">TikTok <span aria-hidden="true">↗</span></a>
+              <a href="/#contact" class="cta-pill">Formulaire de contact</a>
+            </div>
           </div>
         </div>
       </div>
@@ -493,6 +502,7 @@
     });
   </script>
 
+  <script src="/anim.js?v=20261107u" defer></script>
 </body>
 
 </html>

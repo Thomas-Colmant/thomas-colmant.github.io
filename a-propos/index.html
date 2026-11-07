@@ -19,7 +19,7 @@
   <title>À propos | Thomas Colmant</title>
   <meta name="description" content="Thomas Colmant, photographe et vidéaste près de Lens, étudiant en 3e année de BUT MMI à Lens : parcours, logiciels et ce que je fais.">
 
-  <link rel="stylesheet" href="/style.css?v=20261019e">
+  <link rel="stylesheet" href="/style.css?v=20261107u">
 </head>
 
 <body>
@@ -101,26 +101,38 @@
         <p class="ap-hello">Ce que je fais</p>
         <h2 class="ap-big">Du terrain <em>au montage</em></h2>
 
-        <div class="ap-what-grid">
-          <article>
-            <span class="ap-num">01</span>
-            <h3>Captation vidéo</h3>
-            <p>Sport, automobile, mariage, événements : je filme dans tous les domaines.</p>
+        <div class="svc-grid">
+          <article class="svc reveal">
+            <img src="/img/autres/Capture%20d'%C3%A9cran%202026-07-02%20121244-800w.webp" alt="" loading="lazy">
+            <span class="svc-num">01</span>
+            <div class="svc-body">
+              <h3>Captation vidéo</h3>
+              <p>Sport, automobile, mariage, événements : je filme dans tous les domaines.</p>
+            </div>
           </article>
-          <article>
-            <span class="ap-num">02</span>
-            <h3>Événements &amp; aftermovies</h3>
-            <p>Soirées, salons, cérémonies ou matchs : je capte l’ambiance et je la monte en aftermovie.</p>
+          <article class="svc reveal reveal-delay-1">
+            <img src="/vid%C3%A9o_montage/presentation_salon-800w.webp" alt="" loading="lazy">
+            <span class="svc-num">02</span>
+            <div class="svc-body">
+              <h3>Événements &amp; aftermovies</h3>
+              <p>Soirées, salons, cérémonies ou matchs : je capte l’ambiance et je la monte en aftermovie.</p>
+            </div>
           </article>
-          <article>
-            <span class="ap-num">03</span>
-            <h3>Clips &amp; courts-métrages</h3>
-            <p>Du découpage technique au tournage, jusqu’au montage et à l’étalonnage.</p>
+          <article class="svc reveal reveal-delay-2">
+            <img src="/vid%C3%A9o_montage/honeypie%20clip.webp" alt="" loading="lazy">
+            <span class="svc-num">03</span>
+            <div class="svc-body">
+              <h3>Clips &amp; courts-métrages</h3>
+              <p>Du découpage technique au tournage, jusqu’au montage et à l’étalonnage.</p>
+            </div>
           </article>
-          <article>
-            <span class="ap-num">04</span>
-            <h3>Photographie</h3>
-            <p>Sport, animaux, automobile, mariage et shootings photo, avec retouche.</p>
+          <article class="svc reveal reveal-delay-3">
+            <img src="/img/automobile/DSC06658-800w.webp" alt="" loading="lazy">
+            <span class="svc-num">04</span>
+            <div class="svc-body">
+              <h3>Photographie</h3>
+              <p>Sport, animaux, automobile, mariage et shootings photo, avec retouche.</p>
+            </div>
           </article>
         </div>
       </div>
@@ -146,9 +158,18 @@
         <div class="project-cta project-cta--first">
           <h2 class="section-title">Travaillons <em>ensemble</em></h2>
           <p>Un match, un événement, un projet de marque ? Parlez-moi de votre projet.</p>
-          <div class="hero-actions">
-            <a href="/#contact" class="btn-primary">Me contacter</a>
-            <a href="mailto:colmant.thomas@gmail.com" class="btn-ghost">colmant.thomas@gmail.com</a>
+          <div class="cta-main cta-main--center">
+            <a href="mailto:colmant.thomas@gmail.com" class="cta-mail">
+              <small>Par e-mail</small>
+              <span class="cta-mail-addr">colmant.thomas@gmail.com</span>
+              <span class="cta-mail-arrow" aria-hidden="true">→</span>
+            </a>
+            <div class="cta-row">
+              <button type="button" class="cta-pill cta-copy" data-copy="colmant.thomas@gmail.com">Copier l’adresse</button>
+              <a href="https://www.instagram.com/by_thomascmt/" target="_blank" rel="noopener" class="cta-pill cta-pill--insta">Instagram · @by_thomascmt <span aria-hidden="true">↗</span></a>
+              <a href="https://www.tiktok.com/@by_thomascmt" target="_blank" rel="noopener" class="cta-pill">TikTok <span aria-hidden="true">↗</span></a>
+              <a href="/#contact" class="cta-pill">Formulaire de contact</a>
+            </div>
           </div>
         </div>
       </div>
@@ -196,6 +217,7 @@
       });
     }
   </script>
+  <script src="/anim.js?v=20261107u" defer></script>
 </body>
 
 </html>
