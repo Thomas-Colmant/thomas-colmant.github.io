@@ -3141,3 +3141,24 @@ body .lb-inner { margin-bottom: 4rem; }
 }
 .cta--split .cta-mail-addr { font-size: clamp(1.15rem, 2.05vw, 1.9rem); overflow-wrap: normal; white-space: nowrap; }
 @media (max-width: 1024px) { .cta--split .cta-mail-addr { font-size: clamp(1.1rem, 5.6vw, 2.4rem); } }
+
+
+/* Visionneuse : sans légende, la photo reprend toute la place */
+body .lb-img { max-height: 84vh; }
+body .lb-inner { margin-bottom: 0; }
+
+/* Photographie : l'image d'en-tête change en fondu selon la catégorie */
+body .page-hero-bg { overflow: hidden; }
+body .page-hero-bg img.hero-next {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: none;
+  filter: brightness(0.5) saturate(0.85);
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 0.85s ease, transform 1.4s var(--ease-out);
+}
+body .page-hero-bg img.hero-next.on { opacity: 1; transform: scale(1); }

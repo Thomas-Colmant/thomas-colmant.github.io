@@ -26,7 +26,7 @@
     href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="/style.css?v=20261107u">
+  <link rel="stylesheet" href="/style.css?v=20261108a">
 
   <style>
     /* ── Galerie photo ──────────────────────────── */
@@ -347,7 +347,7 @@
         <!-- Filtres -->
         <div class="photo-filters">
           <button class="filter-btn active" data-cat="all">Toutes</button>
-          <button class="filter-btn" data-cat="client">Projet client</button>
+          <button class="filter-btn" data-cat="mariage">Mariage</button>
           <button class="filter-btn" data-cat="sport">Sportive</button>
           <button class="filter-btn" data-cat="auto">Automobile</button>
           <button class="filter-btn" data-cat="animal">Animalière</button>
@@ -357,10 +357,14 @@
 
         <!-- Grille masonry -->
         <div class="photo-grid" id="photo-grid">
-          <div class="photo-item" data-cat="client" data-src="../img/photo_aristochiens/3M7A9579.webp">
+          <div class="photo-item portrait" data-cat="mariage" data-src="../img/mariage/DSC07955.webp">
+            <img src="../img/mariage/DSC07955.webp" width="1080" height="1440" alt="Les mariés s’embrassent sous le porche de l’église, la robe étalée sur les marches" loading="lazy" srcset="../img/mariage/DSC07955-800w.webp 600w, ../img/mariage/DSC07955.webp 1080w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
+            <div class="photo-item-overlay"><span>Mariage · 2026</span></div>
+          </div>
+          <div class="photo-item" data-cat="animal" data-src="../img/photo_aristochiens/3M7A9579.webp">
             <img src="../img/photo_aristochiens/3M7A9579.webp" width="2048" height="1365" alt="Shih tzu au pelage clair, portrait sur fond bleu au Salon Aristochiens"
               loading="lazy" srcset="../img/photo_aristochiens/3M7A9579-800w.webp 800w, ../img/photo_aristochiens/3M7A9579.webp 1920w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
-            <div class="photo-item-overlay"><span>Projet client · 2025</span></div>
+            <div class="photo-item-overlay"><span>Animalière</span></div>
           </div>
 
           <div class="photo-item" data-cat="sport" data-src="../img/basketball/DSC03770.webp">
@@ -393,12 +397,10 @@
             <div class="photo-item-overlay"><span>Animalière</span></div>
           </div>
 
-          <div class="photo-item" data-cat="client" data-src="../img/photo_aristochiens/3M7A9527.webp">
-            <img src="../img/photo_aristochiens/3M7A9527.webp" width="1365" height="2048" alt="Toiletteuse coupant les poils du museau d’un shih tzu au Salon Aristochiens"
-              loading="lazy" srcset="../img/photo_aristochiens/3M7A9527-800w.webp 533w, ../img/photo_aristochiens/3M7A9527.webp 1280w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
-            <div class="photo-item-overlay"><span>Projet client · 2025</span></div>
+          <div class="photo-item" data-cat="mariage" data-src="../img/mariage/DSC07857.webp">
+            <img src="../img/mariage/DSC07857.webp" width="1920" height="1080" alt="Les mariés éclatent de rire devant l’église" loading="lazy" srcset="../img/mariage/DSC07857-800w.webp 800w, ../img/mariage/DSC07857.webp 1920w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
+            <div class="photo-item-overlay"><span>Mariage · 2026</span></div>
           </div>
-
           <div class="photo-item" data-cat="sport" data-src="../img/basketball/DSC03776.webp">
             <img src="../img/basketball/DSC03776.webp" width="2048" height="1365" alt="Duel entre deux jeunes basketteurs, dribble face à un défenseur en jaune" loading="lazy" srcset="../img/basketball/DSC03776-800w.webp 800w, ../img/basketball/DSC03776.webp 1920w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
             <div class="photo-item-overlay"><span>Sportive</span></div>
@@ -429,6 +431,10 @@
             <div class="photo-item-overlay"><span>Street</span></div>
           </div>
 
+          <div class="photo-item portrait" data-cat="mariage" data-src="../img/mariage/DSC07929.webp">
+            <img src="../img/mariage/DSC07929.webp" width="1080" height="1440" alt="Portrait de la mariée souriante à l’église, couronne de fleurs séchées dans les cheveux" loading="lazy" srcset="../img/mariage/DSC07929-800w.webp 600w, ../img/mariage/DSC07929.webp 1080w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
+            <div class="photo-item-overlay"><span>Mariage · 2026</span></div>
+          </div>
           <div class="photo-item" data-cat="street" data-src="../img/autres/DSC_0068.webp">
             <img src="../img/autres/DSC_0068.webp" width="2592" height="3872" alt="Silhouette dans un couloir de métro, effet de filé" loading="lazy" srcset="../img/autres/DSC_0068-800w.webp 536w, ../img/autres/DSC_0068.webp 1285w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
             <div class="photo-item-overlay"><span>Street</span></div>
@@ -464,6 +470,10 @@
             <div class="photo-item-overlay"><span>Paysages</span></div>
           </div>
 
+          <div class="photo-item" data-cat="mariage" data-src="../img/mariage/DSC07996.webp">
+            <img src="../img/mariage/DSC07996.webp" width="1920" height="1080" alt="Un petit garçon embrasse le marié sur la joue, la mariée les regarde en souriant" loading="lazy" srcset="../img/mariage/DSC07996-800w.webp 800w, ../img/mariage/DSC07996.webp 1920w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
+            <div class="photo-item-overlay"><span>Mariage · 2026</span></div>
+          </div>
           <div class="photo-item" data-cat="street" data-src="../img/autres/DSC05844.webp">
             <img src="../img/autres/DSC05844.webp" width="2048" height="1365" alt="Couple marchant devant une façade jaune, effet de mouvement" loading="lazy" srcset="../img/autres/DSC05844-800w.webp 800w, ../img/autres/DSC05844.webp 1920w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
             <div class="photo-item-overlay"><span>Street</span></div>
@@ -474,14 +484,18 @@
             <div class="photo-item-overlay"><span>Street</span></div>
           </div>
 
-          <div class="photo-item" data-cat="client" data-src="../img/photo_aristochiens/3M7A9800.webp">
-            <img src="../img/photo_aristochiens/3M7A9800.webp" width="2048" height="1365" alt="Mains d’une toiletteuse tenant un caniche abricot au Salon Aristochiens"
-              loading="lazy" srcset="../img/photo_aristochiens/3M7A9800-800w.webp 800w, ../img/photo_aristochiens/3M7A9800.webp 1920w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
-            <div class="photo-item-overlay"><span>Projet client · 2025</span></div>
-          </div>
-
           <div class="photo-item" data-cat="animal" data-src="../img/chiens/DSC07480.webp">
             <img src="../img/chiens/DSC07480.webp" width="1365" height="2048" alt="Chien bringé courant au galop dans l’herbe haute" loading="lazy" srcset="../img/chiens/DSC07480-800w.webp 640w, ../img/chiens/DSC07480.webp 1536w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
+            <div class="photo-item-overlay"><span>Animalière</span></div>
+          </div>
+
+          <div class="photo-item portrait" data-cat="animal" data-src="../img/chiens/DSC08201-3.webp">
+            <img src="../img/chiens/DSC08201-3.webp" width="1080" height="1920" alt="Chien bringé assis sur un chemin couvert de feuilles d’automne" loading="lazy" srcset="../img/chiens/DSC08201-3-800w.webp 600w, ../img/chiens/DSC08201-3.webp 1080w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
+            <div class="photo-item-overlay"><span>Animalière</span></div>
+          </div>
+
+          <div class="photo-item portrait" data-cat="animal" data-src="../img/chiens/DSC08203-3.webp">
+            <img src="../img/chiens/DSC08203-3.webp" width="1080" height="1920" alt="Chien bringé courant vers l’objectif sur un chemin d’automne" loading="lazy" srcset="../img/chiens/DSC08203-3-800w.webp 600w, ../img/chiens/DSC08203-3.webp 1080w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
             <div class="photo-item-overlay"><span>Animalière</span></div>
           </div>
 
@@ -495,12 +509,16 @@
             <div class="photo-item-overlay"><span>Street</span></div>
           </div>
 
-          <div class="photo-item" data-cat="client" data-src="../img/photo_aristochiens/3M7A9913.webp">
+          <div class="photo-item" data-cat="animal" data-src="../img/photo_aristochiens/3M7A9913.webp">
             <img src="../img/photo_aristochiens/3M7A9913.webp" width="1365" height="2048" alt="Chien noir à poil bouclé de profil sur fond bleu au Salon Aristochiens"
               loading="lazy" srcset="../img/photo_aristochiens/3M7A9913-800w.webp 533w, ../img/photo_aristochiens/3M7A9913.webp 1280w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
-            <div class="photo-item-overlay"><span>Projet client · 2025</span></div>
+            <div class="photo-item-overlay"><span>Animalière</span></div>
           </div>
 
+          <div class="photo-item portrait" data-cat="mariage" data-src="../img/mariage/DSC07987.webp">
+            <img src="../img/mariage/DSC07987.webp" width="1080" height="1440" alt="Baiser des mariés dans un jardin aux couleurs d’automne" loading="lazy" srcset="../img/mariage/DSC07987-800w.webp 600w, ../img/mariage/DSC07987.webp 1080w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
+            <div class="photo-item-overlay"><span>Mariage · 2026</span></div>
+          </div>
           <div class="photo-item" data-cat="sport" data-src="../img/basketball/DSC03847.webp">
             <img src="../img/basketball/DSC03847.webp" width="2048" height="1365" alt="Jeune basketteur souriant par-dessus l’épaule d’un coéquipier" loading="lazy" srcset="../img/basketball/DSC03847-800w.webp 800w, ../img/basketball/DSC03847.webp 1920w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
             <div class="photo-item-overlay"><span>Sportive</span></div>
@@ -509,12 +527,6 @@
           <div class="photo-item" data-cat="street" data-src="../img/autres/DSC05956.webp">
             <img src="../img/autres/DSC05956.webp" width="1365" height="2048" alt="Cycliste en maillot jaune descendant une rue en ville" loading="lazy" srcset="../img/autres/DSC05956-800w.webp 533w, ../img/autres/DSC05956.webp 1280w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
             <div class="photo-item-overlay"><span>Street</span></div>
-          </div>
-
-          <div class="photo-item" data-cat="client" data-src="../img/photo_aristochiens/3M7A9976.webp">
-            <img src="../img/photo_aristochiens/3M7A9976.webp" width="1365" height="2048" alt="Toiletteuse coiffant un caniche abricot au Salon Aristochiens"
-              loading="lazy" srcset="../img/photo_aristochiens/3M7A9976-800w.webp 533w, ../img/photo_aristochiens/3M7A9976.webp 1280w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
-            <div class="photo-item-overlay"><span>Projet client · 2025</span></div>
           </div>
 
           <div class="photo-item" data-cat="animal" data-src="../img/zoo/DSC07103.webp">
@@ -527,17 +539,15 @@
             <div class="photo-item-overlay"><span>Street</span></div>
           </div>
 
-          <div class="photo-item" data-cat="client" data-src="../img/photo_aristochiens/1B7A0068.webp">
-            <img src="../img/photo_aristochiens/1B7A0068.webp" width="1638" height="2048" alt="Toiletteuse souriante avec un caniche abricot au Salon Aristochiens"
-              loading="lazy" srcset="../img/photo_aristochiens/1B7A0068-800w.webp 640w, ../img/photo_aristochiens/1B7A0068.webp 1536w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
-            <div class="photo-item-overlay"><span>Projet client · 2025</span></div>
-          </div>
-
           <div class="photo-item" data-cat="sport" data-src="../img/basketball/DSC04267.webp">
             <img src="../img/basketball/DSC04267.webp" width="2048" height="1365" alt="Jeune basketteur concentré pendant un temps mort" loading="lazy" srcset="../img/basketball/DSC04267-800w.webp 800w, ../img/basketball/DSC04267.webp 1920w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
             <div class="photo-item-overlay"><span>Sportive</span></div>
           </div>
 
+          <div class="photo-item portrait" data-cat="mariage" data-src="../img/mariage/DSC08026.webp">
+            <img src="../img/mariage/DSC08026.webp" width="1080" height="1440" alt="La mariée rit en levant son bouquet au milieu des rubans orange" loading="lazy" srcset="../img/mariage/DSC08026-800w.webp 600w, ../img/mariage/DSC08026.webp 1080w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
+            <div class="photo-item-overlay"><span>Mariage · 2026</span></div>
+          </div>
           <div class="photo-item" data-cat="auto" data-src="../img/automobile/DSC06371.webp">
             <img src="../img/automobile/DSC06371.webp" width="2048" height="1365" alt="Lamborghini violette en virage sur un parking" loading="lazy" srcset="../img/automobile/DSC06371-800w.webp 800w, ../img/automobile/DSC06371.webp 1920w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
             <div class="photo-item-overlay"><span>Automobile</span></div>
@@ -553,10 +563,10 @@
             <div class="photo-item-overlay"><span>Street</span></div>
           </div>
 
-          <div class="photo-item" data-cat="client" data-src="../img/photo_aristochiens/1B7A0471.webp">
+          <div class="photo-item" data-cat="animal" data-src="../img/photo_aristochiens/1B7A0471.webp">
             <img src="../img/photo_aristochiens/1B7A0471.webp" width="1638" height="2048" alt="Caniche abricot couché, regard levé au Salon Aristochiens"
               loading="lazy" srcset="../img/photo_aristochiens/1B7A0471-800w.webp 640w, ../img/photo_aristochiens/1B7A0471.webp 1536w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
-            <div class="photo-item-overlay"><span>Projet client · 2025</span></div>
+            <div class="photo-item-overlay"><span>Animalière</span></div>
           </div>
 
           <div class="photo-item" data-cat="animal" data-src="../img/zoo/DSC07208.webp">
@@ -574,6 +584,10 @@
             <div class="photo-item-overlay"><span>Automobile</span></div>
           </div>
 
+          <div class="photo-item portrait" data-cat="mariage" data-src="../img/mariage/DSC07874.webp">
+            <img src="../img/mariage/DSC07874.webp" width="1080" height="1440" alt="La mariée avance vers l’autel au bras d’un proche" loading="lazy" srcset="../img/mariage/DSC07874-800w.webp 600w, ../img/mariage/DSC07874.webp 1080w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
+            <div class="photo-item-overlay"><span>Mariage · 2026</span></div>
+          </div>
           <div class="photo-item" data-cat="auto" data-src="../img/automobile/DSC06647.webp">
             <img src="../img/automobile/DSC06647.webp" width="2048" height="1365" alt="Porsche 911 argentée garée dans une allée fleurie" loading="lazy" srcset="../img/automobile/DSC06647-800w.webp 800w, ../img/automobile/DSC06647.webp 1920w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
             <div class="photo-item-overlay"><span>Automobile</span></div>
@@ -587,6 +601,11 @@
           <div class="photo-item" data-cat="auto" data-src="../img/automobile/DSC06658.webp">
             <img src="../img/automobile/DSC06658.webp" width="2048" height="1365" alt="Marsien GT beige devant des palmiers et des drapeaux" loading="lazy" srcset="../img/automobile/DSC06658-800w.webp 800w, ../img/automobile/DSC06658.webp 1920w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
             <div class="photo-item-overlay"><span>Automobile</span></div>
+          </div>
+
+          <div class="photo-item portrait" data-cat="mariage" data-src="../img/mariage/DSC08002.webp">
+            <img src="../img/mariage/DSC08002.webp" width="1080" height="1440" alt="La mariée, les yeux fermés, lève les bras au milieu des rubans orange" loading="lazy" srcset="../img/mariage/DSC08002-800w.webp 600w, ../img/mariage/DSC08002.webp 1080w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
+            <div class="photo-item-overlay"><span>Mariage · 2026</span></div>
           </div>
 
           <div class="photo-item" data-cat="paysage" data-src="../img/paysages/DSC05768.webp">
@@ -763,7 +782,72 @@
     });
   </script>
 
-  <script src="/anim.js?v=20261107u" defer></script>
+  <script>
+    // ── L'image d'en-tête change selon la catégorie choisie (fondu) ──
+    (() => {
+      const heroes = {
+        all:     { img: 'basketball/DSC03770',         pos: 'center 17%', label: '' },
+        mariage: { img: 'mariage/DSC07857',            pos: 'center 30%', label: 'Mariage' },
+        sport:   { img: 'basketball/DSC03801',         pos: 'center 25%', label: 'Sportive' },
+        auto:    { img: 'automobile/DSC06371',         pos: 'center 60%', label: 'Automobile' },
+        animal:  { img: 'zoo/DSC07027',                pos: 'center 40%', label: 'Animalière' },
+        paysage: { img: 'paysages/DSC05791',           pos: 'center 50%', label: 'Paysages' },
+        street:  { img: 'autres/DSC05844',             pos: 'center 40%', label: 'Street' }
+      };
+      const bg = document.querySelector('.page-hero-bg');
+      const base = bg && bg.querySelector('img');
+      const label = document.querySelector('.page-hero .section-label');
+      if (!bg || !base) return;
+
+      const srcOf = h => `../img/${h.img}.webp`;
+      const setsOf = h => `../img/${h.img}-800w.webp 800w, ../img/${h.img}.webp 1920w`;
+      let current = 'all', token = 0;
+
+      const show = (cat, instant) => {
+        const h = heroes[cat] || heroes.all;
+        if (cat === current && !instant) return;
+        current = cat;
+        if (label) label.textContent = h.label ? `Portfolio · ${h.label}` : 'Portfolio';
+        if (instant) {
+          base.srcset = setsOf(h); base.src = srcOf(h); base.style.objectPosition = h.pos;
+          return;
+        }
+        const my = ++token;
+        const next = document.createElement('img');
+        next.className = 'hero-next';
+        next.alt = '';
+        next.sizes = base.sizes;
+        next.style.objectPosition = h.pos;
+        next.srcset = setsOf(h);
+        next.src = srcOf(h);
+        const go = () => {
+          if (my !== token) return;
+          bg.appendChild(next);
+          requestAnimationFrame(() => requestAnimationFrame(() => next.classList.add('on')));
+          setTimeout(() => {
+            if (my !== token) { next.remove(); return; }
+            base.srcset = next.srcset; base.src = next.src; base.style.objectPosition = h.pos;
+            bg.querySelectorAll('.hero-next').forEach(n => n.remove());
+          }, 900);
+        };
+        (next.decode ? next.decode() : Promise.resolve()).then(go, go);
+      };
+
+      document.querySelectorAll('.photo-filters .filter-btn').forEach(btn =>
+        btn.addEventListener('click', () => {
+          show(btn.dataset.cat);
+          // l'adresse suit la catégorie : chaque catégorie a son propre lien à partager
+          const cat = btn.dataset.cat;
+          history.replaceState(null, '', cat === 'all' ? location.pathname : `#${cat}`);
+        }));
+
+      // Catégorie déjà choisie au chargement (lien /photographie/#mariage…)
+      const active = document.querySelector('.photo-filters .filter-btn.active');
+      if (active && active.dataset.cat !== 'all') show(active.dataset.cat, true);
+    })();
+  </script>
+
+  <script src="/anim.js?v=20261108a" defer></script>
 </body>
 
 </html>

@@ -70,23 +70,11 @@
     }
   }
 
-  /* ---------- Visionneuse photo : légende + glisser au doigt ---------- */
+  /* ---------- Visionneuse photo : apparition douce + glisser au doigt ---------- */
   const lbBox = document.getElementById('lightbox');
   const lbImgEl = document.getElementById('lb-img');
   if (lbBox && lbImgEl) {
-    const cap = document.createElement('p');
-    cap.className = 'lb-caption';
-    lbBox.appendChild(cap);
-    const findAlt = src => {
-      if (!src) return '';
-      const file = decodeURIComponent(src.split('/').pop());
-      const img = [...document.querySelectorAll('.photo-item img, .poster-card img')]
-        .find(i => decodeURIComponent((i.currentSrc || i.src).split('/').pop()) === file
-          || decodeURIComponent((i.closest('[data-src]')?.dataset.src || '').split('/').pop()) === file);
-      return img ? img.alt : '';
-    };
     new MutationObserver(() => {
-      cap.textContent = findAlt(lbImgEl.getAttribute('src'));
       lbImgEl.classList.remove('lb-pop');
       void lbImgEl.offsetWidth;
       lbImgEl.classList.add('lb-pop');
