@@ -416,7 +416,7 @@
           </div>
 
           <!-- Interview — Emmaüs Connect × Nausicaá -->
-          <div class="video-card" data-src="../vidéo_montage/Interview Nausicaa Emmaus connect 16X9.mp4" data-title="Interview — Emmaüs Connect × Nausicaá">
+          <div class="video-card" data-src="../vidéo_montage/Interview Nausicaa Emmaus connect 16X9.mp4" data-title="Interview — Emmaüs Connect × Nausicaá" data-page="/emmaus-connect-nausicaa-interview/">
             <div class="video-thumb">
               <img src="../img/emmaus/emmaus-interview-800w.webp" alt="Interview face caméra sur fond bleu, projet Emmaüs Connect × Nausicaá" loading="lazy">
               <div class="video-play-btn">
@@ -436,7 +436,7 @@
           </div>
 
           <!-- Annonce réseaux — Emmaüs Connect × Nausicaá -->
-          <div class="video-card" data-src="../vidéo_montage/Second Souffle Annonce 16X9.mp4" data-title="Annonce réseaux — Emmaüs Connect × Nausicaá">
+          <div class="video-card" data-src="../vidéo_montage/Second Souffle Annonce 16X9.mp4" data-title="Annonce réseaux — Emmaüs Connect × Nausicaá" data-page="/emmaus-connect-nausicaa-annonce/">
             <div class="video-thumb">
               <img src="../img/emmaus/emmaus-annonce-800w.webp" alt="Jeune homme qui parle face caméra dans une salle, annonce pour les réseaux" loading="lazy">
               <div class="video-play-btn">
@@ -533,7 +533,7 @@
 
           <!-- Video Mapping — Zimny Tyen -->
           <div class="video-card" data-src="../video mapping/Mapping Zimny Tyen comp.mp4"
-            data-title="Mapping Vidéo Big Ben">
+            data-title="Mapping Vidéo Big Ben" data-page="/mapping-big-ben/">
             <div class="video-thumb">
               <img src="../video mapping/Capture d'écran 2026-09-24 134432.webp" alt="Video mapping lumineux projeté sur une maquette de Big Ben" srcset="../video%20mapping/Capture%20d'%C3%A9cran%202026-09-24%20134432-800w.webp 800w, ../video%20mapping/Capture%20d'%C3%A9cran%202026-09-24%20134432.webp 1919w" sizes="(max-width: 768px) 100vw, 50vw">
               <div class="video-play-btn">
@@ -696,6 +696,7 @@
         } else if (src) {
           modalIframe.style.display = 'none';
           modalVideo.style.display = 'block';
+          modalVideo.poster = card.querySelector('.video-thumb img')?.src || '';
           modalVideo.src = src;
           modalVideo.play();
         }
