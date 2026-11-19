@@ -3046,6 +3046,15 @@ body .lb-counter {
   box-shadow: none !important;
 }
 #description-affiche .container > div > img { max-width: 620px !important; }
+/* Vidéo verticale : limitée en hauteur et centrée, sinon elle prend tout l'écran */
+#description-motion-projet video.video-verticale {
+  width: auto !important;
+  max-height: 70vh;
+  aspect-ratio: 9 / 16;
+  display: block;
+  margin: 0 auto;
+  background: #000;
+}
 
 /* L'année : simple étiquette mono */
 #description-motion-projet .container > div > p,
