@@ -132,8 +132,10 @@
         <div class="hero-frame">
           <div class="hero-bg">
             <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="./vidéo_fond/fond-portfolio-poster.webp">
+              <source src="./vidéo_fond/fond-portfolio-mobile.mp4" type="video/mp4" media="(orientation: portrait)">
               <source src="./vidéo_fond/fond-portfolio.mp4" type="video/mp4">
             </video>
+            <script>if (matchMedia("(orientation: portrait)").matches) document.getElementById("hero-video").poster = "./vidéo_fond/fond-portfolio-mobile-poster.webp";</script>
           </div>
           <div class="hero-overlay"></div>
           <div class="hero-overlay-noise"></div>
