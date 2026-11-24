@@ -19,17 +19,17 @@
   <title>À propos | Thomas Colmant</title>
   <meta name="description" content="Thomas Colmant, photographe et vidéaste près de Lens, étudiant en 3e année de BUT MMI à Lens : parcours, logiciels et ce que je fais.">
 
-  <link rel="stylesheet" href="/style.css?v=20261119a">
+  <link rel="stylesheet" href="/style.css?v=20261126j">
 </head>
 
-<body>
+<body class="page-about">
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a href="/" class="logo">Thomas<span class="logo-dot"></span>Colmant</a>
+      <a href="/" class="logo">Thomas <span class="logo-paper">Colmant</span></a>
 
       <nav class="main-nav">
         <a href="/#travaux">Projets</a>
-        <a href="/a-propos/">À propos</a>
+        <a href="/a-propos/" aria-current="page">À propos</a>
         <a href="/#contact">Contact</a>
       </nav>
 
@@ -49,19 +49,26 @@
 
   <main>
     <section class="section ap">
-      <div class="container ap-inner">
-
-
-        <div class="ap-content">
-          <p class="ap-hello">Bonjour, je suis</p>
-          <h1 class="ap-name">Thomas <em>Colmant</em></h1>
-          <p class="ap-role">Photographe &amp; vidéaste · près de Lens</p>
-
-          <h2 class="ap-title">À propos</h2>
-          <p>Je suis étudiant en 3<sup>e</sup> année de BUT MMI (Métiers du Multimédia et de l’Internet) à Lens. Je fais de la photo et de la vidéo, surtout du sport en salle, des événements et des animaux. Je filme ou je photographie, puis je m’occupe moi-même du montage, de l’étalonnage et des visuels.</p>
-
+      <div class="container ap-intro">
+        <div class="ap-intro-text">
+          <p class="ap-hello">À propos</p>
+          <h1 class="ap-intro-title" data-split>Moi c’est <span class="ap-poster-underline">Thomas.</span></h1>
+          <p>Moi c’est Thomas, étudiant en 3<sup>e</sup> année de BUT MMI à Lens. Je fais de la photo et de la vidéo dans tous les domaines : sport, événements, animaux, automobile, mariages… Et je m’occupe de tout, du tournage au montage, en passant par l’étalonnage et la retouche photo.</p>
+          <p>Ce que j’aime, c’est être sur le terrain : au bord d’un terrain de basket, au milieu d’un événement ou face à un chien qui ne tient pas en place. Puis retrouver ces moments au montage et leur donner du rythme.</p>
+        </div>
+        <div class="ap-intro-photos" aria-label="Photos de Thomas en tournage">
+          <figure class="ap-print ap-print--a">
+            <img src="../img/moi/tournage-800w.webp" alt="Thomas Colmant de dos, caméra en main, filmant une interview en extérieur" loading="eager">
+          </figure>
+          <figure class="ap-print ap-print--b">
+            <img src="../img/moi/moii-800w.webp" alt="Thomas Colmant photographiant un chien de très près en studio" loading="eager">
+          </figure>
+        </div>
+      </div>
+      <div class="container ap-inner ap-inner--solo" data-stagger>
+        <div>
           <h2 class="ap-title">Logiciels</h2>
-          <ul class="ap-software">
+          <ul class="ap-software" data-stagger>
               <li><img src="/img/logiciels/davinci-resolve.png" alt="" loading="lazy"><span>DaVinci Resolve</span></li>
               <li><img src="/img/logiciels/premiere-pro.svg" alt="" loading="lazy"><span>Premiere Pro</span></li>
               <li><img src="/img/logiciels/after-effects.svg" alt="" loading="lazy"><span>After Effects</span></li>
@@ -69,85 +76,51 @@
               <li><img src="/img/logiciels/photoshop.svg" alt="" loading="lazy"><span>Photoshop</span></li>
               <li><img src="/img/logiciels/illustrator.svg" alt="" loading="lazy"><span>Illustrator</span></li>
           </ul>
-
-          <div class="ap-cols">
-            <div>
-              <h2 class="ap-title">Formation</h2>
-              <ul class="ap-list">
-                <li><strong>BUT MMI · Lens</strong><span>Métiers du Multimédia et de l’Internet · 3<sup>e</sup> année</span></li>
-              </ul>
-            </div>
-          </div>
-
+        </div>
+        <div class="ap-content">
           <h2 class="ap-title">Zone d’intervention</h2>
           <p>Basé près de Lens, je me déplace dans le Pas-de-Calais, le Nord, la Somme et plus loin selon les projets.</p>
-
           <div class="hero-actions ap-actions">
             <a href="../img/moi/CV_Thomas_Colmant.pdf" class="btn-primary" download="CV_Thomas_Colmant.pdf" target="_blank">Télécharger mon CV</a>
             <a href="/#travaux" class="btn-ghost">Voir mes projets</a>
           </div>
         </div>
-
-        <div class="ap-photo">
-          <img src="../img/moi/tournage.webp" alt="Thomas Colmant de dos, caméra en main, filmant une interview en extérieur" srcset="../img/moi/tournage-800w.webp 450w, ../img/moi/tournage.webp 1080w" sizes="(max-width: 900px) 100vw, 40vw">
-        </div>
-
       </div>
     </section>
 
-    <!-- Ce que je fais -->
-    <section class="section ap-what">
-      <div class="container">
-        <p class="ap-hello">Ce que je fais</p>
-        <h2 class="ap-big">Du terrain <em>au montage</em></h2>
-
-        <div class="svc-grid">
-          <article class="svc reveal">
-            <img src="/img/autres/Capture%20d'%C3%A9cran%202026-07-02%20121244-800w.webp" alt="" loading="lazy">
-            <span class="svc-num">01</span>
-            <div class="svc-body">
-              <h3>Captation vidéo</h3>
-              <p>Sport, automobile, mariage, événements : je filme dans tous les domaines.</p>
-            </div>
-          </article>
-          <article class="svc reveal reveal-delay-1">
-            <img src="/vid%C3%A9o_montage/presentation_salon-800w.webp" alt="" loading="lazy">
-            <span class="svc-num">02</span>
-            <div class="svc-body">
-              <h3>Événements &amp; aftermovies</h3>
-              <p>Soirées, salons, cérémonies ou matchs : je capte l’ambiance et je la monte en aftermovie.</p>
-            </div>
-          </article>
-          <article class="svc reveal reveal-delay-2">
-            <img src="/vid%C3%A9o_montage/honeypie%20clip.webp" alt="" loading="lazy">
-            <span class="svc-num">03</span>
-            <div class="svc-body">
-              <h3>Clips &amp; courts-métrages</h3>
-              <p>Du découpage technique au tournage, jusqu’au montage et à l’étalonnage.</p>
-            </div>
-          </article>
-          <article class="svc reveal reveal-delay-3">
-            <img src="/img/automobile/DSC06658-800w.webp" alt="" loading="lazy">
-            <span class="svc-num">04</span>
-            <div class="svc-body">
-              <h3>Photographie</h3>
-              <p>Sport, animaux, automobile, mariage et shootings photo, avec retouche.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
 
     <!-- Ma façon de travailler -->
     <section class="section ap-how">
-      <div class="container ap-how-inner">
-        <div>
-          <p class="ap-hello">Ma façon de travailler</p>
-          <h2 class="ap-big">À l’écoute, <em>du début à la fin</em></h2>
-        </div>
-        <div class="ap-how-text">
-          <p>On commence par parler de votre projet : ce que vous voulez montrer, l’ambiance recherchée et l’endroit où les images seront diffusées. Je m’occupe ensuite du tournage ou de la prise de vue, puis du montage, de l’étalonnage et de la retouche.</p>
-          <p>Club, association, événement ou marque : j’adapte le format à votre besoin, d’une vidéo courte pour les réseaux à une captation complète ou une série de photos.</p>
+      <div class="container">
+        <p class="ap-hello">Ma façon de travailler</p>
+        <h2 class="ap-big">À l’écoute, <em>du début à la fin</em></h2>
+
+        <div class="ap-steps reveal">
+          <svg class="ap-steps-line" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M5 22 C120 8 200 34 330 20 S540 6 670 22 S870 34 995 18" pathLength="1"/>
+          </svg>
+          <ol>
+            <li class="ap-step">
+              <span class="ap-step-num">01</span>
+              <h3>On en parle</h3>
+              <p>Ce que vous voulez montrer, l’ambiance recherchée et où les images seront diffusées.</p>
+            </li>
+            <li class="ap-step">
+              <span class="ap-step-num">02</span>
+              <h3>Je tourne</h3>
+              <p>Tournage vidéo ou prise de vue photo, sur le terrain.</p>
+            </li>
+            <li class="ap-step">
+              <span class="ap-step-num">03</span>
+              <h3>Je monte</h3>
+              <p>Montage, étalonnage et retouche, jusqu’au rendu final.</p>
+            </li>
+            <li class="ap-step">
+              <span class="ap-step-num">04</span>
+              <h3>Vous diffusez</h3>
+              <p>Un format adapté : vidéo courte pour les réseaux, captation complète ou série de photos.</p>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
@@ -155,7 +128,7 @@
     <!-- Contact -->
     <section class="section project-next">
       <div class="container">
-        <div class="project-cta project-cta--first">
+        <div class="project-cta project-cta--first reveal">
           <h2 class="section-title">Travaillons <em>ensemble</em></h2>
           <p>Un match, un événement, un projet de marque ? Parlez-moi de votre projet.</p>
           <div class="cta-main cta-main--center">
@@ -217,7 +190,7 @@
       });
     }
   </script>
-  <script src="/anim.js?v=20261108a" defer></script>
+  <script src="/anim.js?v=20261125x" defer></script>
 </body>
 
 </html>

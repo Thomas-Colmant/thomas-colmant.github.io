@@ -26,7 +26,7 @@
     href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="/style.css?v=20261119a">
+  <link rel="stylesheet" href="/style.css?v=20261126j">
 
   <style>
     /* ── Galerie photo ──────────────────────────── */
@@ -274,7 +274,7 @@
   <!-- ===== NAVIGATION ===== -->
   <header class="site-header scrolled" id="site-header">
     <div class="header-inner">
-      <a href="/" class="logo">Thomas<span class="logo-dot"></span>Colmant</a>
+      <a href="/" class="logo">Thomas <span class="logo-paper">Colmant</span></a>
 
       <nav class="main-nav">
         <a href="/#travaux">Projets</a>
@@ -336,17 +336,20 @@
             style="font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4.5rem);font-weight:600;font-stretch:112%;letter-spacing:-0.03em;color:#fff;line-height:1;margin:0;">
             Photographie
           </h1>
+          <a href="#contenu" class="hero-note">
+            <span class="hero-note-text">descends voir mes photos</span>
+            <svg class="hero-note-arrow" viewBox="0 0 100 120" aria-hidden="true"><path class="arrow-shaft" d="M8 10 C 40 4, 70 18, 66 42 C 63 60, 40 58, 44 46 C 48 34, 70 44, 68 70 C 66 88, 58 100, 52 110"/><path class="arrow-head" d="M50.8 94 L52 110 L66.6 103.4"/></svg>
+          </a>
         </div>
       </div>
     </div>
 
     <!-- ===== GALERIE ===== -->
-    <section class="section">
+    <section class="section" id="contenu">
       <div class="container">
 
-        <!-- Filtres -->
-        <div class="photo-filters">
-          <button class="filter-btn active" data-cat="all">Toutes</button>
+        <!-- Dossiers : un clic ouvre les photos juste en dessous -->
+        <div class="photo-filters folders" role="tablist" aria-label="Dossiers photo">
           <button class="filter-btn" data-cat="mariage">Mariage</button>
           <button class="filter-btn" data-cat="sport">Sportive</button>
           <button class="filter-btn" data-cat="auto">Automobile</button>
@@ -355,8 +358,10 @@
           <button class="filter-btn" data-cat="street">Street</button>
         </div>
 
+        <p class="folders-hint" id="folders-hint">Choisis un dossier ↑</p>
+
         <!-- Grille masonry -->
-        <div class="photo-grid" id="photo-grid">
+        <div class="photo-grid is-empty" id="photo-grid">
           <div class="photo-item portrait" data-cat="mariage" data-src="../img/mariage/DSC07955.webp">
             <img src="../img/mariage/DSC07955.webp" width="1080" height="1440" alt="Les mariés s’embrassent sous le porche de l’église, la robe étalée sur les marches" loading="lazy" srcset="../img/mariage/DSC07955-800w.webp 600w, ../img/mariage/DSC07955.webp 1080w" sizes="(max-width: 540px) 100vw, (max-width: 900px) 50vw, 33vw">
             <div class="photo-item-overlay"><span>Mariage · 2026</span></div>
@@ -695,29 +700,84 @@
     let currentSrcs = [];
     let currentIndex = 0;
 
+    // ── Dossiers : les photos sortent du dossier cliqué, et rentrent dans le leur quand on en change ──
+    const grid = document.getElementById('photo-grid');
+    const hint = document.getElementById('folders-hint');
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const itemsOf = cat => [...photoItems].filter(i => i.dataset.cat === cat);
+    const wait = ms => new Promise(r => setTimeout(r, reduceMotion ? 0 : ms));
+    const intoFolder = (item, btn) => {
+      const f = btn.getBoundingClientRect(), i = item.getBoundingClientRect();
+      return `translate(${f.left + f.width / 2 - (i.left + i.width / 2)}px, ${f.top + f.height / 2 - (i.top + i.height / 2)}px) scale(0.12) rotate(-8deg)`;
+    };
+    let openCat = null, busy = false;
+    photoItems.forEach(i => i.classList.add('hidden'));
+
+    // Chaque dossier montre 3 photos qui dépassent et son nombre de photos
     filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const cat = btn.dataset.cat;
-        photoItems.forEach(item => {
-          const show = cat === 'all' || item.dataset.cat === cat;
-          item.classList.toggle('hidden', !show);
-        });
-        buildSrcList(cat);
-      });
+      const items = itemsOf(btn.dataset.cat);
+      const name = btn.textContent.trim();
+      btn.setAttribute('role', 'tab');
+      btn.innerHTML = `<span class="folder-peek">${items.slice(0, 3).map(i => `<img src="${(i.querySelector('img').currentSrc || i.querySelector('img').src)}" alt="" loading="lazy">`).join('')}</span><span class="folder-body"><span class="folder-name">${name}</span><span class="folder-count">${items.length} photos</span></span>`;
     });
+
+    async function openFolder(btn) {
+      if (busy) return;
+      busy = true;
+      const cat = btn.dataset.cat;
+      const prev = document.querySelector('.photo-filters .filter-btn.active');
+      if (openCat && prev) { // les photos ouvertes rentrent dans leur dossier
+        itemsOf(openCat).forEach((it, k) => {
+          const d = Math.min(k, 10) * 28;
+          it.style.transition = `transform .55s cubic-bezier(.6,0,.4,1) ${d}ms, opacity .35s ${d + 200}ms`;
+          it.style.transform = intoFolder(it, prev);
+          it.style.opacity = '0';
+        });
+        prev.classList.add('is-gulp');
+        await wait(800);
+        prev.classList.remove('is-gulp');
+        itemsOf(openCat).forEach(it => { it.classList.add('hidden'); it.style.transition = it.style.transform = it.style.opacity = ''; });
+      }
+      filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      if (openCat === cat) { // même dossier : on le referme
+        openCat = null;
+        document.dispatchEvent(new CustomEvent('folderchange', { detail: 'all' }));
+        grid.classList.add('is-empty'); hint.hidden = false;
+        buildSrcList('none');
+        busy = false;
+        return;
+      }
+      openCat = cat;
+      document.dispatchEvent(new CustomEvent('folderchange', { detail: cat }));
+      btn.classList.add('active'); btn.setAttribute('aria-selected', 'true');
+      grid.classList.remove('is-empty'); hint.hidden = true;
+      const items = itemsOf(cat);
+      items.forEach(it => { it.classList.remove('hidden'); it.classList.add('g-in'); });
+      items.forEach(it => { it.style.transition = 'none'; it.style.transform = intoFolder(it, btn); it.style.opacity = '0'; });
+      grid.offsetHeight; // applique la position de départ avant d'animer
+      items.forEach((it, k) => { // les nouvelles sortent du dossier
+        const d = Math.min(k, 12) * 45;
+        it.style.transition = `transform .75s cubic-bezier(.2,.8,.2,1) ${d}ms, opacity .35s ${d}ms`;
+        it.style.transform = '';
+        it.style.opacity = '';
+      });
+      buildSrcList(cat);
+      await wait(450);
+      busy = false;
+      setTimeout(() => items.forEach(it => { it.style.transition = ''; }), 1300);
+    }
+    filterBtns.forEach(btn => btn.addEventListener('click', () => openFolder(btn)));
 
     function buildSrcList(cat) {
       currentSrcs = [];
       photoItems.forEach(item => {
-        if (cat === 'all' || item.dataset.cat === cat) {
+        if (item.dataset.cat === cat) {
           currentSrcs.push(item.dataset.src);
         }
       });
     }
 
-    buildSrcList('all');
+    buildSrcList('none');
 
     // ── Catégorie demandée dans l'adresse (ex. /photographie/#sport depuis l'accueil) ──
     function applyHashFilter() {
@@ -833,13 +893,12 @@
         (next.decode ? next.decode() : Promise.resolve()).then(go, go);
       };
 
-      document.querySelectorAll('.photo-filters .filter-btn').forEach(btn =>
-        btn.addEventListener('click', () => {
-          show(btn.dataset.cat);
-          // l'adresse suit la catégorie : chaque catégorie a son propre lien à partager
-          const cat = btn.dataset.cat;
-          history.replaceState(null, '', cat === 'all' ? location.pathname : `#${cat}`);
-        }));
+      // L'en-tête et l'adresse suivent le dossier ouvert (« all » quand on le referme)
+      document.addEventListener('folderchange', e => {
+        const cat = e.detail;
+        show(cat);
+        history.replaceState(null, '', cat === 'all' ? location.pathname : `#${cat}`);
+      });
 
       // Catégorie déjà choisie au chargement (lien /photographie/#mariage…)
       const active = document.querySelector('.photo-filters .filter-btn.active');
@@ -847,7 +906,7 @@
     })();
   </script>
 
-  <script src="/anim.js?v=20261108a" defer></script>
+  <script src="/anim.js?v=20261125x" defer></script>
 </body>
 
 </html>

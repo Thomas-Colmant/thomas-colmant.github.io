@@ -26,7 +26,7 @@
     href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="/style.css?v=20261119a">
+  <link rel="stylesheet" href="/style.css?v=20261126j">
 
   <style>
     /* ── Page hero ── */
@@ -284,7 +284,7 @@
 
   <header class="site-header scrolled" id="site-header">
     <div class="header-inner">
-      <a href="/" class="logo">Thomas<span class="logo-dot"></span>Colmant</a>
+      <a href="/" class="logo">Thomas <span class="logo-paper">Colmant</span></a>
 
       <nav class="main-nav">
         <a href="/#travaux">Projets</a>
@@ -338,18 +338,31 @@
             style="font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4.5rem);font-weight:600;font-stretch:112%;letter-spacing:-0.03em;color:#fff;line-height:1;margin:0;">
             Production Vidéo
           </h1>
+          <a href="#contenu" class="hero-note">
+            <span class="hero-note-text">descends voir mes réalisations</span>
+            <svg class="hero-note-arrow" viewBox="0 0 100 120" aria-hidden="true"><path class="arrow-shaft" d="M8 10 C 40 4, 70 18, 66 42 C 63 60, 40 58, 44 46 C 48 34, 70 44, 68 70 C 66 88, 58 100, 52 110"/><path class="arrow-head" d="M50.8 94 L52 110 L66.6 103.4"/></svg>
+          </a>
         </div>
       </div>
     </div>
 
     <!-- Grille vidéos -->
-    <section class="section">
+    <section class="section" id="contenu">
       <div class="container">
-        <div class="video-grid">
+        <!-- Dossiers : un clic ouvre les vidéos juste en dessous -->
+        <div class="photo-filters folders" role="tablist" aria-label="Dossiers vidéo">
+          <button class="filter-btn" data-cat="sport">Sport &amp; événements</button>
+          <button class="filter-btn" data-cat="fiction">Fiction &amp; clips</button>
+          <button class="filter-btn" data-cat="com">Communication</button>
+          <button class="filter-btn" data-cat="plateau">Plateau &amp; mapping</button>
+        </div>
+        <p class="folders-hint" id="folders-hint">Choisis un dossier ↑</p>
+
+        <div class="video-grid is-empty" id="video-grid">
 
 
           <!-- Mariage Heather & Absalom -->
-          <div class="video-card" data-youtube="cjS2XTlDH04" data-title="Mariage Heather &amp; Absalom" data-page="/mariage-heather-absalom/">
+          <div class="video-card" data-cat="sport" data-youtube="cjS2XTlDH04" data-title="Mariage Heather &amp; Absalom" data-page="/mariage-heather-absalom/">
             <div class="video-thumb">
               <img src="../img/autres/mariage-heather-absalom.webp" alt="Les mariés Heather et Absalom se sourient devant un vitrail" srcset="../img/autres/mariage-heather-absalom-800w.webp 800w, ../img/autres/mariage-heather-absalom.webp 1920w" sizes="(max-width: 768px) 100vw, 50vw">
               <div class="video-play-btn">
@@ -371,7 +384,7 @@
           </div>
 
           <!-- Court-métrage .Onion -->
-          <div class="video-card" data-link="https://mmiflix.fr/movie/ee3d3610-896c-4d79-aadc-de3ac130ac4c"
+          <div class="video-card" data-cat="fiction" data-link="https://mmiflix.fr/movie/ee3d3610-896c-4d79-aadc-de3ac130ac4c"
             data-title=".Onion" data-page="/court-metrage-onion/">
             <div class="video-thumb">
               <img src="../img/autres/Onion.webp" alt="Ordinateur portable affichant « .ONION » sur fond rouge, court-métrage .Onion">
@@ -396,7 +409,7 @@
           </div>
 
           <!-- Emmaüs Connect × Nausicaá -->
-          <div class="video-card" data-title="Spot de sensibilisation — Emmaüs Connect × Nausicaá" data-page="/emmaus-connect-nausicaa/">
+          <div class="video-card" data-cat="com" data-title="Spot de sensibilisation — Emmaüs Connect × Nausicaá" data-page="/emmaus-connect-nausicaa/">
             <div class="video-thumb">
               <img src="../img/emmaus/emmaus-sensibilisation-800w.webp" alt="Jeune homme mangeant un sandwich sur un banc en forêt, spot de sensibilisation Emmaüs Connect × Nausicaá" loading="lazy">
               <div class="video-play-btn">
@@ -416,7 +429,7 @@
           </div>
 
           <!-- Interview — Emmaüs Connect × Nausicaá -->
-          <div class="video-card" data-src="../vidéo_montage/Interview Nausicaa Emmaus connect 16X9.mp4" data-title="Interview — Emmaüs Connect × Nausicaá" data-page="/emmaus-connect-nausicaa-interview/">
+          <div class="video-card" data-cat="com" data-src="../vidéo_montage/Interview Nausicaa Emmaus connect 16X9.mp4" data-title="Interview — Emmaüs Connect × Nausicaá" data-page="/emmaus-connect-nausicaa-interview/">
             <div class="video-thumb">
               <img src="../img/emmaus/emmaus-interview-800w.webp" alt="Interview face caméra sur fond bleu, projet Emmaüs Connect × Nausicaá" loading="lazy">
               <div class="video-play-btn">
@@ -436,7 +449,7 @@
           </div>
 
           <!-- Annonce réseaux — Emmaüs Connect × Nausicaá -->
-          <div class="video-card" data-src="../vidéo_montage/Second Souffle Annonce 16X9.mp4" data-title="Annonce réseaux — Emmaüs Connect × Nausicaá" data-page="/emmaus-connect-nausicaa-annonce/">
+          <div class="video-card" data-cat="com" data-src="../vidéo_montage/Second Souffle Annonce 16X9.mp4" data-title="Annonce réseaux — Emmaüs Connect × Nausicaá" data-page="/emmaus-connect-nausicaa-annonce/">
             <div class="video-thumb">
               <img src="../img/emmaus/emmaus-annonce-800w.webp" alt="Jeune homme qui parle face caméra dans une salle, annonce pour les réseaux" loading="lazy">
               <div class="video-play-btn">
@@ -456,7 +469,7 @@
           </div>
 
           <!-- Vidéo Basket Match Gala -->
-          <div class="video-card" data-youtube="/kteyhcDh-cc" data-title="Vidéo Basket Match Gala" data-page="/match-gala-basket/">
+          <div class="video-card" data-cat="sport" data-youtube="/kteyhcDh-cc" data-title="Vidéo Basket Match Gala" data-page="/match-gala-basket/">
             <div class="video-thumb">
               <img src="../img/autres/Capture d'écran 2026-07-02 121244.webp" alt="Captation vidéo du match de basket de gala : joueurs Team BCL et Team Fox" srcset="../img/autres/Capture%20d'%C3%A9cran%202026-07-02%20121244-800w.webp 800w, ../img/autres/Capture%20d'%C3%A9cran%202026-07-02%20121244.webp 1808w" sizes="(max-width: 768px) 100vw, 50vw">
               <div class="video-play-btn">
@@ -475,7 +488,7 @@
           </div>
 
           <!-- Vidéo Basket NM2 -->
-          <div class="video-card" data-youtube="GyjVBln3uKQ" data-title="Vidéo Basket NM2" data-page="/match-basket-nm2/">
+          <div class="video-card" data-cat="sport" data-youtube="GyjVBln3uKQ" data-title="Vidéo Basket NM2" data-page="/match-basket-nm2/">
             <div class="video-thumb">
               <img src="../img/autres/Capture d'écran 2026-07-02 121152.webp" alt="Captation vidéo d’un match de basket NM2 devant les tribunes" srcset="../img/autres/Capture%20d'%C3%A9cran%202026-07-02%20121152-800w.webp 800w, ../img/autres/Capture%20d'%C3%A9cran%202026-07-02%20121152.webp 1813w" sizes="(max-width: 768px) 100vw, 50vw">
               <div class="video-play-btn">
@@ -494,7 +507,7 @@
           </div>
 
           <!-- WEB TV - Layover Point -->
-          <div class="video-card" data-youtube="pMx6v06m9Wo" data-title="WEB TV — Layover Point" data-page="/web-tv-production-video/">
+          <div class="video-card" data-cat="plateau" data-youtube="pMx6v06m9Wo" data-title="WEB TV — Layover Point" data-page="/web-tv-production-video/">
             <div class="video-thumb">
               <img src="../web tv layover point.webp" alt="WEB TV Layover Point" srcset="../web%20tv%20layover%20point-800w.webp 800w, ../web%20tv%20layover%20point.webp 1282w" sizes="(max-width: 768px) 100vw, 50vw">
               <div class="video-play-btn">
@@ -513,7 +526,7 @@
           </div>
 
           <!-- Clip Honeypie -->
-          <div class="video-card" data-youtube="ILHow0LKMoM" data-title="Clip Étudiant — Honeypie" data-page="/clip-etudiant-honeypie/">
+          <div class="video-card" data-cat="fiction" data-youtube="ILHow0LKMoM" data-title="Clip Étudiant — Honeypie" data-page="/clip-etudiant-honeypie/">
             <div class="video-thumb">
               <img src="../vidéo_montage/honeypie clip.webp" alt="Image du clip Honey Pie : chanteur face caméra avec le titre en lettres dorées">
               <div class="video-play-btn">
@@ -532,7 +545,7 @@
           </div>
 
           <!-- Video Mapping — Zimny Tyen -->
-          <div class="video-card" data-src="../video mapping/Mapping Zimny Tyen comp.mp4"
+          <div class="video-card" data-cat="plateau" data-src="../video mapping/Mapping Zimny Tyen comp.mp4"
             data-title="Mapping Vidéo Big Ben" data-page="/mapping-big-ben/">
             <div class="video-thumb">
               <img src="../video mapping/Capture d'écran 2026-09-24 134432.webp" alt="Video mapping lumineux projeté sur une maquette de Big Ben" srcset="../video%20mapping/Capture%20d'%C3%A9cran%202026-09-24%20134432-800w.webp 800w, ../video%20mapping/Capture%20d'%C3%A9cran%202026-09-24%20134432.webp 1919w" sizes="(max-width: 768px) 100vw, 50vw">
@@ -552,7 +565,7 @@
           </div>
 
           <!-- Vidéo Cinématographique -->
-          <div class="video-card" data-src="../vidéo_montage/Vidéo Cinématographique.mp4"
+          <div class="video-card" data-cat="fiction" data-src="../vidéo_montage/Vidéo Cinématographique.mp4"
             data-title="Vidéo Cinématographique" data-page="/Production_personnelle/">
             <div class="video-thumb">
               <img src="../vidéo_montage/fond_pour_video.webp" alt="Plan cinématographique de deux jeunes hommes sous une lumière verte" srcset="../vid%C3%A9o_montage/fond_pour_video-800w.webp 446w, ../vid%C3%A9o_montage/fond_pour_video.webp 601w" sizes="(max-width: 768px) 100vw, 50vw">
@@ -572,7 +585,7 @@
           </div>
 
           <!-- Présentation Salon Aristochiens -->
-          <div class="video-card" data-src="../vidéo_montage/Vidéo Présentation Salon Horizontale.mp4"
+          <div class="video-card" data-cat="sport" data-src="../vidéo_montage/Vidéo Présentation Salon Horizontale.mp4"
             data-title="Vidéo Présentation — Salon Aristochiens" data-page="/presentation-salon/">
             <div class="video-thumb">
               <img src="../vidéo_montage/presentation_salon.webp" alt="Caniche abricot attendant son toilettage, vidéo de présentation du Salon Aristochiens" srcset="../vid%C3%A9o_montage/presentation_salon-800w.webp 800w, ../vid%C3%A9o_montage/presentation_salon.webp 1803w" sizes="(max-width: 768px) 100vw, 50vw">
@@ -716,7 +729,82 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
 
-  <script src="/anim.js?v=20261108a" defer></script>
+  <script>
+    // ── Dossiers : les vidéos sortent du dossier cliqué, et rentrent dans le leur quand on en change ──
+    (() => {
+      const btns = [...document.querySelectorAll('.photo-filters .filter-btn')];
+      const cards = [...document.querySelectorAll('.video-card')];
+      const grid = document.getElementById('video-grid');
+      const hint = document.getElementById('folders-hint');
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const of = cat => cards.filter(c => c.dataset.cat === cat);
+      const wait = ms => new Promise(r => setTimeout(r, reduce ? 0 : ms));
+      const into = (el, btn) => {
+        const f = btn.getBoundingClientRect(), i = el.getBoundingClientRect();
+        return `translate(${f.left + f.width / 2 - (i.left + i.width / 2)}px, ${f.top + f.height / 2 - (i.top + i.height / 2)}px) scale(0.12) rotate(-8deg)`;
+      };
+      let open = null, busy = false;
+      cards.forEach(c => c.classList.add('hidden'));
+
+      // Chaque dossier montre ses vignettes qui dépassent et son nombre de vidéos
+      btns.forEach(btn => {
+        const items = of(btn.dataset.cat);
+        const name = btn.textContent.trim();
+        btn.setAttribute('role', 'tab');
+        btn.innerHTML = `<span class="folder-peek">${items.slice(0, 3).map(c => `<img src="${c.querySelector('.video-thumb img').getAttribute('src')}" alt="" loading="lazy">`).join('')}</span><span class="folder-body"><span class="folder-name">${name}</span><span class="folder-count">${items.length} vidéo${items.length > 1 ? 's' : ''}</span></span>`;
+      });
+
+      async function toggle(btn) {
+        if (busy) return;
+        busy = true;
+        const cat = btn.dataset.cat;
+        const prev = btns.find(b => b.classList.contains('active'));
+        if (open && prev) { // les vidéos ouvertes rentrent dans leur dossier
+          of(open).forEach((c, k) => {
+            const d = Math.min(k, 10) * 40;
+            c.style.transition = `transform .55s cubic-bezier(.6,0,.4,1) ${d}ms, opacity .35s ${d + 200}ms`;
+            c.style.transform = into(c, prev);
+            c.style.opacity = '0';
+          });
+          prev.classList.add('is-gulp');
+          await wait(800);
+          prev.classList.remove('is-gulp');
+          of(open).forEach(c => { c.classList.add('hidden'); c.style.transition = c.style.transform = c.style.opacity = ''; });
+        }
+        btns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        if (open === cat) { // même dossier : on le referme
+          open = null;
+          grid.classList.add('is-empty'); hint.hidden = false;
+          history.replaceState(null, '', location.pathname);
+          busy = false;
+          return;
+        }
+        open = cat;
+        btn.classList.add('active'); btn.setAttribute('aria-selected', 'true');
+        grid.classList.remove('is-empty'); hint.hidden = true;
+        history.replaceState(null, '', '#' + cat);
+        const items = of(cat);
+        items.forEach(c => { c.classList.remove('hidden'); c.classList.add('g-in'); c.style.transition = 'none'; c.style.transform = into(c, btn); c.style.opacity = '0'; });
+        grid.offsetHeight; // position de départ avant d'animer
+        items.forEach((c, k) => { // les nouvelles sortent du dossier
+          const d = Math.min(k, 10) * 70;
+          c.style.transition = `transform .75s cubic-bezier(.2,.8,.2,1) ${d}ms, opacity .35s ${d}ms`;
+          c.style.transform = '';
+          c.style.opacity = '';
+        });
+        await wait(450);
+        busy = false;
+        setTimeout(() => items.forEach(c => { c.style.transition = ''; }), 1300);
+      }
+      btns.forEach(b => b.addEventListener('click', () => toggle(b)));
+
+      // Dossier demandé dans l'adresse (ex. /production-video/#sport)
+      const fromHash = () => { const b = btns.find(x => x.dataset.cat === location.hash.slice(1)); if (b && !b.classList.contains('active')) toggle(b); };
+      fromHash();
+      addEventListener('hashchange', fromHash);
+    })();
+  </script>
+  <script src="/anim.js?v=20261125x" defer></script>
 </body>
 
 </html>

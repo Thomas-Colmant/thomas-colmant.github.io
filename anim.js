@@ -5,6 +5,7 @@
    - survol des liens du menu (texte qui roule)
    ============================================= */
 (() => {
+  const below = en => en.boundingClientRect.top > 0; // l'élément est sous l'écran : on est remonté au-dessus
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const doc = document.documentElement;
   doc.classList.add('js-anim');
@@ -58,10 +59,9 @@
       let batch = 0, batchTimer;
       const ioG = new IntersectionObserver(entries => {
         entries.forEach(en => {
-          if (!en.isIntersecting) return;
+          if (!en.isIntersecting) { if (below(en)) { en.target.classList.remove('g-in'); en.target.style.transitionDelay = '0ms'; } return; }
           en.target.style.transitionDelay = `${Math.min(batch++, 6) * 80}ms`;
           en.target.classList.add('g-in');
-          ioG.unobserve(en.target);
         });
         clearTimeout(batchTimer);
         batchTimer = setTimeout(() => { batch = 0; }, 120);
@@ -90,6 +90,51 @@
     });
   }
 
+  /* ---------- [data-stagger] : chaque enfant apparaît à son tour ---------- */
+  document.querySelectorAll('[data-stagger]').forEach(box => {
+    [...box.children].forEach((el, i) => {
+      el.classList.add('reveal');
+      el.style.transitionDelay = `${Math.min(i, 8) * 90}ms`;
+    });
+  });
+
+  /* ---------- Affiche À propos : les plans bougent à des vitesses différentes au défilement ---------- */
+  const poster = document.querySelector('.ap-poster');
+  if (poster && !reduce) {
+    let ticking = false;
+    const update = () => {
+      poster.style.setProperty('--p', Math.min(scrollY / innerHeight, 1.2).toFixed(3));
+      // Une fois la section suivante en haut de l'écran, l'affiche (collée) est cachée : elle ne transparaît plus sous la suite
+      const next = poster.nextElementSibling;
+      poster.style.visibility = next && next.getBoundingClientRect().top <= 0 ? 'hidden' : '';
+      ticking = false;
+    };
+    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
+    // Affiche plus haute que l'écran (mobile) : elle ne se fige qu'une fois son bas atteint, pour tout voir avant
+    const fitTop = () => { poster.style.top = Math.min(0, innerHeight - poster.offsetHeight) + 'px'; };
+    addEventListener('resize', fitTop, { passive: true });
+    addEventListener('load', fitTop);
+    fitTop();
+  }
+
+  /* ---------- Animations réversibles : tout ce qui repasse sous l'écran (on remonte) se recache,
+     pour rejouer l'apparition quand on redescend. Vérifié au défilement : un défilement rapide
+     peut sauter les rappels de l'IntersectionObserver ---------- */
+  if (!reduce) {
+    let tick = false;
+    const hideBelow = () => {
+      tick = false;
+      document.querySelectorAll('.reveal.visible, .split.in, [data-reveal-img].in, .g-item.g-in').forEach(el => {
+        if (el.getBoundingClientRect().top > innerHeight) {
+          el.classList.remove('visible', 'in', 'g-in');
+          if (el.classList.contains('g-item')) el.style.transitionDelay = '0ms';
+        }
+      });
+    };
+    addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(hideBelow); } }, { passive: true });
+  }
+
   /* ---------- Blocs .reveal : apparition au défilement (toutes les pages) ---------- */
   const reveals = document.querySelectorAll('.reveal');
   if (reduce || !('IntersectionObserver' in window)) {
@@ -97,7 +142,8 @@
   } else {
     const ioR = new IntersectionObserver(entries => {
       entries.forEach(en => {
-        if (en.isIntersecting) { en.target.classList.add('visible'); ioR.unobserve(en.target); }
+        if (en.isIntersecting) en.target.classList.add('visible');
+        else if (below(en)) en.target.classList.remove('visible');
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
     reveals.forEach(el => ioR.observe(el));
@@ -138,7 +184,8 @@
     titles.forEach(splitWords);
     const io = new IntersectionObserver(entries => {
       entries.forEach(en => {
-        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+        if (en.isIntersecting) en.target.classList.add('in');
+        else if (below(en)) en.target.classList.remove('in');
       });
     }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
     titles.forEach(t => io.observe(t));
@@ -147,7 +194,8 @@
     const imgs = document.querySelectorAll('[data-reveal-img]');
     const io2 = new IntersectionObserver(entries => {
       entries.forEach(en => {
-        if (en.isIntersecting) { en.target.classList.add('in'); io2.unobserve(en.target); }
+        if (en.isIntersecting) en.target.classList.add('in');
+        else if (below(en)) en.target.classList.remove('in');
       });
     }, { threshold: 0.15 });
     imgs.forEach(i => io2.observe(i));

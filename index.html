@@ -41,7 +41,7 @@
     href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="/style.css?v=20261119a">
+  <link rel="stylesheet" href="/style.css?v=20261126j">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -98,7 +98,7 @@
   <header class="site-header" id="site-header">
     <div class="header-inner">
       <a href="#home" class="logo">
-        Thomas<span class="logo-dot"></span>Colmant
+        Thomas <span class="logo-paper">Colmant</span>
       </a>
 
       <nav class="main-nav" id="main-nav">
@@ -126,57 +126,32 @@
 
   <main>
 
-    <!-- ===== HERO ===== -->
-    <section id="home" class="hero hero--home hero-cine" aria-label="Accueil">
-      <div class="hero-sticky">
-        <div class="hero-frame">
-          <div class="hero-bg">
-            <video id="hero-video" autoplay muted loop playsinline preload="auto" poster="./vidéo_fond/fond-portfolio-poster.webp">
-              <source src="./vidéo_fond/fond-portfolio-mobile.mp4" type="video/mp4" media="(orientation: portrait)">
-              <source src="./vidéo_fond/fond-portfolio.mp4" type="video/mp4">
-            </video>
-            <script>if (matchMedia("(orientation: portrait)").matches) document.getElementById("hero-video").poster = "./vidéo_fond/fond-portfolio-mobile-poster.webp";</script>
-          </div>
-          <div class="hero-overlay"></div>
-          <div class="hero-overlay-noise"></div>
+    <!-- ===== AFFICHE D'ACCUEIL ===== -->
+    <section id="home" class="ap-poster" aria-labelledby="ap-poster-title">
+      <video class="ap-poster-bg" id="hero-video" autoplay muted loop playsinline disablepictureinpicture preload="auto" poster="./vidéo_fond/fond-portfolio-poster.webp" aria-hidden="true">
+        <source src="./vidéo_fond/fond-portfolio-mobile.mp4" type="video/mp4" media="(max-width: 900px)">
+        <source src="./vidéo_fond/fond-portfolio.mp4" type="video/mp4">
+      </video>
+      <script>if (matchMedia("(max-width: 900px)").matches) document.getElementById("hero-video").poster = "./vidéo_fond/fond-portfolio-mobile-poster.webp";</script>
+
+      <div class="ap-poster-left">
+        <h1 class="ap-poster-slogan" id="ap-poster-title" data-split>Thomas<br><span class="ap-poster-underline">Colmant.</span></h1>
+        <div class="hero-actions ap-poster-actions">
+          <a href="#travaux" class="btn-primary">Voir mes projets</a>
+          <a href="#contact" class="btn-ghost">Me contacter</a>
         </div>
-
-        <!-- Bandes cinéma qui reviennent au défilement -->
-        <div class="scope scope--top" aria-hidden="true"></div>
-        <div class="scope scope--bot" aria-hidden="true"></div>
-
-        <!-- Ouverture : trait bleu puis barres qui s'écartent -->
-        <div class="lb lb--top" aria-hidden="true"></div>
-        <div class="lb lb--bot" aria-hidden="true"></div>
-        <div class="lb-line" aria-hidden="true"></div>
-
-        <div class="hero-content">
-          <p class="hero-eyebrow">Photographe &amp; Vidéaste · Près de Lens</p>
-          <h1 class="hero-title" aria-label="Thomas Colmant">
-            <span class="ht-line">Thomas</span>
-            <span class="ht-line"><em>Colmant</em></span>
-          </h1>
-
-          <div class="hero-actions">
-            <a href="#travaux" class="btn-primary">Voir mes projets</a>
-            <a href="#contact" class="btn-ghost">Me contacter</a>
-          </div>
-        </div>
-
-        <a href="#travaux" class="hero-scroll" aria-label="Descendre vers les projets">
-          <span>Défiler</span>
-          <span class="scroll-line"></span>
-        </a>
       </div>
+
+      <img class="ap-poster-photo" src="./img/moi/thomas-papier.webp?v=2" srcset="./img/moi/thomas-papier-600w.webp?v=2 600w, ./img/moi/thomas-papier.webp?v=2 1200w" sizes="(max-width: 768px) 80vw, 40vw" alt="Portrait de Thomas Colmant en noir et blanc, détouré façon papier découpé" fetchpriority="high">
+
+      <div class="ap-poster-right">
+        <p class="ap-poster-name">Photographe<br>&amp; vidéaste</p>
+        <p class="ap-poster-chip">Hauts-de-France</p>
+        <p class="ap-poster-chip">Photo · Vidéo · Montage</p>
+      </div>
+      <span class="ap-poster-fade" aria-hidden="true"></span>
+      <span class="ap-poster-dim" aria-hidden="true"></span>
     </section>
-
-    <!-- ===== BANDE DÉFILANTE ===== -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track" id="marquee-track">
-        <span>Photographie</span><span>Vidéo</span><span>Sport</span><span>Clips</span><span>Événementiel</span><span>Montage</span>
-        <span>Photographie</span><span>Vidéo</span><span>Sport</span><span>Clips</span><span>Événementiel</span><span>Montage</span>
-      </div>
-    </div>
 
     <!-- ===== PROJETS (carrousel 3D) ===== -->
     <section id="travaux" class="section">
@@ -298,6 +273,7 @@
         </div>
 
         <!-- Catégories : panneaux qui s'ouvrent au survol, clic = rideau vers la page -->
+        <p class="cats-note reveal">tout voir par catégorie ↘</p>
         <nav class="cats reveal" id="cats" aria-label="Tous mes projets par catégorie">
           <a href="/photographie" class="cat">
             <img src="./img/basketball/DSC03801.webp" alt="" loading="lazy">
@@ -314,7 +290,7 @@
             </video>
             <span class="cat-num">02</span>
             <span class="cat-body">
-              <span class="cat-name">Vidéo</span>
+              <span class="cat-name">Réalisations</span>
               <span class="cat-meta">Clips · Captations · Montage</span>
             </span>
           </a>
@@ -415,62 +391,6 @@
   </footer>
 
   <script>
-    // ===== Header cinéma =====
-    (() => {
-      const hero = document.getElementById('home');
-      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // Titre découpé lettre par lettre
-      let n = 0;
-      hero.querySelectorAll('.ht-line').forEach(line => {
-        const target = line.querySelector('em') || line;
-        const txt = target.textContent.trim();
-        target.innerHTML = [...txt].map(c => `<span class="ch" aria-hidden="true" style="transition-delay:${1.25 + n++ * 0.045}s">${c}</span>`).join('');
-      });
-
-      // Ouverture : on attend que la vidéo puisse jouer (ou 1,2 s max)
-      const video = document.getElementById('hero-video');
-      let opened = false;
-      const open = () => { if (!opened) { opened = true; hero.classList.add('is-open'); } };
-      if (reduce) open();
-      else {
-        if (video.readyState >= 2) open(); else video.addEventListener('canplay', open, { once: true });
-        setTimeout(open, 1200);
-      }
-
-      // Recadrage au défilement (--p de 0 à 1)
-      let ticking = false;
-      const update = () => {
-        ticking = false;
-        const range = hero.offsetHeight - innerHeight;
-        const p = range > 0 ? Math.min(Math.max(scrollY / range, 0), 1) : 0;
-        hero.style.setProperty('--p', p.toFixed(4));
-      };
-      if (!reduce) {
-        addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-        addEventListener('resize', update, { passive: true });
-        update();
-      }
-    })();
-
-    // ===== Bande défilante : avance toute seule et accélère avec le défilement =====
-    (() => {
-      const track = document.getElementById('marquee-track');
-      if (!track || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      let x = 0, last = scrollY, boost = 0;
-      const loop = () => {
-        const dy = scrollY - last;
-        last = scrollY;
-        boost += (dy * 0.6 - boost) * 0.12;
-        x -= 0.6 + Math.abs(boost);
-        const half = track.scrollWidth / 2;
-        if (-x >= half) x += half;
-        track.style.transform = `translate3d(${x}px,0,0)`;
-        requestAnimationFrame(loop);
-      };
-      requestAnimationFrame(loop);
-    })();
-
     // ===== Panneaux de catégories : la vidéo joue au survol =====
     (() => {
       document.querySelectorAll('#cats .cat').forEach(cat => {
@@ -694,7 +614,7 @@
     }
   </script>
 
-  <script src="/anim.js?v=20261108a" defer></script>
+  <script src="/anim.js?v=20261125x" defer></script>
 </body>
 
 </html>
